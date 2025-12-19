@@ -1,42 +1,43 @@
-name: Deploy Frontend to Server
+name: Deploy to GitHub Pages
 
 on:
     push:
         branches:
-            - main # Trigger only when pushing to main
+            - main
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: pages
+    cancel-in-progress: true
 
 jobs:
     deploy:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout code
+            - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Deploy via SSH
-              uses: appleboy/ssh-action@v1.0.3
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
               with:
-                  host: ${{ secrets.SERVER_HOST }}
-                  username: ${{ secrets.SERVER_USER }}
-                  key: ${{ secrets.SERVER_SSH_KEY }}
-                  script: |
-                      set -euo pipefail
-                      cd /root/silah-frontend
+                  node-version: 20
+                  cache: npm
 
-                      echo "Fetching latest changes..."
-                      git fetch origin main --prune
-                      git reset --hard origin/main
+            - name: Install dependencies
+              run: npm ci
 
-                      echo "Installing dependencies..."
-                      npm ci --prefer-offline
+            - name: Build frontend
+              run: npm run build
 
-                      echo "Building frontend..."
-                      npm run build
+            - name: Upload Pages artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: dist
 
-                      echo "Deploying build to /var/www/silah-frontend..."
-                      rm -rf /var/www/silah-frontend/*
-                      cp -r dist/* /var/www/silah-frontend/
-
-                      echo "Setting permissions..."
-                      chown -R www-data:www-data /var/www/silah-frontend
-                      chmod -R 755 /var/www/silah-frontend
+            - name: Deploy to GitHub Pages
+              uses: actions/deploy-pages@v4
