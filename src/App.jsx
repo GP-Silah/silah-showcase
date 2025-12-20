@@ -22,11 +22,6 @@ import NotFound from './pages/NotFound/NotFound';
 const pages = import.meta.glob('./pages/**/*.jsx');
 
 export default function App() {
-  // Redirect to live site first (TEMP)
-  React.useEffect(() => {
-    window.location.href = 'https://silah.site';
-  }, []);
-
   const { i18n } = useTranslation();
   const { role, loading } = useAuth();
 
