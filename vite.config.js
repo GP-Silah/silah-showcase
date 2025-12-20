@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react';
 import json from '@rollup/plugin-json';
 import path from 'path';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react(), json()],
-  base: '/silah-showcase/',
+  base: mode === 'development' ? '/' : '/silah-showcase/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -21,4 +21,4 @@ export default defineConfig({
     strictPort: true,
     host: true,
   },
-});
+}));
