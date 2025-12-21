@@ -1,8 +1,8 @@
 # Silah Frontend
 
-_Last Updated: October 2025_
+_Last Updated: December 2025_
 
-This is the frontend application for [Silah](https://github.com/GP-Silah), an AI-augmented full-stack B2B platform that connects suppliers and buyers. Built using [React](https://reactjs.org/) and [Vite](https://vitejs.dev/), it features fast hot-module reloading (HMR), code splitting, and automatic route detection.
+This is the permenant showcase of the frontend application for [Silah](https://github.com/GP-Silah), an AI-augmented full-stack B2B platform that connects suppliers and buyers. Built using [React](https://reactjs.org/) and [Vite](https://vitejs.dev/).
 
 > **Silah** (Arabic: صِلَة) _\[noun]_ Connection, bond, link; often used to describe the ties between people, family, or communities.
 
