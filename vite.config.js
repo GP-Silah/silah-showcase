@@ -5,7 +5,7 @@ import path from 'path';
 
 export default defineConfig(({ mode }) => ({
   plugins: [react(), json()],
-  base: '/',
+  base: '/silah-showcase',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

@@ -77,7 +77,7 @@ const GuestHeader = () => {
     <header className={`header ${i18n.language === 'ar' ? 'rtl' : 'ltr'}`}>
       <div className="header-left">
         <img
-          src="/logo.png"
+          src="/silah-showcase/logo.png"
           alt="Logo"
           className="logo"
           onClick={() => navigate('/')}

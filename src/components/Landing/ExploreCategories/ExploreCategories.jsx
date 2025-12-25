@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Button from '../../Button/Button';
 import ItemCard from '../../ItemCard/ItemCard';
 import styles from './ExploreCategories.module.css';
+import { getCategories } from '@/utils/mock-api/categoryApi';
 
 function ExploreCategories() {
   const { t, i18n } = useTranslation('landing');
@@ -13,17 +14,24 @@ function ExploreCategories() {
   const [loading, setLoading] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
 
+  const lang = i18n.language.toLowerCase();
+  const url = getCategories({ main: true, lang });
+
   // Fetch categories on mount + language change
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(
-          `${
-            import.meta.env.VITE_BACKEND_URL
-          }/api/categories/main?lang=${i18n.language.toLowerCase()}`,
-        );
-        const data = await response.json();
-        setCategories(data || []);
+        // const response = await fetch(
+        //   `${
+        //     import.meta.env.VITE_BACKEND_URL
+        //   }/api/categories/main?lang=${i18n.language.toLowerCase()}`,
+        // );
+        // const data = await response.json();
+        // setCategories(data || []);
+
+        fetch(url)
+          .then((res) => res.json())
+          .then(setCategories);
       } catch (err) {
         console.error('Error fetching categories:', err);
       }
