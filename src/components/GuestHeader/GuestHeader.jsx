@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import CategoryMegamenu from '../CategoryMegamenu/CategoryMegamenu';
+import { getCategories } from '@/utils/mock-api/categoryApi';
 
 const TYPE_MAP = {
   en: {
@@ -32,13 +33,27 @@ const GuestHeader = () => {
     i18n.changeLanguage(newLang);
   };
 
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_BACKEND_URL}/api/categories`, {
+  //       params: { lang: i18n.language },
+  //     })
+  //     .then((res) => setCategories(res.data))
+  //     .catch((err) => console.error('Failed to load categories', err));
+  // }, [i18n.language]);
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/api/categories`, {
-        params: { lang: i18n.language },
+    const lang = i18n.language.toLowerCase();
+    const url = getCategories({ main: false, lang });
+
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to fetch categories: ${res.status}`);
+        }
+        return res.json();
       })
-      .then((res) => setCategories(res.data))
-      .catch((err) => console.error('Failed to load categories', err));
+      .then((data) => setCategories(data || []))
+      .catch((err) => console.error('Failed to load categories (mock)', err));
   }, [i18n.language]);
 
   const handleSearch = () => {
@@ -77,7 +92,7 @@ const GuestHeader = () => {
     <header className={`header ${i18n.language === 'ar' ? 'rtl' : 'ltr'}`}>
       <div className="header-left">
         <img
-          src="/logo.png"
+          src="/silah-showcase/logo.png"
           alt="Logo"
           className="logo"
           onClick={() => navigate('/')}

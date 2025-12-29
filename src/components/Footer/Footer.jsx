@@ -20,13 +20,13 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-links">
+        <Link to="/about-the-project">{t('project')}</Link>
+        <span>|</span>
         <Link to="/about-us">{t('about')}</Link>
         <span>|</span>
         <Link to="/terms-of-service">{t('terms')}</Link>
         <span>|</span>
         <Link to="/privacy-policy">{t('privacy')}</Link>
-        <span>|</span>
-        <a href="mailto:info@silah.site">{t('contact')}: info@silah.site</a>
       </div>
       <p className="copyright">©️ 2025 Silah. {t('rights')}</p>
     </footer>

@@ -1,0 +1,404 @@
+[
+  {
+    "id": 1,
+    "name": "مستلزمات الزراعة والحيوانات الأليفة",
+    "usedFor": "PRODUCT",
+    "subcategories": [
+      {
+        "id": 16,
+        "name": "علف الحيوانات",
+        "usedFor": "PRODUCT",
+        "parentCategory": {
+          "id": 1,
+          "name": "مستلزمات الزراعة والحيوانات الأليفة"
+        },
+        "subcategories": []
+      },
+      {
+        "id": 17,
+        "name": "الأسمدة",
+        "usedFor": "PRODUCT",
+        "parentCategory": {
+          "id": 1,
+          "name": "مستلزمات الزراعة والحيوانات الأليفة"
+        },
+        "subcategories": []
+      },
+      {
+        "id": 18,
+        "name": "إكسسوارات وألعاب الحيوانات الأليفة",
+        "usedFor": "PRODUCT",
+        "parentCategory": {
+          "id": 1,
+          "name": "مستلزمات الزراعة والحيوانات الأليفة"
+        },
+        "subcategories": []
+      },
+      {
+        "id": 19,
+        "name": "أغذية وعلاجات الحيوانات الأليفة",
+        "usedFor": "PRODUCT",
+        "parentCategory": {
+          "id": 1,
+          "name": "مستلزمات الزراعة والحيوانات الأليفة"
+        },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "الجمال والعناية الشخصية",
+    "usedFor": "PRODUCT",
+    "subcategories": [
+      {
+        "id": 20,
+        "name": "العناية بالبشرة والعناية بالجسم",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 2, "name": "الجمال والعناية الشخصية" },
+        "subcategories": []
+      },
+      {
+        "id": 21,
+        "name": "العناية بالشعر",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 2, "name": "الجمال والعناية الشخصية" },
+        "subcategories": []
+      },
+      {
+        "id": 22,
+        "name": "النظافة الشخصية",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 2, "name": "الجمال والعناية الشخصية" },
+        "subcategories": []
+      },
+      {
+        "id": 23,
+        "name": "المكياج والعطور",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 2, "name": "الجمال والعناية الشخصية" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "الأزياء والإكسسوارات",
+    "usedFor": "PRODUCT",
+    "subcategories": [
+      {
+        "id": 32,
+        "name": "الملابس",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 3, "name": "الأزياء والإكسسوارات" },
+        "subcategories": []
+      },
+      {
+        "id": 33,
+        "name": "المجوهرات والساعات",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 3, "name": "الأزياء والإكسسوارات" },
+        "subcategories": []
+      },
+      {
+        "id": 34,
+        "name": "الأحذية",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 3, "name": "الأزياء والإكسسوارات" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "المأكولات والمشروبات والصحة",
+    "usedFor": "PRODUCT",
+    "subcategories": [
+      {
+        "id": 29,
+        "name": "الوجبات الخفيفة والمشروبات",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 4, "name": "المأكولات والمشروبات والصحة" },
+        "subcategories": []
+      },
+      {
+        "id": 30,
+        "name": "منتجات الألبان وبدائل الألبان",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 4, "name": "المأكولات والمشروبات والصحة" },
+        "subcategories": []
+      },
+      {
+        "id": 31,
+        "name": "المكملات الغذائية الصحية",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 4, "name": "المأكولات والمشروبات والصحة" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "المنزل والمعيشة",
+    "usedFor": "PRODUCT",
+    "subcategories": [
+      {
+        "id": 24,
+        "name": "الأثاث",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 5, "name": "المنزل والمعيشة" },
+        "subcategories": []
+      },
+      {
+        "id": 25,
+        "name": "المستلزمات المنزلية ومستلزمات التنظيف",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 5, "name": "المنزل والمعيشة" },
+        "subcategories": []
+      },
+      {
+        "id": 26,
+        "name": "المطبخ والطعام",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 5, "name": "المنزل والمعيشة" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "الأجهزة والأدوات",
+    "usedFor": "PRODUCT",
+    "subcategories": [
+      {
+        "id": 27,
+        "name": "الأدوات الكهربائية",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 6, "name": "الأجهزة والأدوات" },
+        "subcategories": []
+      },
+      {
+        "id": 28,
+        "name": "معدات صناعية",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 6, "name": "الأجهزة والأدوات" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "التعبئة والتغليف والمواد الخام",
+    "usedFor": "PRODUCT",
+    "subcategories": [
+      {
+        "id": 35,
+        "name": "الزجاجات والحاويات",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 7, "name": "التعبئة والتغليف والمواد الخام" },
+        "subcategories": []
+      },
+      {
+        "id": 36,
+        "name": "المنسوجات والأقمشة",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 7, "name": "التعبئة والتغليف والمواد الخام" },
+        "subcategories": []
+      },
+      {
+        "id": 37,
+        "name": "الأصباغ والكيماويات",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 7, "name": "التعبئة والتغليف والمواد الخام" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "الطاقة والاستدامة",
+    "usedFor": "PRODUCT",
+    "subcategories": [
+      {
+        "id": 38,
+        "name": "مواد صديقة للبيئة",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 8, "name": "الطاقة والاستدامة" },
+        "subcategories": []
+      },
+      {
+        "id": 39,
+        "name": "منتجات الطاقة المتجددة",
+        "usedFor": "PRODUCT",
+        "parentCategory": { "id": 8, "name": "الطاقة والاستدامة" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "خدمات الأعمال التجارية والتسويق",
+    "usedFor": "SERVICE",
+    "subcategories": [
+      {
+        "id": 40,
+        "name": "استشارات الأعمال",
+        "usedFor": "SERVICE",
+        "parentCategory": {
+          "id": 9,
+          "name": "خدمات الأعمال التجارية والتسويق"
+        },
+        "subcategories": []
+      },
+      {
+        "id": 41,
+        "name": "التسويق عبر الإنترنت وإنشاء الإعلانات عبر الإنترنت",
+        "usedFor": "SERVICE",
+        "parentCategory": {
+          "id": 9,
+          "name": "خدمات الأعمال التجارية والتسويق"
+        },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "حلول البرمجيات وتكنولوجيا المعلومات",
+    "usedFor": "SERVICE",
+    "subcategories": [
+      {
+        "id": 42,
+        "name": "تطوير الويب والتطبيقات",
+        "usedFor": "SERVICE",
+        "parentCategory": {
+          "id": 10,
+          "name": "حلول البرمجيات وتكنولوجيا المعلومات"
+        },
+        "subcategories": []
+      },
+      {
+        "id": 43,
+        "name": "تكنولوجيا المعلومات والخدمات السحابية",
+        "usedFor": "SERVICE",
+        "parentCategory": {
+          "id": 10,
+          "name": "حلول البرمجيات وتكنولوجيا المعلومات"
+        },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "الشحن والخدمات اللوجستية",
+    "usedFor": "SERVICE",
+    "subcategories": [
+      {
+        "id": 44,
+        "name": "الشحن والتخزين",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 11, "name": "الشحن والخدمات اللوجستية" },
+        "subcategories": []
+      },
+      {
+        "id": 45,
+        "name": "الشحن الدولي",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 11, "name": "الشحن والخدمات اللوجستية" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "خدمات التصميم",
+    "usedFor": "SERVICE",
+    "subcategories": [
+      {
+        "id": 46,
+        "name": "تصميم المنتج",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 12, "name": "خدمات التصميم" },
+        "subcategories": []
+      },
+      {
+        "id": 47,
+        "name": "تصميم الشعار والعلامة التجارية",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 12, "name": "خدمات التصميم" },
+        "subcategories": []
+      },
+      {
+        "id": 48,
+        "name": "تصميم واجهة المستخدم/تجربة المستخدم والتصميم الجرافيكي",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 12, "name": "خدمات التصميم" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "التصنيع والتغليف",
+    "usedFor": "SERVICE",
+    "subcategories": [
+      {
+        "id": 49,
+        "name": "التعبئة والتغليف والتغليف المشترك",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 13, "name": "التصنيع والتغليف" },
+        "subcategories": []
+      },
+      {
+        "id": 50,
+        "name": "التوريد والمشتريات",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 13, "name": "التصنيع والتغليف" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "الخدمات الفنية وخدمات الإصلاح",
+    "usedFor": "SERVICE",
+    "subcategories": [
+      {
+        "id": 51,
+        "name": "الإصلاح العام والكمبيوتر",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 14, "name": "الخدمات الفنية وخدمات الإصلاح" },
+        "subcategories": []
+      },
+      {
+        "id": 52,
+        "name": "الصيانة الصناعية",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 14, "name": "الخدمات الفنية وخدمات الإصلاح" },
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "الخدمات القانونية والامتثال",
+    "usedFor": "SERVICE",
+    "subcategories": [
+      {
+        "id": 53,
+        "name": "الاستشارات القانونية للأعمال التجارية",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 15, "name": "الخدمات القانونية والامتثال" },
+        "subcategories": []
+      },
+      {
+        "id": 54,
+        "name": "الامتثال الضريبي والتنظيمي",
+        "usedFor": "SERVICE",
+        "parentCategory": { "id": 15, "name": "الخدمات القانونية والامتثال" },
+        "subcategories": []
+      }
+    ]
+  }
+]
