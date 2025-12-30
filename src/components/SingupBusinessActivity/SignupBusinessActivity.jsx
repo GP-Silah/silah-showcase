@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import { getCategories } from '@/utils/mock-api/categoryApi';
 
 export default function SignupBusinessActivity({ value, onChange }) {
   const { i18n } = useTranslation();
@@ -9,6 +10,8 @@ export default function SignupBusinessActivity({ value, onChange }) {
 
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const url = getCategories({ main: true, lang });
 
   useEffect(() => {
     const fetchCategories = async () => {
