@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import ItemCard from '@/components/ItemCard/ItemCard';
 import './SupplierSearchResult.css';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
 
 const SupplierSearchResult = ({ supplier }) => {
   const { t, i18n } = useTranslation('search');
@@ -21,35 +22,54 @@ const SupplierSearchResult = ({ supplier }) => {
     const fetchItems = async () => {
       setLoading(true);
       try {
-        const [productsRes, servicesRes] = await Promise.all([
-          axios.get(
-            `${import.meta.env.VITE_BACKEND_URL}/api/products/supplier/${
-              supplier.supplierId
-            }?lang=${lang}`,
-            { withCredentials: true },
+        // const [productsRes, servicesRes] = await Promise.all([
+        //   axios.get(
+        //     `${import.meta.env.VITE_BACKEND_URL}/api/products/supplier/${
+        //       supplier.supplierId
+        //     }?lang=${lang}`,
+        //     { withCredentials: true },
+        //   ),
+        //   axios.get(
+        //     `${import.meta.env.VITE_BACKEND_URL}/api/services/supplier/${
+        //       supplier.supplierId
+        //     }?lang=${lang}`,
+        //     { withCredentials: true },
+        //   ),
+        // ]);
+
+        // const products = (productsRes.data || []).map((p) => ({
+        //   ...p,
+        //   type: 'product',
+        // }));
+        // const services = (servicesRes.data || []).map((s) => ({
+        //   ...s,
+        //   type: 'service',
+        // }));
+
+        // const all = [...products, ...services]
+        //   .sort((a, b) => (b.avgRating || 0) - (a.avgRating || 0))
+        //   .slice(0, 4);
+
+        // setItems(all);
+        const [products, services] = await Promise.all([
+          fetch(getSearchResults({ type: 'products', isAll: true })).then((r) =>
+            r.json(),
           ),
-          axios.get(
-            `${import.meta.env.VITE_BACKEND_URL}/api/services/supplier/${
-              supplier.supplierId
-            }?lang=${lang}`,
-            { withCredentials: true },
+          fetch(getSearchResults({ type: 'services', isAll: true })).then((r) =>
+            r.json(),
           ),
         ]);
 
-        const products = (productsRes.data || []).map((p) => ({
-          ...p,
-          type: 'product',
-        }));
-        const services = (servicesRes.data || []).map((s) => ({
-          ...s,
-          type: 'service',
-        }));
-
-        const all = [...products, ...services]
+        const merged = [...products, ...services]
+          .filter((i) => i.supplierId === supplier.supplierId)
           .sort((a, b) => (b.avgRating || 0) - (a.avgRating || 0))
-          .slice(0, 4);
+          .slice(0, 4)
+          .map((i) => ({
+            ...i,
+            type: i.productId ? 'product' : 'service',
+          }));
 
-        setItems(all);
+        setItems(merged);
       } catch (err) {
         console.error('Failed to load supplier items', err);
       } finally {
