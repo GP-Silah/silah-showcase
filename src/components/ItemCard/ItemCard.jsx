@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import styles from './ItemCard.module.css'; // Fixed import
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 function ItemCard({
   type = 'product',
@@ -67,57 +68,66 @@ function ItemCard({
   }, [_id, type]);
 
   // ---- Favorite Handler ----
+  const { t: tDemo } = useTranslation('demo');
+
   const handleFavorite = async (e) => {
     e.stopPropagation();
-    if (!_id) {
-      await Swal.fire({
-        icon: 'info',
-        title: t('demoTitle'),
-        text: t('demoText'),
-        confirmButtonColor: '#476DAE',
-        confirmButtonText: t('ok'),
-      });
-      return;
-    }
-    try {
-      setLoading(true);
-      const res = await axios.patch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/wishlist/${_id}`,
-        {},
-        { withCredentials: true },
-      );
-      const { isAdded } = res.data;
-      setFavorited(isAdded);
-      await Swal.fire({
-        icon: 'success',
-        title: t('successTitle'),
-        text: t(isAdded ? 'added' : 'removed'),
-        confirmButtonColor: '#476DAE',
-        confirmButtonText: t('ok'),
-      });
-    } catch (err) {
-      console.error('Wishlist toggle failed:', err);
-      const errorMessage = err.response?.data?.error?.message;
-      if (errorMessage === 'No token found in cookies') {
-        await Swal.fire({
-          icon: 'warning',
-          title: t('loginRequired'),
-          text: t('loginToContinue'),
-          confirmButtonColor: '#476DAE',
-          confirmButtonText: t('ok'),
-          allowOutsideClick: false,
-        });
-        return;
-      }
-      Swal.fire({
-        icon: 'error',
-        title: t('error.genericTitle'),
-        text: t('error.genericText'),
-        confirmButtonText: t('ok'),
-      });
-    } finally {
-      setLoading(false);
-    }
+
+    // if (!_id) {
+    //   await Swal.fire({
+    //     icon: 'info',
+    //     title: t('demoTitle'),
+    //     text: t('demoText'),
+    //     confirmButtonColor: '#476DAE',
+    //     confirmButtonText: t('ok'),
+    //   });
+    //   return;
+    // }
+    // try {
+    //   setLoading(true);
+    //   const res = await axios.patch(
+    //     `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/wishlist/${_id}`,
+    //     {},
+    //     { withCredentials: true },
+    //   );
+    //   const { isAdded } = res.data;
+    //   setFavorited(isAdded);
+    //   await Swal.fire({
+    //     icon: 'success',
+    //     title: t('successTitle'),
+    //     text: t(isAdded ? 'added' : 'removed'),
+    //     confirmButtonColor: '#476DAE',
+    //     confirmButtonText: t('ok'),
+    //   });
+    // } catch (err) {
+    //   console.error('Wishlist toggle failed:', err);
+    //   const errorMessage = err.response?.data?.error?.message;
+    //   if (errorMessage === 'No token found in cookies') {
+    //     await Swal.fire({
+    //       icon: 'warning',
+    //       title: t('loginRequired'),
+    //       text: t('loginToContinue'),
+    //       confirmButtonColor: '#476DAE',
+    //       confirmButtonText: t('ok'),
+    //       allowOutsideClick: false,
+    //     });
+    //     return;
+    //   }
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: t('error.genericTitle'),
+    //     text: t('error.genericText'),
+    //     confirmButtonText: t('ok'),
+    //   });
+    // } finally {
+    //   setLoading(false);
+    // }
+
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   };
 
   // ---- Card Click ----
@@ -191,7 +201,12 @@ function ItemCard({
             </span>
           </div>
           <div className={styles.price}>
-            {price} <img src="/riyal.png" alt="SAR" className={styles.sar} />
+            {price}{' '}
+            <img
+              src="/silah-showcase/riyal.png"
+              alt="SAR"
+              className={styles.sar}
+            />
             {type === 'service' && !isPriceNegotiable
               ? ' •' + fixedMessage
               : ''}

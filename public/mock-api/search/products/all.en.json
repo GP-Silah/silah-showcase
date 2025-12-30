@@ -461,7 +461,7 @@
     "stock": 84,
     "category": { "id": 18, "name": "Pet Accessories & Toys" },
     "imagesFilesNames": ["toys-36d38085-a155-4e0c-9c9e-57d7472d685e.jpg"],
-    "imagesFilesUrls": ["mock-api/images/fertlizer.webp"],
+    "imagesFilesUrls": ["mock-api/images/toys.jpg"],
     "caseQuantity": 1,
     "minOrderQuantity": 1,
     "allowGroupPurchase": false,
