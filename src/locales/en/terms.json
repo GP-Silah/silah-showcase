@@ -1,6 +1,6 @@
 {
   "title": "Terms of Service Agreement",
-  "intro": "Welcome to Sila (\"we,\" \"our,\" or \"us\"). These Terms of Service (\"Terms\") govern your access to and use of our platform, sila.site (the \"Platform\"). By accessing or using the Platform, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use the Platform.",
+  "intro": "Welcome to Sila (\"we,\" \"our,\" or \"us\"). These Terms of Service (\"Terms\") govern your access to and use of our platform, silah.site (the \"Platform\"). By accessing or using the Platform, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use the Platform.",
   "eligibility": {
     "title": "Eligibility and Account Registration",
     "text": "To access certain features of the Platform, users must create an account. Guests may browse the Platform, search for products and services, and add items to their cart without registering. However, an account is required to complete purchases and use direct messaging. By registering for an account, you represent that:",
@@ -39,6 +39,6 @@
   },
   "contact": {
     "title": "Contact Information",
-    "text": "If you have any questions about these Terms, please contact us at info@silah.site."
+    "text": "If you have any questions about these Terms, please contact us at ."
   }
 }
