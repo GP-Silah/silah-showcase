@@ -16,7 +16,7 @@ export default function SimpleHeader() {
   return (
     <header className="simple-header">
       <img
-        src="/logo.png"
+        src="/silah-showcase/logo.png"
         alt="Logo"
         className="simple-header__logo"
         onClick={() => navigate('/')}

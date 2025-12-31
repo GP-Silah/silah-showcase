@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import ItemCard from '@/components/ItemCard/ItemCard';
 import './Wishlist.css';
+import { getWishlist } from '@/utils/mock-api/wishlistApi';
 
 const API = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site/';
 
@@ -23,14 +24,18 @@ function WishlistPage() {
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const response = await fetch(`${API}/api/buyers/me/wishlist`, {
-          method: 'GET',
-          credentials: 'include',
-        });
+        // const response = await fetch(`${API}/api/buyers/me/wishlist`, {
+        //   method: 'GET',
+        //   credentials: 'include',
+        // });
 
-        if (!response.ok) throw new Error('Failed to fetch wishlist');
+        // if (!response.ok) throw new Error('Failed to fetch wishlist');
 
-        const data = await response.json();
+        // const data = await response.json();
+
+        const url = getWishlist();
+        const res = await fetch(url);
+        const data = await res.json();
 
         // 🆕 تم الإضافة: تنسيق البيانات القادمة من الباك-إند لتتناسب مع ItemCard
         const formatted = data.map((item) => {
