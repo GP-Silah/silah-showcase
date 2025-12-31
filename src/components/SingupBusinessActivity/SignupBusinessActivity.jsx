@@ -16,14 +16,22 @@ export default function SignupBusinessActivity({ value, onChange }) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/categories/main`,
-          {
-            params: { lang },
-          },
-        );
+        // const response = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/categories/main`,
+        //   {
+        //     params: { lang },
+        //   },
+        // );
 
-        const options = response.data.map((cat) => ({
+        // const options = response.data.map((cat) => ({
+        //   value: cat.id,
+        //   label: cat.name,
+        // }));
+        // setCategories(options);
+
+        const response = await fetch(url);
+        const data = await response.json();
+        const options = data.map((cat) => ({
           value: cat.id,
           label: cat.name,
         }));

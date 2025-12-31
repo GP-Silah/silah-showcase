@@ -1,0 +1,348 @@
+[
+  {
+    "user": {
+      "userId": "4cb9d863-de02-418f-8871-e90849288f20",
+      "tapCustomerId": "cus_TS07A1620252023j8R21711598",
+      "name": "naonya",
+      "email": "noof8saad@gmail.com",
+      "crn": "1231231231",
+      "businessName": "nonayabyuissness",
+      "role": "BUYER",
+      "city": "Riyadh",
+      "pfpFileName": "defaultavatars4cb9d863de02418f8871e90849288f20-e465dc83-4646-41c4-82d4-9fb1888b5edc.png",
+      "pfpUrl": "mock-api/images/nonya.png",
+      "categories": [
+        {
+          "id": 3,
+          "name": "Fashion & Accessories"
+        }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-11-17T20:23:16.751Z",
+      "updatedAt": "2025-11-23T00:30:30.074Z"
+    },
+    "supplierId": "1a549d11-9f41-4dc4-81b5-e64ee37baf08",
+    "supplierName": "naonya",
+    "supplierEmail": "noof8saad@gmail.com",
+    "businessName": "nonayabyuissness",
+    "city": "Riyadh",
+    "storeStatus": "OPEN",
+    "storeClosedMsg": "This store is currently closed. Please check back later.",
+    "storeBio": "",
+    "storeBannerFileName": "",
+    "storeBannerFileUrl": "",
+    "deliveryFees": 0,
+    "avgRating": 0,
+    "ratingsCount": 0,
+    "usedFreeTrail": false,
+    "supplierStatus": "ACTIVE",
+    "plan": "PREMIUM",
+    "favoriteCategories": [
+      {
+        "id": 52,
+        "name": "Industrial Maintenance"
+      }
+    ]
+  },
+  {
+    "user": {
+      "userId": "b271da04-eb61-4f41-9100-9c2f26dd1bff",
+      "tapCustomerId": "cus_TS05A3120250133Rg102411379",
+      "name": "fayrouz",
+      "email": "video1223334444@gmail.com",
+      "crn": "0987654365",
+      "businessName": "araba",
+      "role": "SUPPLIER",
+      "city": "riyadh",
+      "pfpFileName": "defaultavatarsb271da04eb614f4191009c2f26dd1bff-b2e80a27-ed3b-4f02-856b-0981ece2929d.png",
+      "pfpUrl": "mock-api/images/fayrouz.png",
+      "categories": [
+        {
+          "id": 2,
+          "name": "Beauty & Personal Care"
+        }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-11-24T01:33:31.531Z",
+      "updatedAt": "2025-11-24T05:22:31.016Z"
+    },
+    "supplierId": "32207942-2804-4230-97d6-3d747ef37ac9",
+    "supplierName": "fayrouz",
+    "supplierEmail": "video1223334444@gmail.com",
+    "businessName": "araba",
+    "city": "riyadh",
+    "storeStatus": "OPEN",
+    "storeClosedMsg": "This store is currently closed. Please check back later.",
+    "storeBio": "designing store",
+    "storeBannerFileName": "",
+    "storeBannerFileUrl": "",
+    "deliveryFees": 0,
+    "avgRating": 5,
+    "ratingsCount": 1,
+    "usedFreeTrail": false,
+    "supplierStatus": "ACTIVE",
+    "plan": "BASIC",
+    "favoriteCategories": []
+  },
+  {
+    "user": {
+      "userId": "adb20167-0b85-4571-8777-c2115a99716a",
+      "tapCustomerId": "cus_TS04A3320251815j3MR2311953",
+      "name": "Naif",
+      "email": "amoolalzahrani89@gmail.com",
+      "crn": "7000000001",
+      "businessName": "مؤسسة الفن",
+      "role": "BUYER",
+      "city": "Riyadh",
+      "pfpFileName": "file-f9ec5523-f90c-4e86-9970-8f0a8c6d3b6d.jpg",
+      "pfpUrl": "mock-api/images/art.jpg",
+      "categories": [
+        {
+          "id": 12,
+          "name": "Design Services"
+        },
+        {
+          "id": 13,
+          "name": "Manufacturing & Packaging"
+        }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "AR",
+      "createdAt": "2025-11-23T18:15:34.120Z",
+      "updatedAt": "2025-11-24T01:10:13.213Z"
+    },
+    "supplierId": "31b566f6-5035-43dc-ba76-53c6a824080d",
+    "supplierName": "Naif",
+    "supplierEmail": "amoolalzahrani89@gmail.com",
+    "businessName": "مؤسسة الفن",
+    "city": "Riyadh",
+    "storeStatus": "OPEN",
+    "storeClosedMsg": "This store is currently closed. Please check back later.",
+    "storeBio": "متجر راقٍ يقدّم مجموعة مختارة من أرقى الألوان وأدوات الرسم المصممة لإلهام كل فنان. نوفّر خامات احترافية عالية الجودة تساعدك على إطلاق خيالك وصناعة أعمال تعبّر عنك بأجمل الطرق. فهنا يلتقي الإبداع مع الأدوات التي ترتقي به، لتجد كل ما تحتاجه لتحويل أفكارك إلى لوحات تنبض بالحياة.\n\nالفن بالنسبة لنا ليس مجرد هواية، بل لغة عالمية تُجسّد المشاعر وتروي القصص وتحوّل اللحظات إلى جمالٍ خالص. سواء كنت مبتدئاً أو محترفاً، يمنحك متجرنا مساحة اكتشاف، وتجربة تجعل الفن رحلة ممتعة تبدأ من أول لون تلمسه يدك.",
+    "storeBannerFileName": "",
+    "storeBannerFileUrl": "",
+    "deliveryFees": 20,
+    "avgRating": 0,
+    "ratingsCount": 0,
+    "usedFreeTrail": false,
+    "supplierStatus": "ACTIVE",
+    "plan": "BASIC",
+    "favoriteCategories": []
+  },
+  {
+    "user": {
+      "userId": "abd85066-cc6f-413d-8308-7cebe00bca00",
+      "tapCustomerId": "cus_TS05A5520251908Jk362111225",
+      "name": "أمل",
+      "email": "Amal.majed403@gmail.com",
+      "crn": "7000000000",
+      "businessName": "Alkadi perfumes",
+      "role": "SUPPLIER",
+      "city": "Riyadh",
+      "pfpFileName": "2-c639a9ae-3c7d-44d8-a3cc-6b2007d9998c.png",
+      "pfpUrl": "mock-api/images/perfum.jpg",
+      "categories": [
+        {
+          "id": 2,
+          "name": "Beauty & Personal Care"
+        }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "AR",
+      "createdAt": "2025-11-21T19:08:55.398Z",
+      "updatedAt": "2025-11-24T00:52:55.830Z"
+    },
+    "supplierId": "f0e62a58-cb54-411e-b0d3-4f265cdabd03",
+    "supplierName": "أمل",
+    "supplierEmail": "Amal.majed403@gmail.com",
+    "businessName": "Alkadi perfumes",
+    "city": "Riyadh",
+    "storeStatus": "OPEN",
+    "storeClosedMsg": "This store is currently closed. Please check back later.",
+    "storeBio": "متجر عطور راقٍ يقدّم توليفات فاخرة مصممة من أجود المكونات، ويمنحك تجربة عطرية استثنائية تجمع بين الأناقة والابتكار. نعتني بكل تفصيلة لنصنع عطراً يليق بذوقك ويعبّر عن حضورك الخاص.",
+    "storeBannerFileName": "file-2df923ce-f8f3-4d92-994a-52f1a39220cd.jpg",
+    "storeBannerFileUrl": "mock-api/images/perfum.jpg",
+    "deliveryFees": 15,
+    "avgRating": 5,
+    "ratingsCount": 3,
+    "usedFreeTrail": true,
+    "supplierStatus": "ACTIVE",
+    "plan": "PREMIUM",
+    "favoriteCategories": []
+  },
+  {
+    "user": {
+      "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+      "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+      "name": "SHAHAD SAAD",
+      "email": "shahadsaad001.dev@gmail.com",
+      "crn": "1234567899",
+      "businessName": "ShahadSaad001",
+      "role": "SUPPLIER",
+      "city": "Riyadh",
+      "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+      "pfpUrl": "mock-api/images/moon.jpg",
+      "categories": [
+        {
+          "id": 10,
+          "name": "Software & IT Solutions"
+        },
+        {
+          "id": 14,
+          "name": "Technical & Repair Services"
+        }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-10-25T13:07:44.792Z",
+      "updatedAt": "2025-12-04T10:56:53.996Z"
+    },
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "supplierName": "SHAHAD SAAD",
+    "supplierEmail": "shahadsaad001.dev@gmail.com",
+    "businessName": "ShahadSaad001",
+    "city": "Riyadh",
+    "storeStatus": "OPEN",
+    "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+    "storeBio": "Developer",
+    "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+    "storeBannerFileUrl": "mock-api/images/flowers.jpg",
+    "deliveryFees": 38,
+    "avgRating": 4.5,
+    "ratingsCount": 14,
+    "usedFreeTrail": true,
+    "supplierStatus": "ACTIVE",
+    "plan": "PREMIUM",
+    "favoriteCategories": [
+      {
+        "id": 42,
+        "name": "Web & App Development"
+      }
+    ]
+  },
+  {
+    "user": {
+      "userId": "549a0904-b664-401f-a236-1f66aeedad6f",
+      "tapCustomerId": "cus_TS03A4320252015Qg8y1011372",
+      "name": "Shahad",
+      "email": "443007510@pnu.edu.sa",
+      "crn": "7001238640",
+      "businessName": "Animals World",
+      "role": "BUYER",
+      "city": "Riyadh",
+      "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+      "pfpUrl": "mock-api/images/s.png",
+      "categories": [
+        {
+          "id": 1,
+          "name": "Agricultural & Pet Supplies"
+        }
+      ],
+      "isEmailVerified": false,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-11-10T20:15:43.552Z",
+      "updatedAt": "2025-11-25T04:43:55.352Z"
+    },
+    "supplierId": "570d4012-84f1-4673-9215-186fa04f0f83",
+    "supplierName": "Shahad",
+    "supplierEmail": "443007510@pnu.edu.sa",
+    "businessName": "Animals World",
+    "city": "Riyadh",
+    "storeStatus": "OPEN",
+    "storeClosedMsg": "This store is currently closed. Please check back later.",
+    "storeBio": "",
+    "storeBannerFileName": "petfood3-b47debe2-b667-4f9e-8fa5-0ac8ecea4735.jpg",
+    "storeBannerFileUrl": "mock-api/images/pet-food3.jpg",
+    "deliveryFees": 37,
+    "avgRating": 0,
+    "ratingsCount": 0,
+    "usedFreeTrail": false,
+    "supplierStatus": "ACTIVE",
+    "plan": "BASIC",
+    "favoriteCategories": []
+  },
+  {
+    "user": {
+      "userId": "2c42c11b-01dc-4538-8462-03a092fada92",
+      "tapCustomerId": "cus_TS06A0120251137Rt222610323",
+      "name": "shaden",
+      "email": "shadnmhmd86@gmail.com",
+      "crn": "1230987532",
+      "businessName": "shaden",
+      "role": "BUYER",
+      "city": "Riyadh",
+      "pfpFileName": "defaultavatars2c42c11b01dc4538846203a092fada92-73075e94-f60a-40ce-8460-9b18b1cf7e45.png",
+      "pfpUrl": "mock-api/images/s2.png",
+      "categories": [
+        {
+          "id": 12,
+          "name": "Design Services"
+        }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-10-26T11:37:01.638Z",
+      "updatedAt": "2025-11-09T10:30:17.928Z"
+    },
+    "supplierId": "ca2e64b1-24b6-40ad-b8ea-e6dce50d181b",
+    "supplierName": "shaden",
+    "supplierEmail": "shadnmhmd86@gmail.com",
+    "businessName": "shaden",
+    "city": "Riyadh",
+    "storeStatus": "OPEN",
+    "storeClosedMsg": "This store is currently closed. Please check back later.",
+    "storeBio": "",
+    "storeBannerFileName": "",
+    "storeBannerFileUrl": "",
+    "deliveryFees": 0,
+    "avgRating": 0,
+    "ratingsCount": 0,
+    "usedFreeTrail": false,
+    "supplierStatus": "ACTIVE",
+    "plan": "BASIC",
+    "favoriteCategories": []
+  },
+  {
+    "user": {
+      "userId": "21e928da-253f-4a88-b0a1-37b9c5a1f15d",
+      "tapCustomerId": "cus_TS05A2720252026Ph621011053",
+      "name": "FAYROUZ ",
+      "email": "fairozzsagga@gmail.com",
+      "crn": "4420053940",
+      "businessName": "Store_f",
+      "role": "SUPPLIER",
+      "city": "Riyadh",
+      "pfpFileName": "defaultavatars21e928da253f4a88b0a137b9c5a1f15d-5f311856-83f0-4872-9095-e307ddbc9db8.png",
+      "pfpUrl": "mock-api/images/fayrouz2.png",
+      "categories": [
+        {
+          "id": 3,
+          "name": "Fashion & Accessories"
+        }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-11-10T20:26:27.214Z",
+      "updatedAt": "2025-11-25T04:54:46.551Z"
+    },
+    "supplierId": "9f241111-eba6-48ff-ac1a-264b8e6b0444",
+    "supplierName": "FAYROUZ ",
+    "supplierEmail": "fairozzsagga@gmail.com",
+    "businessName": "Store_f",
+    "city": "Riyadh",
+    "storeStatus": "OPEN",
+    "storeClosedMsg": "This store is currently closed. Please check back later.",
+    "storeBio": "",
+    "storeBannerFileName": "",
+    "storeBannerFileUrl": "",
+    "deliveryFees": 0,
+    "avgRating": 0,
+    "ratingsCount": 0,
+    "usedFreeTrail": false,
+    "supplierStatus": "ACTIVE",
+    "plan": "BASIC",
+    "favoriteCategories": []
+  }
+]

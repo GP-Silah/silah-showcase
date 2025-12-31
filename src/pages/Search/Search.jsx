@@ -5,6 +5,7 @@ import axios from 'axios';
 import ItemCard from '@/components/ItemCard/ItemCard';
 import SupplierSearchResult from '@/components/SupplierSearchResult/SupplierSearchResult';
 import './Search.css';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
 
 const TYPE_MAP = {
   en: {
@@ -58,26 +59,52 @@ export default function SearchPage() {
       setLoading(true);
       setError(null);
       try {
-        let endpoint = '';
+        // let endpoint = '';
+        // if (typeKey === 'products') {
+        //   endpoint = `/api/search/products?name=${text}`;
+        // } else if (typeKey === 'services') {
+        //   endpoint = `/api/search/services?name=${text}`;
+        // } else if (typeKey === 'suppliers') {
+        //   endpoint = `/api/search/suppliers?name=${text}&businessName=${text}`;
+        // }
+        // endpoint += `&lang=${lang}`;
+        // if (typeKey === 'products') {
+        //   if (minPrice) endpoint += `&minPrice=${minPrice}`;
+        //   if (maxPrice) endpoint += `&maxPrice=${maxPrice}`;
+        // }
+        // const res = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}${endpoint}`,
+        //   { withCredentials: true },
+        // );
+        // setItems(res.data || []);
+        const url = getSearchResults({
+          type: typeKey,
+          lang,
+          isAll: true,
+        });
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        let filtered = data.filter((item) => {
+          const value = item.name || item.businessName || '';
+          return value.toLowerCase().includes(text.toLowerCase());
+        });
+
         if (typeKey === 'products') {
-          endpoint = `/api/search/products?name=${text}`;
-        } else if (typeKey === 'services') {
-          endpoint = `/api/search/services?name=${text}`;
-        } else if (typeKey === 'suppliers') {
-          endpoint = `/api/search/suppliers?name=${text}&businessName=${text}`;
+          if (minPrice) {
+            filtered = filtered.filter(
+              (i) => Number(i.price) >= Number(minPrice),
+            );
+          }
+          if (maxPrice) {
+            filtered = filtered.filter(
+              (i) => Number(i.price) <= Number(maxPrice),
+            );
+          }
         }
 
-        endpoint += `&lang=${lang}`;
-        if (typeKey === 'products') {
-          if (minPrice) endpoint += `&minPrice=${minPrice}`;
-          if (maxPrice) endpoint += `&maxPrice=${maxPrice}`;
-        }
-
-        const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}${endpoint}`,
-          { withCredentials: true },
-        );
-        setItems(res.data || []);
+        setItems(filtered);
       } catch (err) {
         setError(t('error'));
         console.error(err);
