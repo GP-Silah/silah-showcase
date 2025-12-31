@@ -90,6 +90,12 @@ export function AuthProvider({ children }) {
       const userRole = userData.role?.toLowerCase() || 'guest';
       setRole(userRole);
 
+      const normalizeUrl = (url) => {
+        if (!url) return null;
+        if (url.startsWith('http')) return url;
+        return `/${url}`;
+      };
+
       // === إذا كان supplier → جلب بيانات المورد ===
       if (userRole === 'supplier') {
         try {

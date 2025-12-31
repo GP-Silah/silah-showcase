@@ -5,6 +5,8 @@ import qs from 'qs';
 import { useTranslation } from 'react-i18next';
 import ItemCard from '@/components/ItemCard/ItemCard';
 import styles from './BrowseByCategory.module.css'; // ← فقط غيرت هذا السطر
+import { getCategories } from '@/utils/mock-api/categoryApi';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
 
 export default function BrowseByCategoryItems() {
   const { i18n, t } = useTranslation('browseByCategory');
@@ -19,6 +21,8 @@ export default function BrowseByCategoryItems() {
   const [loadingCategories, setLoadingCategories] = useState(false);
   const [error, setError] = useState(null);
 
+  const url = getCategories({ main: true, lang });
+
   useEffect(() => {
     document.title = t('pageTitle');
   }, [t, i18n.language]);
@@ -31,34 +35,65 @@ export default function BrowseByCategoryItems() {
   const categoryIdParam = query.categoryId;
 
   // --- Fetch categories ---
+  // useEffect(() => {
+  //   let cancelled = false;
+  //   setLoadingCategories(true);
+  //   setError(null);
+  //   axios
+  //     .get(`${import.meta.env.VITE_BACKEND_URL}/api/categories`, {
+  //       params: { lang },
+  //     })
+  //     .then((res) => {
+  //       if (cancelled) return;
+  //       setCategories(res.data || []);
+  //     })
+  //     .catch((err) => {
+  //       if (cancelled) return;
+  //       const msg =
+  //         err?.response?.data?.error?.message ||
+  //         err?.response?.data?.message ||
+  //         err?.message ||
+  //         'Failed to load categories';
+  //       setError(msg);
+  //     })
+  //     .finally(() => {
+  //       if (!cancelled) setLoadingCategories(false);
+  //     });
+  //   return () => {
+  //     cancelled = true;
+  //   };
+  // }, [lang]);
+  // --- Fetch categories (MOCK) ---
   useEffect(() => {
     let cancelled = false;
-    setLoadingCategories(true);
-    setError(null);
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/api/categories`, {
-        params: { lang },
-      })
-      .then((res) => {
+
+    const fetchCategories = async () => {
+      try {
+        setLoadingCategories(true);
+        setError(null);
+
+        const res = await fetch(url);
+        const data = await res.json();
+
         if (cancelled) return;
-        setCategories(res.data || []);
-      })
-      .catch((err) => {
+
+        // mock returns array directly
+        setCategories(Array.isArray(data) ? data : []);
+      } catch (err) {
         if (cancelled) return;
-        const msg =
-          err?.response?.data?.error?.message ||
-          err?.response?.data?.message ||
-          err?.message ||
-          'Failed to load categories';
-        setError(msg);
-      })
-      .finally(() => {
+        console.error('Error fetching categories:', err);
+        setError(t('fetchError'));
+      } finally {
         if (!cancelled) setLoadingCategories(false);
-      });
+      }
+    };
+
+    fetchCategories();
+
     return () => {
       cancelled = true;
     };
-  }, [lang]);
+  }, [url, lang, t]);
 
   // --- Determine selected category ---
   useEffect(() => {
@@ -112,24 +147,62 @@ export default function BrowseByCategoryItems() {
     let cancelled = false;
     setLoadingItems(true);
     setError(null);
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${endpoint}`, { params })
-      .then((res) => {
+    // axios
+    //   .get(`${import.meta.env.VITE_BACKEND_URL}${endpoint}`, { params })
+    //   .then((res) => {
+    //     if (cancelled) return;
+    //     setItems(res.data || []);
+    //   })
+    //   .catch((err) => {
+    //     if (cancelled) return;
+    //     const msg =
+    //       err?.response?.data?.error?.message ||
+    //       err?.response?.data?.message ||
+    //       err?.message ||
+    //       t('fetchError');
+    //     setError(msg);
+    //   })
+    //   .finally(() => {
+    //     if (!cancelled) setLoadingItems(false);
+    //   });
+
+    const type = isProduct ? 'products' : 'services';
+
+    const fetchItems = async () => {
+      try {
+        const isProduct = selectedMainCat.usedFor === 'PRODUCT';
+        const type = isProduct ? 'products' : 'services';
+
+        const url = getSearchResults({
+          type,
+          categoryId: selectedMainCat.id,
+          lang,
+        });
+
+        const res = await fetch(url);
+        const data = await res.json();
+
         if (cancelled) return;
-        setItems(res.data || []);
-      })
-      .catch((err) => {
+        let results = Array.isArray(data) ? data : [];
+
+        if (selectedSubCat) {
+          results = results.filter(
+            (item) => String(item.category?.id) === String(selectedSubCat.id),
+          );
+        }
+
+        setItems(results);
+      } catch (err) {
         if (cancelled) return;
-        const msg =
-          err?.response?.data?.error?.message ||
-          err?.response?.data?.message ||
-          err?.message ||
-          t('fetchError');
-        setError(msg);
-      })
-      .finally(() => {
+        console.error('Error fetching items:', err);
+        setError(t('fetchError'));
+      } finally {
         if (!cancelled) setLoadingItems(false);
-      });
+      }
+    };
+
+    fetchItems();
+
     return () => {
       cancelled = true;
     };
