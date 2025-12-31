@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import styles from './ItemCard.module.css'; // Fixed import
 import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getWishlist } from '@/utils/mock-api/wishlistApi';
 
 function ItemCard({
   type = 'product',
@@ -36,18 +37,30 @@ function ItemCard({
 
   const supplierName =
     supplier.businessName || supplier.supplierName || 'Unknown Supplier';
+  // const image =
+  //   imagesFilesUrls[0] || 'https://placehold.co/300x200?text=No+Image';
+
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
   const image =
-    imagesFilesUrls[0] || 'https://placehold.co/300x200?text=No+Image';
+    normalizeUrl(imagesFilesUrls?.[0]) ||
+    'https://placehold.co/300x200?text=No+Image';
 
   // --- Check wishlist on mount ---
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/wishlist`,
-          { withCredentials: true },
-        );
-        const wishlist = res.data || [];
+        // const res = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/wishlist`,
+        //   { withCredentials: true },
+        // );
+        // const wishlist = res.data || [];
+        const url = getWishlist();
+        const res = await fetch(url);
+        const wishlist = await res.json();
         const isFavorited = wishlist.some((entry) => {
           if (type === 'product') {
             return (
