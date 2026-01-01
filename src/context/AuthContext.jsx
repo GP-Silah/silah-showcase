@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { toast } from 'react-hot-toast';
+import { fetchMe, fetchSupplierMe } from '@/utils/mock-api/authApi';
 
 const AuthContext = createContext();
 
@@ -16,6 +17,8 @@ export function AuthProvider({ children }) {
   const [supplierId, setSupplierId] = useState(null);
 
   const INACTIVE_NOTICE_KEY = 'inactiveSupplierNoticeClosed';
+
+  const MOCK_AUTH_KEY = 'mock-authenticated';
 
   const showInactiveSupplierNotice = () => {
     const isClosed = sessionStorage.getItem(INACTIVE_NOTICE_KEY) === '1';
@@ -57,11 +60,12 @@ export function AuthProvider({ children }) {
 
   const handleLogout = async () => {
     try {
-      await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/auth/logout`,
-        {},
-        { withCredentials: true },
-      );
+      // await axios.post(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/auth/logout`,
+      //   {},
+      //   { withCredentials: true },
+      // );
+      sessionStorage.removeItem(MOCK_AUTH_KEY);
 
       // Only clear frontend state if backend confirmed logout
       setUser(null);
@@ -79,35 +83,107 @@ export function AuthProvider({ children }) {
     }
   };
 
+  // const fetchUser = async () => {
+  //   try {
+  //     const res = await axios.get(
+  //       `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
+  //       { withCredentials: true },
+  //     );
+  //     const userData = res.data;
+  //     setUser(userData);
+  //     const userRole = userData.role?.toLowerCase() || 'guest';
+  //     setRole(userRole);
+
+  //     const normalizeUrl = (url) => {
+  //       if (!url) return null;
+  //       if (url.startsWith('http')) return url;
+  //       return `/${url}`;
+  //     };
+
+  //     // === إذا كان supplier → جلب بيانات المورد ===
+  //     if (userRole === 'supplier') {
+  //       try {
+  //         const supplierRes = await axios.get(
+  //           `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me`,
+  //           { withCredentials: true },
+  //         );
+  //         const supplierData = supplierRes.data;
+  //         setSupplierStatus(supplierData.supplierStatus);
+  //         setSupplierId(supplierData.supplierId);
+
+  //         // === إظهار التنبيه إذا INACTIVE ولم يُغلق ===
+  //         if (supplierData.supplierStatus === 'INACTIVE') {
+  //           showInactiveSupplierNotice();
+  //         }
+  //       } catch (supplierErr) {
+  //         console.error('Failed to fetch supplier data:', supplierErr);
+  //         setSupplierStatus(null);
+  //       }
+  //     } else {
+  //       setSupplierStatus(null);
+  //     }
+  //   } catch (err) {
+  //     if (err.response?.status === 401 || err.response?.status === 403) {
+  //       const message = err.response?.data?.error?.message;
+
+  //       if (message === 'Invalid or expired token') {
+  //         await Swal.fire({
+  //           icon: 'warning',
+  //           title: t('title'),
+  //           text: t('text'),
+  //           confirmButtonColor: '#476DAE',
+  //           confirmButtonText: 'OK',
+  //         });
+  //       }
+
+  //       setUser(null);
+  //       setRole('guest');
+  //       setSupplierStatus(null);
+  //     } else {
+  //       console.error('Fetch user failed:', err);
+  //       setUser(null);
+  //       setRole('guest');
+  //       setSupplierStatus(null);
+  //     }
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchUser();
+  // }, []);
   const fetchUser = async () => {
     try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
-        { withCredentials: true },
-      );
-      const userData = res.data;
+      // ⬅️ MOCK AUTH GATE
+      if (!sessionStorage.getItem(MOCK_AUTH_KEY)) {
+        setUser(null);
+        setRole('guest');
+        setSupplierStatus(null);
+        setSupplierId(null);
+        return;
+      }
+
+      // ---- users/me (MOCK) ----
+      const userData = await fetchMe();
       setUser(userData);
+
       const userRole = userData.role?.toLowerCase() || 'guest';
       setRole(userRole);
 
       const normalizeUrl = (url) => {
         if (!url) return null;
         if (url.startsWith('http')) return url;
-        return `/${url}`;
+        return `/silah-showcase/${url}`;
       };
 
-      // === إذا كان supplier → جلب بيانات المورد ===
+      // ---- suppliers/me (MOCK) ----
       if (userRole === 'supplier') {
         try {
-          const supplierRes = await axios.get(
-            `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me`,
-            { withCredentials: true },
-          );
-          const supplierData = supplierRes.data;
+          const supplierData = await fetchSupplierMe();
           setSupplierStatus(supplierData.supplierStatus);
           setSupplierId(supplierData.supplierId);
 
-          // === إظهار التنبيه إذا INACTIVE ولم يُغلق ===
           if (supplierData.supplierStatus === 'INACTIVE') {
             showInactiveSupplierNotice();
           }
@@ -117,30 +193,14 @@ export function AuthProvider({ children }) {
         }
       } else {
         setSupplierStatus(null);
+        setSupplierId(null);
       }
     } catch (err) {
-      if (err.response?.status === 401 || err.response?.status === 403) {
-        const message = err.response?.data?.error?.message;
-
-        if (message === 'Invalid or expired token') {
-          await Swal.fire({
-            icon: 'warning',
-            title: t('title'),
-            text: t('text'),
-            confirmButtonColor: '#476DAE',
-            confirmButtonText: 'OK',
-          });
-        }
-
-        setUser(null);
-        setRole('guest');
-        setSupplierStatus(null);
-      } else {
-        console.error('Fetch user failed:', err);
-        setUser(null);
-        setRole('guest');
-        setSupplierStatus(null);
-      }
+      console.error('Fetch user failed:', err);
+      setUser(null);
+      setRole('guest');
+      setSupplierStatus(null);
+      setSupplierId(null);
     } finally {
       setLoading(false);
     }
@@ -154,13 +214,39 @@ export function AuthProvider({ children }) {
     if (switching) return role;
     setSwitching(true);
     try {
-      const res = await axios.patch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/auth/switch-role`,
-        {},
-        { withCredentials: true },
-      );
-      await fetchUser();
-      return res.data?.newRole?.toLowerCase() || role;
+      // const res = await axios.patch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/auth/switch-role`,
+      //   {},
+      //   { withCredentials: true },
+      // );
+      // await fetchUser();
+      // return res.data?.newRole?.toLowerCase() || role;
+      // Must be logged in (mock)
+      if (!sessionStorage.getItem(MOCK_AUTH_KEY)) {
+        return role;
+      }
+
+      if (role === 'buyer') {
+        // switch → supplier
+        const supplierData = await fetchSupplierMe();
+
+        setRole('supplier');
+        setSupplierStatus(supplierData.supplierStatus);
+        setSupplierId(supplierData.supplierId);
+
+        if (supplierData.supplierStatus === 'INACTIVE') {
+          showInactiveSupplierNotice();
+        }
+
+        return 'supplier';
+      }
+
+      // switch → buyer
+      setRole('buyer');
+      setSupplierStatus(null);
+      setSupplierId(null);
+
+      return 'buyer';
     } catch (err) {
       const msg =
         err.response?.data?.error?.message ||

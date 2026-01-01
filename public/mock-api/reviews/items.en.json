@@ -1,0 +1,270 @@
+[
+  {
+    "itemReviewId": 16,
+    "reviewId": "5efe304f-c22d-4123-b47e-84c03388c77b",
+    "invoiceItemReview": {
+      "invoiceItemId": 13,
+      "name": "test",
+      "relatedProduct": {
+        "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+        "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+        "supplier": null,
+        "name": "Lipstick",
+        "description": "Red Lipstick",
+        "price": 24,
+        "stock": 500,
+        "category": { "id": 23, "name": "Makeup & Fragrances" },
+        "imagesFilesNames": [
+          "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+        ],
+        "caseQuantity": 7,
+        "minOrderQuantity": 28,
+        "allowGroupPurchase": true,
+        "minGroupOrderQuantity": 50,
+        "groupPurchasePrice": 20,
+        "groupPurchaseDuration": "FIVE_DAYS",
+        "isPublished": true,
+        "stockStatus": "GOOD",
+        "avgRating": 3.571428571428572,
+        "ratingsCount": 7,
+        "createdAt": "2025-10-25T19:07:39.806Z",
+        "updatedAt": "2025-11-29T05:19:21.764Z",
+        "isDeleted": false
+      }
+    },
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "buyerBusinessName": "ShahadSaad001",
+    "itemRating": 5,
+    "writtenReviewOfItem": "Very Red",
+    "createdAt": "2025-11-23T02:07:12.057Z"
+  },
+  {
+    "itemReviewId": 13,
+    "reviewId": "04bd431f-8bde-4048-a97c-e861fb4b3dec",
+    "orderItemReview": {
+      "orderItemId": 34,
+      "product": {
+        "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+        "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+        "supplier": null,
+        "name": "Lipstick",
+        "description": "Red Lipstick",
+        "price": 24,
+        "stock": 500,
+        "category": { "id": 23, "name": "Makeup & Fragrances" },
+        "imagesFilesNames": [
+          "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+        ],
+        "caseQuantity": 7,
+        "minOrderQuantity": 28,
+        "allowGroupPurchase": true,
+        "minGroupOrderQuantity": 50,
+        "groupPurchasePrice": 20,
+        "groupPurchaseDuration": "FIVE_DAYS",
+        "isPublished": true,
+        "stockStatus": "GOOD",
+        "avgRating": 3.571428571428572,
+        "ratingsCount": 7,
+        "createdAt": "2025-10-25T19:07:39.806Z",
+        "updatedAt": "2025-11-29T05:19:21.764Z",
+        "isDeleted": false
+      }
+    },
+    "buyerId": "fd6fa90d-b2d2-46c7-8b05-5f41ed4c8025",
+    "buyerBusinessName": "Alkadi perfumes",
+    "itemRating": 5,
+    "writtenReviewOfItem": null,
+    "createdAt": "2025-11-22T23:39:58.363Z"
+  },
+  {
+    "itemReviewId": 8,
+    "reviewId": "37296ac3-9323-451c-980e-5ced056b80ec",
+    "orderItemReview": {
+      "orderItemId": 2,
+      "product": {
+        "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+        "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+        "supplier": null,
+        "name": "Lipstick",
+        "description": "Red Lipstick",
+        "price": 24,
+        "stock": 500,
+        "category": { "id": 23, "name": "Makeup & Fragrances" },
+        "imagesFilesNames": [
+          "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+        ],
+        "caseQuantity": 7,
+        "minOrderQuantity": 28,
+        "allowGroupPurchase": true,
+        "minGroupOrderQuantity": 50,
+        "groupPurchasePrice": 20,
+        "groupPurchaseDuration": "FIVE_DAYS",
+        "isPublished": true,
+        "stockStatus": "GOOD",
+        "avgRating": 3.571428571428572,
+        "ratingsCount": 7,
+        "createdAt": "2025-10-25T19:07:39.806Z",
+        "updatedAt": "2025-11-29T05:19:21.764Z",
+        "isDeleted": false
+      }
+    },
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "buyerBusinessName": "ShahadSaad001",
+    "itemRating": 2,
+    "writtenReviewOfItem": "👍️",
+    "createdAt": "2025-11-15T22:24:44.864Z"
+  },
+  {
+    "itemReviewId": 7,
+    "reviewId": "4e2cba89-2e77-4410-b16d-5c73ede6d459",
+    "orderItemReview": {
+      "orderItemId": 4,
+      "product": {
+        "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+        "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+        "supplier": null,
+        "name": "Lipstick",
+        "description": "Red Lipstick",
+        "price": 24,
+        "stock": 500,
+        "category": { "id": 23, "name": "Makeup & Fragrances" },
+        "imagesFilesNames": [
+          "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+        ],
+        "caseQuantity": 7,
+        "minOrderQuantity": 28,
+        "allowGroupPurchase": true,
+        "minGroupOrderQuantity": 50,
+        "groupPurchasePrice": 20,
+        "groupPurchaseDuration": "FIVE_DAYS",
+        "isPublished": true,
+        "stockStatus": "GOOD",
+        "avgRating": 3.571428571428572,
+        "ratingsCount": 7,
+        "createdAt": "2025-10-25T19:07:39.806Z",
+        "updatedAt": "2025-11-29T05:19:21.764Z",
+        "isDeleted": false
+      }
+    },
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "buyerBusinessName": "ShahadSaad001",
+    "itemRating": 1,
+    "writtenReviewOfItem": "They arrived in a bad shape...",
+    "createdAt": "2025-11-15T22:23:27.155Z"
+  },
+  {
+    "itemReviewId": 6,
+    "reviewId": "d9adb7b5-3999-464c-9af4-305323a1fe83",
+    "orderItemReview": {
+      "orderItemId": 7,
+      "product": {
+        "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+        "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+        "supplier": null,
+        "name": "Lipstick",
+        "description": "Red Lipstick",
+        "price": 24,
+        "stock": 500,
+        "category": { "id": 23, "name": "Makeup & Fragrances" },
+        "imagesFilesNames": [
+          "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+        ],
+        "caseQuantity": 7,
+        "minOrderQuantity": 28,
+        "allowGroupPurchase": true,
+        "minGroupOrderQuantity": 50,
+        "groupPurchasePrice": 20,
+        "groupPurchaseDuration": "FIVE_DAYS",
+        "isPublished": true,
+        "stockStatus": "GOOD",
+        "avgRating": 3.571428571428572,
+        "ratingsCount": 7,
+        "createdAt": "2025-10-25T19:07:39.806Z",
+        "updatedAt": "2025-11-29T05:19:21.764Z",
+        "isDeleted": false
+      }
+    },
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "buyerBusinessName": "ShahadSaad001",
+    "itemRating": 3,
+    "writtenReviewOfItem": null,
+    "createdAt": "2025-11-15T22:22:41.533Z"
+  },
+  {
+    "itemReviewId": 5,
+    "reviewId": "ad55cfbe-160d-4fae-b1ca-2ca5de924fc9",
+    "orderItemReview": {
+      "orderItemId": 8,
+      "product": {
+        "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+        "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+        "supplier": null,
+        "name": "Lipstick",
+        "description": "Red Lipstick",
+        "price": 24,
+        "stock": 500,
+        "category": { "id": 23, "name": "Makeup & Fragrances" },
+        "imagesFilesNames": [
+          "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+        ],
+        "caseQuantity": 7,
+        "minOrderQuantity": 28,
+        "allowGroupPurchase": true,
+        "minGroupOrderQuantity": 50,
+        "groupPurchasePrice": 20,
+        "groupPurchaseDuration": "FIVE_DAYS",
+        "isPublished": true,
+        "stockStatus": "GOOD",
+        "avgRating": 3.571428571428572,
+        "ratingsCount": 7,
+        "createdAt": "2025-10-25T19:07:39.806Z",
+        "updatedAt": "2025-11-29T05:19:21.764Z",
+        "isDeleted": false
+      }
+    },
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "buyerBusinessName": "ShahadSaad001",
+    "itemRating": 4,
+    "writtenReviewOfItem": null,
+    "createdAt": "2025-11-15T22:20:16.485Z"
+  },
+  {
+    "itemReviewId": 1,
+    "reviewId": "2f5fdd43-0672-41f5-b61b-51fe59430df8",
+    "invoiceItemReview": {
+      "invoiceItemId": 4,
+      "name": ".",
+      "relatedProduct": {
+        "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+        "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+        "supplier": null,
+        "name": "Lipstick",
+        "description": "Red Lipstick",
+        "price": 24,
+        "stock": 500,
+        "category": { "id": 23, "name": "Makeup & Fragrances" },
+        "imagesFilesNames": [
+          "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+        ],
+        "caseQuantity": 7,
+        "minOrderQuantity": 28,
+        "allowGroupPurchase": true,
+        "minGroupOrderQuantity": 50,
+        "groupPurchasePrice": 20,
+        "groupPurchaseDuration": "FIVE_DAYS",
+        "isPublished": true,
+        "stockStatus": "GOOD",
+        "avgRating": 3.571428571428572,
+        "ratingsCount": 7,
+        "createdAt": "2025-10-25T19:07:39.806Z",
+        "updatedAt": "2025-11-29T05:19:21.764Z",
+        "isDeleted": false
+      }
+    },
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "buyerBusinessName": "ShahadSaad001",
+    "itemRating": 5,
+    "writtenReviewOfItem": null,
+    "createdAt": "2025-11-13T09:36:50.288Z"
+  }
+]
