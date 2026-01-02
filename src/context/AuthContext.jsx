@@ -161,15 +161,9 @@ export function AuthProvider({ children }) {
         setRole('guest');
         setSupplierStatus(null);
         setSupplierId(null);
+        setLoading(false);
         return;
       }
-
-      // ---- users/me (MOCK) ----
-      const userData = await fetchMe();
-      setUser(userData);
-
-      const userRole = userData.role?.toLowerCase() || 'guest';
-      setRole(userRole);
 
       const normalizeUrl = (url) => {
         if (!url) return null;
@@ -177,10 +171,21 @@ export function AuthProvider({ children }) {
         return `/silah-showcase/${url}`;
       };
 
+      // ---- users/me (MOCK) ----
+      const userData = await fetchMe();
+      userData.pfpUrl = normalizeUrl(userData.pfpUrl);
+      setUser(userData);
+
+      const userRole = userData.role?.toLowerCase() || 'guest';
+      setRole(userRole);
+
       // ---- suppliers/me (MOCK) ----
       if (userRole === 'supplier') {
         try {
           const supplierData = await fetchSupplierMe();
+          supplierData.storeBannerFileUrl = normalizeUrl(
+            supplierData.storeBannerFileUrl,
+          );
           setSupplierStatus(supplierData.supplierStatus);
           setSupplierId(supplierData.supplierId);
 

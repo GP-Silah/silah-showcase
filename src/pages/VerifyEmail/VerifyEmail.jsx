@@ -15,7 +15,8 @@ const EmailFlow = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const email = location.state?.email;
-  const token = new URLSearchParams(location.search).get('token');
+  // const token = new URLSearchParams(location.search).get('token');
+  const token = 'demo-token';
 
   useEffect(() => {
     document.title = t('pageTitle');
@@ -31,14 +32,18 @@ const EmailFlow = () => {
       const verifyEmail = async () => {
         try {
           setLoading(true);
-          const res = await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL}/api/auth/verify-email`,
-            null,
-            {
-              params: { token },
-            },
-          );
-          setStep('success');
+          // const res = await axios.post(
+          //   `${import.meta.env.VITE_BACKEND_URL}/api/auth/verify-email`,
+          //   null,
+          //   {
+          //     params: { token },
+          //   },
+          // );
+          // setStep('success');
+          setTimeout(() => {
+            setStep('success');
+            setLoading(false);
+          }, 800);
         } catch (err) {
           console.error(err);
           setStep('error');
@@ -55,17 +60,21 @@ const EmailFlow = () => {
     if (!email) return;
     try {
       setLoading(true);
-      await axios.post(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/api/auth/resend-verification-email`,
-        { email: email.trim() }, // removes any extra spaces
-      );
-      setStatus(t('resend.success'));
+      // await axios.post(
+      //   `${
+      //     import.meta.env.VITE_BACKEND_URL
+      //   }/api/auth/resend-verification-email`,
+      //   { email: email.trim() }, // removes any extra spaces
+      // );
+      // setStatus(t('resend.success'));
+      // setTimeout(() => {
+      //   setStatus('');
+      //   setStep('resendSuccess');
+      // }, 1500);
       setTimeout(() => {
-        setStatus('');
-        setStep('resendSuccess');
-      }, 1500);
+        setStep('success');
+        setLoading(false);
+      }, 800);
     } catch (err) {
       console.error(err);
 
