@@ -21,6 +21,7 @@ import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import { useAuth } from '../../context/AuthContext';
 import './SupplierStorefront.css';
 import { getSupplierReviews } from '@/utils/mock-api/reviewApi';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
 
 const API = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 const PLACEHOLD_BANNER = 'https://placehold.co/300x200?text=No+Image';
@@ -45,54 +46,125 @@ export default function SupplierStorefront() {
   const [canScrollBack, setCanScrollBack] = useState(false);
   const [canScrollForward, setCanScrollForward] = useState(false);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = i18n.language;
   }, [isRTL, i18n.language]);
 
   // ——————————————————————— FETCH SUPPLIER ———————————————————————
+  // const fetchSupplier = useCallback(async () => {
+  //   if (!id) throw new Error(t('errors.noId'));
+  //   const res = await axios.get(`${API}/api/suppliers/${id}`, {
+  //     params: { lang: i18n.language },
+  //     withCredentials: true,
+  //   });
+  //   return res.data;
+  // }, [id, i18n.language, t]);
   const fetchSupplier = useCallback(async () => {
     if (!id) throw new Error(t('errors.noId'));
-    const res = await axios.get(`${API}/api/suppliers/${id}`, {
-      params: { lang: i18n.language },
-      withCredentials: true,
-    });
-    return res.data;
-  }, [id, i18n.language, t]);
+
+    const res = await axios.get(
+      getSearchResults({
+        type: 'suppliers',
+        isAll: true,
+      }),
+    );
+
+    const suppliers = res.data || [];
+
+    const foundSupplier = suppliers.find(
+      (s) => s.supplierId === id || s._id === id,
+    );
+
+    if (!foundSupplier) {
+      throw new Error('Supplier not found');
+    }
+
+    return foundSupplier;
+  }, [id, t]);
 
   // ——————————————————————— FETCH PRODUCTS ———————————————————————
+  // const fetchProducts = async (supplierId) => {
+  //   const res = await axios.get(`${API}/api/products/supplier/${supplierId}`, {
+  //     params: { lang: i18n.language },
+  //     withCredentials: true,
+  //   });
+  //   return res.data.map((p) => ({
+  //     ...p,
+  //     _id: p.productId,
+  //     type: 'product',
+  //   }));
+  // };
   const fetchProducts = async (supplierId) => {
-    const res = await axios.get(`${API}/api/products/supplier/${supplierId}`, {
-      params: { lang: i18n.language },
-      withCredentials: true,
-    });
-    return res.data.map((p) => ({
-      ...p,
-      _id: p.productId,
-      type: 'product',
-    }));
+    const res = await axios.get(
+      getSearchResults({
+        type: 'products',
+        isAll: true,
+      }),
+    );
+
+    return (res.data || [])
+      .filter((p) => p.supplier?.supplierId === supplierId)
+      .map((p) => ({
+        ...p,
+        _id: p.productId,
+        type: 'product',
+      }));
   };
 
   // ——————————————————————— FETCH SERVICES ———————————————————————
+  // const fetchServices = async (supplierId) => {
+  //   const res = await axios.get(`${API}/api/services/supplier/${supplierId}`, {
+  //     params: { lang: i18n.language },
+  //     withCredentials: true,
+  //   });
+  //   return res.data.map((s) => ({
+  //     ...s,
+  //     _id: s.serviceId,
+  //     type: 'service',
+  //   }));
+  // };
   const fetchServices = async (supplierId) => {
-    const res = await axios.get(`${API}/api/services/supplier/${supplierId}`, {
-      params: { lang: i18n.language },
-      withCredentials: true,
-    });
-    return res.data.map((s) => ({
-      ...s,
-      _id: s.serviceId,
-      type: 'service',
-    }));
+    const res = await axios.get(
+      getSearchResults({
+        type: 'services',
+        isAll: true,
+      }),
+    );
+
+    return (res.data || [])
+      .filter((s) => s.supplier?.supplierId === supplierId)
+      .map((s) => ({
+        ...s,
+        _id: s.serviceId,
+        type: 'service',
+      }));
   };
 
   // ——————————————————————— FETCH REVIEWS ———————————————————————
+  // const fetchReviews = async (supplierId) => {
+  //   const res = await axios.get(`${API}/api/reviews/suppliers/${supplierId}`, {
+  //     params: { lang: i18n.language },
+  //     withCredentials: true,
+  //   });
+  //   return res.data.map((r) => ({
+  //     reviewId: r.reviewId,
+  //     buyerId: r.buyerId,
+  //     supplierRating: r.supplierRating,
+  //     writtenReviewOfSupplier: r.writtenReviewOfSupplier,
+  //     createdAt: r.createdAt,
+  //   }));
+  // };
   const fetchReviews = async (supplierId) => {
-    const res = await axios.get(`${API}/api/reviews/suppliers/${supplierId}`, {
-      params: { lang: i18n.language },
-      withCredentials: true,
-    });
-    return res.data.map((r) => ({
+    const res = await axios.get(getSupplierReviews());
+
+    return (res.data || []).map((r) => ({
       reviewId: r.reviewId,
       buyerId: r.buyerId,
       supplierRating: r.supplierRating,
@@ -111,23 +183,28 @@ export default function SupplierStorefront() {
       categories: supplier.user.categories || [],
     };
     try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/chats/me`,
-        {
-          withCredentials: true,
-        },
-      );
-      const chats = res.data || [];
-      const existingChat = chats.find(
-        (chat) => chat.otherUser?.userId === partner.userId,
-      );
-      if (existingChat) {
-        navigate(`/buyer/chats/${existingChat.chatId}`);
-      } else {
-        navigate(`/buyer/chats/new?with=${partner.userId}`, {
-          state: { partner },
-        });
-      }
+      // const res = await axios.get(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/chats/me`,
+      //   {
+      //     withCredentials: true,
+      //   },
+      // );
+      // const chats = res.data || [];
+      // const existingChat = chats.find(
+      //   (chat) => chat.otherUser?.userId === partner.userId,
+      // );
+      // if (existingChat) {
+      //   navigate(`/buyer/chats/${existingChat.chatId}`);
+      // } else {
+      //   navigate(`/buyer/chats/new?with=${partner.userId}`, {
+      //     state: { partner },
+      //   });
+      // }
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error('Failed to check chat history:', err);
       navigate(`/buyer/chats/new?with=${partner.userId}`, {
@@ -185,7 +262,7 @@ export default function SupplierStorefront() {
   // ——————————————————————— ACTIVE STORE CONTENT ———————————————————————
   function ActiveStorefrontContent() {
     const user = supplier.user || {};
-    const pfpUrl = user.pfpUrl || PLACEHOLD_PFP;
+    const pfpUrl = normalizeUrl(user.pfpUrl) || PLACEHOLD_PFP;
     const displayName =
       supplier.businessName ||
       user.name ||
@@ -193,7 +270,8 @@ export default function SupplierStorefront() {
       'Unknown Store';
     const city = supplier.city || '—';
     const bio = supplier.storeBio || t('description');
-    const bannerUrl = supplier.storeBannerFileUrl || PLACEHOLD_BANNER;
+    const bannerUrl =
+      normalizeUrl(supplier.storeBannerFileUrl) || PLACEHOLD_BANNER;
 
     return (
       <>

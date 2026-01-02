@@ -106,11 +106,11 @@ export default function ProductDetails() {
   const fetchGroupPurchases = useCallback(async () => {
     if (!product?.allowGroupPurchase) return;
     try {
-      const res = await axios.get(
-        `${API}/api/group-purchases/products/${id}/suitable-groups`,
-        { withCredentials: true },
-      );
-      setGroupPurchases(res.data);
+      // const res = await axios.get(
+      //   `${API}/api/group-purchases/products/${id}/suitable-groups`,
+      //   { withCredentials: true },
+      // );
+      // setGroupPurchases(res.data);
     } catch (err) {
       console.error('Group purchase fetch error', err);
       setGroupPurchases([]);
@@ -204,14 +204,19 @@ export default function ProductDetails() {
       return;
     }
     try {
-      await axios.post(
-        `${API}/api/carts/me/items`,
-        { productId: product.productId, quantity: Number(quantity) },
-        { withCredentials: true },
-      );
-      Swal.fire({ icon: 'success', title: t('addedToCart') });
-      setQuantity('');
-      refreshCart();
+      // await axios.post(
+      //   `${API}/api/carts/me/items`,
+      //   { productId: product.productId, quantity: Number(quantity) },
+      //   { withCredentials: true },
+      // );
+      // Swal.fire({ icon: 'success', title: t('addedToCart') });
+      // setQuantity('');
+      // refreshCart();
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || err.message;
       Swal.fire({ icon: 'error', title: t('error'), text: msg });
@@ -226,14 +231,19 @@ export default function ProductDetails() {
       return;
     }
     try {
-      await axios.post(
-        `${API}/api/group-purchases/products/${id}/start`,
-        null,
-        { params: { quantity: Number(groupQuantity) }, withCredentials: true },
-      );
-      Swal.fire({ icon: 'success', title: t('groupStarted') });
-      setGroupQuantity('');
-      fetchGroupPurchases();
+      // await axios.post(
+      //   `${API}/api/group-purchases/products/${id}/start`,
+      //   null,
+      //   { params: { quantity: Number(groupQuantity) }, withCredentials: true },
+      // );
+      // Swal.fire({ icon: 'success', title: t('groupStarted') });
+      // setGroupQuantity('');
+      // fetchGroupPurchases();
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || err.message;
       Swal.fire({ icon: 'error', title: t('error'), text: msg });
@@ -247,14 +257,19 @@ export default function ProductDetails() {
       return;
     }
     try {
-      await axios.post(
-        `${API}/api/group-purchases/groups/${groupId}/join`,
-        null,
-        { params: { quantity: Number(groupQuantity) }, withCredentials: true },
-      );
-      Swal.fire({ icon: 'success', title: t('groupJoined') });
-      setGroupQuantity('');
-      fetchGroupPurchases();
+      // await axios.post(
+      //   `${API}/api/group-purchases/groups/${groupId}/join`,
+      //   null,
+      //   { params: { quantity: Number(groupQuantity) }, withCredentials: true },
+      // );
+      // Swal.fire({ icon: 'success', title: t('groupJoined') });
+      // setGroupQuantity('');
+      // fetchGroupPurchases();
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || err.message;
       Swal.fire({ icon: 'error', title: t('error'), text: msg });
@@ -360,8 +375,8 @@ export default function ProductDetails() {
   const supplierId = supplier?.supplierId;
   const heroImg =
     normalizeUrl(imagesFilesUrls[0]) || '/placeholder-product.jpg';
-  const thumb1 = imagesFilesUrls[1] || null;
-  const thumb2 = imagesFilesUrls[2] || null;
+  const thumb1 = normalizeUrl(imagesFilesUrls[1]) || null;
+  const thumb2 = normalizeUrl(imagesFilesUrls[2]) || null;
   const activeGroup = Array.isArray(groupPurchases) ? groupPurchases[0] : null;
 
   return (

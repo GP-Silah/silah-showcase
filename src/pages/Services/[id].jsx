@@ -15,6 +15,10 @@ import Swal from 'sweetalert2';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import { useAuth } from '../../context/AuthContext';
 import styles from './ServiceDetails.module.css';
+import { getItemReviews } from '@/utils/mock-api/reviewApi';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
+import { getWishlist } from '@/utils/mock-api/wishlistApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 const API = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -37,14 +41,38 @@ export default function ServiceDetails() {
   const [canScrollBack, setCanScrollBack] = useState(false);
   const [canScrollForward, setCanScrollForward] = useState(false);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // Fetch Service
   const fetchService = useCallback(async () => {
     try {
-      const res = await axios.get(`${API}/api/services/${id}`, {
-        params: { lang: i18n.language },
-        withCredentials: true,
-      });
-      setService(res.data);
+      // const res = await axios.get(`${API}/api/services/${id}`, {
+      //   params: { lang: i18n.language },
+      //   withCredentials: true,
+      // });
+      // setService(res.data);
+      const res = await axios.get(
+        getSearchResults({
+          type: 'services',
+          isAll: true,
+        }),
+      );
+
+      const services = res.data || [];
+
+      const foundService = services.find(
+        (s) => s._id === id || s.serviceId === id,
+      );
+
+      if (!foundService) {
+        throw new Error('Service not found');
+      }
+
+      setService(foundService);
     } catch (err) {
       const msg = err.response?.data?.error?.message || err.message;
       setError(msg);
@@ -54,10 +82,11 @@ export default function ServiceDetails() {
   // Fetch Reviews
   const fetchReviews = useCallback(async () => {
     try {
-      const res = await axios.get(`${API}/api/reviews/items/${id}`, {
-        params: { lang: i18n.language },
-        withCredentials: true,
-      });
+      // const res = await axios.get(`${API}/api/reviews/items/${id}`, {
+      //   params: { lang: i18n.language },
+      //   withCredentials: true,
+      // });
+      const res = await axios.get(getItemReviews());
       setReviews(res.data);
     } catch (err) {
       console.error('Reviews error', err);
@@ -68,9 +97,10 @@ export default function ServiceDetails() {
   const checkWishlist = async () => {
     if (!service?.serviceId) return;
     try {
-      const res = await axios.get(`${API}/api/buyers/me/wishlist`, {
-        withCredentials: true,
-      });
+      // const res = await axios.get(`${API}/api/buyers/me/wishlist`, {
+      //   withCredentials: true,
+      // });
+      const res = await axios.get(getWishlist());
       const inList = res.data.some(
         (e) =>
           e.itemType === 'SERVICE' &&
@@ -82,23 +112,29 @@ export default function ServiceDetails() {
     }
   };
 
+  const { t: tDemo } = useTranslation('demo');
   const toggleFavorite = async (e) => {
     e.stopPropagation();
     if (!service?.serviceId) return;
     setFavLoading(true);
     try {
-      const res = await axios.patch(
-        `${API}/api/buyers/me/wishlist/${service.serviceId}`,
-        {},
-        { withCredentials: true },
-      );
-      const { isAdded } = res.data;
-      setFavorited(isAdded);
-      Swal.fire({
-        icon: 'success',
-        title: t('wishlist.successTitle'),
-        text: t(isAdded ? 'wishlist.added' : 'wishlist.removed'),
-        confirmButtonColor: '#476DAE',
+      // const res = await axios.patch(
+      //   `${API}/api/buyers/me/wishlist/${service.serviceId}`,
+      //   {},
+      //   { withCredentials: true },
+      // );
+      // const { isAdded } = res.data;
+      // setFavorited(isAdded);
+      // Swal.fire({
+      //   icon: 'success',
+      //   title: t('wishlist.successTitle'),
+      //   text: t(isAdded ? 'wishlist.added' : 'wishlist.removed'),
+      //   confirmButtonColor: '#476DAE',
+      // });
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
       });
     } catch (err) {
       Swal.fire({
@@ -144,24 +180,29 @@ export default function ServiceDetails() {
     };
 
     try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/chats/me`,
-        {
-          withCredentials: true,
-        },
-      );
-      const chats = res.data || [];
-      const existingChat = chats.find(
-        (chat) => chat.otherUser?.userId === partner.userId,
-      );
+      // const res = await axios.get(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/chats/me`,
+      //   {
+      //     withCredentials: true,
+      //   },
+      // );
+      // const chats = res.data || [];
+      // const existingChat = chats.find(
+      //   (chat) => chat.otherUser?.userId === partner.userId,
+      // );
 
-      if (existingChat) {
-        navigate(`/buyer/chats/${existingChat.chatId}`);
-      } else {
-        navigate(`/buyer/chats/new?with=${partner.userId}`, {
-          state: { partner },
-        });
-      }
+      // if (existingChat) {
+      //   navigate(`/buyer/chats/${existingChat.chatId}`);
+      // } else {
+      //   navigate(`/buyer/chats/new?with=${partner.userId}`, {
+      //     state: { partner },
+      //   });
+      // }
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error('Failed to check chat history:', err);
       navigate(`/buyer/chats/new?with=${partner.userId}`, {
@@ -245,11 +286,12 @@ export default function ServiceDetails() {
   const supplierName =
     supplier?.user?.businessName || supplier?.user?.name || '';
   const supplierCity = supplier?.user?.city || '';
-  const supplierAvatar = supplier?.user?.pfpUrl || '';
+  const supplierAvatar = normalizeUrl(supplier?.user?.pfpUrl) || '';
   const supplierId = supplier?.supplierId;
-  const heroImg = imagesFilesUrls[0] || '/placeholder-service.jpg';
-  const thumb1 = imagesFilesUrls[1] || null;
-  const thumb2 = imagesFilesUrls[2] || null;
+  const heroImg =
+    normalizeUrl(imagesFilesUrls[0]) || '/placeholder-service.jpg';
+  const thumb1 = normalizeUrl(imagesFilesUrls[1]) || null;
+  const thumb2 = normalizeUrl(imagesFilesUrls[2]) || null;
 
   return (
     <div className={styles['service-details']} data-dir={dir}>
@@ -325,7 +367,7 @@ export default function ServiceDetails() {
             <span className={styles['sd-price']}>
               {price}{' '}
               <img
-                src="/riyal.png"
+                src="/silah-showcase/riyal.png"
                 alt="SAR"
                 className={styles['sd-currency']}
               />
