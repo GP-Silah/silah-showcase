@@ -1,0 +1,92 @@
+[
+  {
+    "id": 40,
+    "name": "استشارات الأعمال",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 9, "name": "Business & Marketing Services" }
+  },
+  {
+    "id": 41,
+    "name": "التسويق عبر الإنترنت وإنشاء الإعلانات عبر الإنترنت",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 9, "name": "Business & Marketing Services" }
+  },
+  {
+    "id": 42,
+    "name": "تطوير الويب والتطبيقات",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 10, "name": "Software & IT Solutions" }
+  },
+  {
+    "id": 43,
+    "name": "تكنولوجيا المعلومات والخدمات السحابية",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 10, "name": "Software & IT Solutions" }
+  },
+  {
+    "id": 44,
+    "name": "الشحن والتخزين",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 11, "name": "Shipping & Logistics" }
+  },
+  {
+    "id": 45,
+    "name": "الشحن الدولي",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 11, "name": "Shipping & Logistics" }
+  },
+  {
+    "id": 46,
+    "name": "تصميم المنتج",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 12, "name": "Design Services" }
+  },
+  {
+    "id": 47,
+    "name": "تصميم الشعار والعلامة التجارية",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 12, "name": "Design Services" }
+  },
+  {
+    "id": 48,
+    "name": "تصميم واجهة المستخدم/تجربة المستخدم والتصميم الجرافيكي",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 12, "name": "Design Services" }
+  },
+  {
+    "id": 49,
+    "name": "التعبئة والتغليف والتغليف المشترك",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 13, "name": "Manufacturing & Packaging" }
+  },
+  {
+    "id": 50,
+    "name": "التوريد والمشتريات",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 13, "name": "Manufacturing & Packaging" }
+  },
+  {
+    "id": 51,
+    "name": "الإصلاح العام والكمبيوتر",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 14, "name": "Technical & Repair Services" }
+  },
+  {
+    "id": 52,
+    "name": "الصيانة الصناعية",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 14, "name": "Technical & Repair Services" }
+  },
+  {
+    "id": 53,
+    "name": "الاستشارات القانونية للأعمال التجارية",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 15, "name": "Legal & Compliance Services" }
+  },
+  {
+    "id": 54,
+    "name": "الامتثال الضريبي والتنظيمي",
+    "usedFor": "SERVICE",
+    "parentCategory": { "id": 15, "name": "Legal & Compliance Services" }
+  }
+]
