@@ -17,6 +17,10 @@ import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import styles from './ProductDetails.module.css';
+import { getItemReviews } from '@/utils/mock-api/reviewApi';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
+import { getWishlist } from '@/utils/mock-api/wishlistApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 const API = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -46,14 +50,38 @@ export default function ProductDetails() {
   const [canScrollBack, setCanScrollBack] = useState(false);
   const [canScrollForward, setCanScrollForward] = useState(false);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // 1. Fetch Product
   const fetchProduct = useCallback(async () => {
     try {
-      const res = await axios.get(`${API}/api/products/${id}`, {
-        params: { lang: i18n.language },
-        withCredentials: true,
-      });
-      setProduct(res.data);
+      // const res = await axios.get(`${API}/api/products/${id}`, {
+      //   params: { lang: i18n.language },
+      //   withCredentials: true,
+      // });
+      // setProduct(res.data);
+      const res = await axios.get(
+        getSearchResults({
+          type: 'products',
+          isAll: true,
+        }),
+      );
+
+      const products = res.data || [];
+
+      const foundProduct = products.find(
+        (p) => p._id === id || p.productId === id,
+      );
+
+      if (!foundProduct) {
+        throw new Error('Product not found');
+      }
+
+      setProduct(foundProduct);
     } catch (err) {
       const msg = err.response?.data?.error?.message || err.message;
       setError(msg);
@@ -63,10 +91,11 @@ export default function ProductDetails() {
   // 2. Fetch Reviews
   const fetchReviews = useCallback(async () => {
     try {
-      const res = await axios.get(`${API}/api/reviews/items/${id}`, {
-        params: { lang: i18n.language },
-        withCredentials: true,
-      });
+      // const res = await axios.get(`${API}/api/reviews/items/${id}`, {
+      //   params: { lang: i18n.language },
+      //   withCredentials: true,
+      // });
+      const res = await axios.get(getItemReviews());
       setReviews(res.data);
     } catch (err) {
       console.error('Reviews error', err);
@@ -77,11 +106,11 @@ export default function ProductDetails() {
   const fetchGroupPurchases = useCallback(async () => {
     if (!product?.allowGroupPurchase) return;
     try {
-      const res = await axios.get(
-        `${API}/api/group-purchases/products/${id}/suitable-groups`,
-        { withCredentials: true },
-      );
-      setGroupPurchases(res.data);
+      // const res = await axios.get(
+      //   `${API}/api/group-purchases/products/${id}/suitable-groups`,
+      //   { withCredentials: true },
+      // );
+      // setGroupPurchases(res.data);
     } catch (err) {
       console.error('Group purchase fetch error', err);
       setGroupPurchases([]);
@@ -92,9 +121,10 @@ export default function ProductDetails() {
   const checkWishlist = async () => {
     if (!product?.productId) return;
     try {
-      const res = await axios.get(`${API}/api/buyers/me/wishlist`, {
-        withCredentials: true,
-      });
+      // const res = await axios.get(`${API}/api/buyers/me/wishlist`, {
+      //   withCredentials: true,
+      // });
+      const res = await axios.get(getWishlist());
       const inList = res.data.some(
         (e) =>
           e.itemType === 'PRODUCT' &&
@@ -106,23 +136,29 @@ export default function ProductDetails() {
     }
   };
 
+  const { t: tDemo } = useTranslation('demo');
   const toggleFavorite = async (e) => {
     e.stopPropagation();
     if (!product?.productId) return;
     setFavLoading(true);
     try {
-      const res = await axios.patch(
-        `${API}/api/buyers/me/wishlist/${product.productId}`,
-        {},
-        { withCredentials: true },
-      );
-      const { isAdded } = res.data;
-      setFavorited(isAdded);
-      Swal.fire({
-        icon: 'success',
-        title: t('wishlist.successTitle'),
-        text: t(isAdded ? 'wishlist.added' : 'wishlist.removed'),
-        confirmButtonColor: '#476DAE',
+      // const res = await axios.patch(
+      //   `${API}/api/buyers/me/wishlist/${product.productId}`,
+      //   {},
+      //   { withCredentials: true },
+      // );
+      // const { isAdded } = res.data;
+      // setFavorited(isAdded);
+      // Swal.fire({
+      //   icon: 'success',
+      //   title: t('wishlist.successTitle'),
+      //   text: t(isAdded ? 'wishlist.added' : 'wishlist.removed'),
+      //   confirmButtonColor: '#476DAE',
+      // });
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
       });
     } catch (err) {
       Swal.fire({
@@ -168,14 +204,19 @@ export default function ProductDetails() {
       return;
     }
     try {
-      await axios.post(
-        `${API}/api/carts/me/items`,
-        { productId: product.productId, quantity: Number(quantity) },
-        { withCredentials: true },
-      );
-      Swal.fire({ icon: 'success', title: t('addedToCart') });
-      setQuantity('');
-      refreshCart();
+      // await axios.post(
+      //   `${API}/api/carts/me/items`,
+      //   { productId: product.productId, quantity: Number(quantity) },
+      //   { withCredentials: true },
+      // );
+      // Swal.fire({ icon: 'success', title: t('addedToCart') });
+      // setQuantity('');
+      // refreshCart();
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || err.message;
       Swal.fire({ icon: 'error', title: t('error'), text: msg });
@@ -190,14 +231,19 @@ export default function ProductDetails() {
       return;
     }
     try {
-      await axios.post(
-        `${API}/api/group-purchases/products/${id}/start`,
-        null,
-        { params: { quantity: Number(groupQuantity) }, withCredentials: true },
-      );
-      Swal.fire({ icon: 'success', title: t('groupStarted') });
-      setGroupQuantity('');
-      fetchGroupPurchases();
+      // await axios.post(
+      //   `${API}/api/group-purchases/products/${id}/start`,
+      //   null,
+      //   { params: { quantity: Number(groupQuantity) }, withCredentials: true },
+      // );
+      // Swal.fire({ icon: 'success', title: t('groupStarted') });
+      // setGroupQuantity('');
+      // fetchGroupPurchases();
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || err.message;
       Swal.fire({ icon: 'error', title: t('error'), text: msg });
@@ -211,14 +257,19 @@ export default function ProductDetails() {
       return;
     }
     try {
-      await axios.post(
-        `${API}/api/group-purchases/groups/${groupId}/join`,
-        null,
-        { params: { quantity: Number(groupQuantity) }, withCredentials: true },
-      );
-      Swal.fire({ icon: 'success', title: t('groupJoined') });
-      setGroupQuantity('');
-      fetchGroupPurchases();
+      // await axios.post(
+      //   `${API}/api/group-purchases/groups/${groupId}/join`,
+      //   null,
+      //   { params: { quantity: Number(groupQuantity) }, withCredentials: true },
+      // );
+      // Swal.fire({ icon: 'success', title: t('groupJoined') });
+      // setGroupQuantity('');
+      // fetchGroupPurchases();
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || err.message;
       Swal.fire({ icon: 'error', title: t('error'), text: msg });
@@ -320,11 +371,12 @@ export default function ProductDetails() {
   const supplierName =
     supplier?.user?.businessName || supplier?.user?.name || '';
   const supplierCity = supplier?.user?.city || '';
-  const supplierAvatar = supplier?.user?.pfpUrl || '';
+  const supplierAvatar = normalizeUrl(supplier?.user?.pfpUrl) || '';
   const supplierId = supplier?.supplierId;
-  const heroImg = imagesFilesUrls[0] || '/placeholder-product.jpg';
-  const thumb1 = imagesFilesUrls[1] || null;
-  const thumb2 = imagesFilesUrls[2] || null;
+  const heroImg =
+    normalizeUrl(imagesFilesUrls[0]) || '/placeholder-product.jpg';
+  const thumb1 = normalizeUrl(imagesFilesUrls[1]) || null;
+  const thumb2 = normalizeUrl(imagesFilesUrls[2]) || null;
   const activeGroup = Array.isArray(groupPurchases) ? groupPurchases[0] : null;
 
   return (
@@ -412,7 +464,7 @@ export default function ProductDetails() {
             <span className={styles['pd-price']}>
               {price}{' '}
               <img
-                src="/riyal.png"
+                src="/silah-showcase/riyal.png"
                 alt="SAR"
                 className={styles['pd-currency']}
               />
@@ -496,7 +548,7 @@ export default function ProductDetails() {
                   <span style={{ fontSize: '1.25rem', color: '#6d28d9' }}>
                     {groupPurchasePrice}{' '}
                     <img
-                      src="/riyal.png"
+                      src="/silah-showcase/riyal.png"
                       alt="SAR"
                       style={{ width: 18, height: 18, verticalAlign: 'middle' }}
                     />

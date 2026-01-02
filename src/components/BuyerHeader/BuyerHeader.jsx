@@ -22,6 +22,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import CategoryMegamenu from '../CategoryMegamenu/CategoryMegamenu';
 import './BuyerHeader.global.css';
+import { getCategories } from '@/utils/mock-api/categoryApi';
 
 const TYPE_MAP = {
   en: {
@@ -70,14 +71,28 @@ const BuyerHeader = ({
   };
 
   // === Fetch Categories ===
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_BACKEND_URL}/api/categories`, {
+  //       params: { lang: i18n.language },
+  //       withCredentials: true,
+  //     })
+  //     .then((res) => setCategories(res.data))
+  //     .catch((err) => console.error('Failed to load categories', err));
+  // }, [i18n.language]);
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/api/categories`, {
-        params: { lang: i18n.language },
-        withCredentials: true,
+    const lang = i18n.language.toLowerCase();
+    const url = getCategories({ main: false, lang });
+
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to fetch categories: ${res.status}`);
+        }
+        return res.json();
       })
-      .then((res) => setCategories(res.data))
-      .catch((err) => console.error('Failed to load categories', err));
+      .then((data) => setCategories(data || []))
+      .catch((err) => console.error('Failed to load categories (mock)', err));
   }, [i18n.language]);
 
   // === Close dropdowns on outside click ===
@@ -180,7 +195,7 @@ const BuyerHeader = ({
     >
       <div className="header-left">
         <img
-          src="/logo.png"
+          src="/silah-showcase/logo.png"
           alt="Logo"
           className="logo"
           onClick={() => navigate('/buyer/homepage')}

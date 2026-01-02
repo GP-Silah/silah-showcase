@@ -14,6 +14,8 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const { fetchUser } = useAuth();
 
+  const MOCK_AUTH_KEY = 'mock-authenticated';
+
   useEffect(() => {
     document.title = t('pageTitle.login', { ns: 'common' });
   }, [t, i18n.language]);
@@ -40,14 +42,15 @@ function Login() {
 
     try {
       setLoading(true);
-      const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/auth/login`,
-        payload,
-        { withCredentials: true },
-      );
+      // const res = await axios.post(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/auth/login`,
+      //   payload,
+      //   { withCredentials: true },
+      // );
+      sessionStorage.setItem(MOCK_AUTH_KEY, '1');
 
-      // Example response: { message: "Login successful", role: "BUYER" }
-      const role = res.data?.role?.toLowerCase() || (await refreshUser())?.role;
+      // // Example response: { message: "Login successful", role: "BUYER" }
+      // const role = res.data?.role?.toLowerCase() || (await refreshUser())?.role;
 
       // Update the user context immediately
       await fetchUser();

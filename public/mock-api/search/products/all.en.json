@@ -13,6 +13,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+        "pfpUrl": "mock-api/images/s.png",
         "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
         "isEmailVerified": false,
         "preferredLanguage": "EN",
@@ -79,6 +80,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+        "pfpUrl": "mock-api/images/s.png",
         "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
         "isEmailVerified": false,
         "preferredLanguage": "EN",
@@ -138,6 +140,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+        "pfpUrl": "mock-api/images/s.png",
         "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
         "isEmailVerified": false,
         "preferredLanguage": "EN",
@@ -196,6 +199,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+        "pfpUrl": "mock-api/images/s.png",
         "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
         "isEmailVerified": false,
         "preferredLanguage": "EN",
@@ -255,6 +259,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+        "pfpUrl": "mock-api/images/s.png",
         "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
         "isEmailVerified": false,
         "preferredLanguage": "EN",
@@ -314,6 +319,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+        "pfpUrl": "mock-api/images/s.png",
         "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
         "isEmailVerified": false,
         "preferredLanguage": "EN",
@@ -373,6 +379,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+        "pfpUrl": "mock-api/images/s.png",
         "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
         "isEmailVerified": false,
         "preferredLanguage": "EN",
@@ -432,6 +439,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+        "pfpUrl": "mock-api/images/s.png",
         "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
         "isEmailVerified": false,
         "preferredLanguage": "EN",
@@ -490,6 +498,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -555,6 +564,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -618,6 +628,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -681,6 +692,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -744,6 +756,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -807,6 +820,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -878,6 +892,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
