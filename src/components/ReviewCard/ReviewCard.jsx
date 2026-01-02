@@ -3,6 +3,7 @@ import { Star, User } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import './ReviewCard.css';
+import { getItemReviews } from '@/utils/mock-api/reviewApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -18,32 +19,65 @@ export default function ReviewCard({ review }) {
     { year: 'numeric', month: 'short', day: 'numeric' },
   );
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // === FETCH BUYER ===
   const [name, setName] = useState(t('anonymous'));
   const [pfpUrl, setPfpUrl] = useState(null);
   const [loadingPfp, setLoadingPfp] = useState(true);
 
+  // useEffect(() => {
+  //   const fetchBuyerInfo = async () => {
+  //     if (!review.buyerId) {
+  //       setLoadingPfp(false);
+  //       return;
+  //     }
+
+  //     try {
+  //       const res = await axios.get(
+  //         `${API_BASE}/api/buyers/${review.buyerId}`,
+  //         {
+  //           withCredentials: true,
+  //         },
+  //       );
+  //       const url = res.data.user?.pfpUrl;
+  //       const name = res.data.user?.businessName;
+  //       setPfpUrl(url || null);
+  //       setName(name || t('anonymous'));
+  //     } catch (err) {
+  //       console.log('Failed to fetch buyer info:', err);
+  //       setPfpUrl(null);
+  //     } finally {
+  //       setLoadingPfp(false);
+  //     }
+  //   };
+
+  //   fetchBuyerInfo();
+  // }, [review.buyerId]);
   useEffect(() => {
     const fetchBuyerInfo = async () => {
-      if (!review.buyerId) {
-        setLoadingPfp(false);
-        return;
-      }
-
       try {
-        const res = await axios.get(
-          `${API_BASE}/api/buyers/${review.buyerId}`,
-          {
-            withCredentials: true,
-          },
-        );
+        const res = await axios.get(getItemReviews());
 
-        const url = res.data.user?.pfpUrl;
-        const name = res.data.user?.businessName;
-        setPfpUrl(url || null);
-        setName(name || t('anonymous'));
+        const reviews = res.data || [];
+
+        const matchedReview = reviews.find((r) => r.buyerId === review.buyerId);
+
+        if (!matchedReview) {
+          setName(t('anonymous'));
+          setPfpUrl(null);
+          return;
+        }
+
+        setName(matchedReview.buyerBusinessName || t('anonymous'));
+        setPfpUrl(normalizeUrl(matchedReview.buyerPfpUrl));
       } catch (err) {
-        console.warn('Failed to fetch buyer info:', err);
+        console.log('Failed to fetch buyer info:', err);
+        setName(t('anonymous'));
         setPfpUrl(null);
       } finally {
         setLoadingPfp(false);
@@ -51,7 +85,7 @@ export default function ReviewCard({ review }) {
     };
 
     fetchBuyerInfo();
-  }, [review.buyerId]);
+  }, [review.buyerId, t]);
 
   // === DEFAULT AVATAR IF NO PFP ===
   const Avatar = () => {

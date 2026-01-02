@@ -34,6 +34,7 @@
     },
     "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
     "buyerBusinessName": "ShahadSaad001",
+    "buyerPfpUrl": "/mock-api/images/moon.jpg",
     "itemRating": 5,
     "writtenReviewOfItem": "Very Red",
     "createdAt": "2025-11-23T02:07:12.057Z"
@@ -72,6 +73,7 @@
     },
     "buyerId": "fd6fa90d-b2d2-46c7-8b05-5f41ed4c8025",
     "buyerBusinessName": "Alkadi perfumes",
+    "buyerPfpUrl": "/mock-api/images/perfum.jpg",
     "itemRating": 5,
     "writtenReviewOfItem": null,
     "createdAt": "2025-11-22T23:39:58.363Z"
@@ -110,6 +112,7 @@
     },
     "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
     "buyerBusinessName": "ShahadSaad001",
+    "buyerPfpUrl": "/mock-api/images/moon.jpg",
     "itemRating": 2,
     "writtenReviewOfItem": "👍️",
     "createdAt": "2025-11-15T22:24:44.864Z"
@@ -148,6 +151,7 @@
     },
     "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
     "buyerBusinessName": "ShahadSaad001",
+    "buyerPfpUrl": "/mock-api/images/moon.jpg",
     "itemRating": 1,
     "writtenReviewOfItem": "They arrived in a bad shape...",
     "createdAt": "2025-11-15T22:23:27.155Z"
@@ -186,6 +190,7 @@
     },
     "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
     "buyerBusinessName": "ShahadSaad001",
+    "buyerPfpUrl": "/mock-api/images/moon.jpg",
     "itemRating": 3,
     "writtenReviewOfItem": null,
     "createdAt": "2025-11-15T22:22:41.533Z"
@@ -224,6 +229,7 @@
     },
     "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
     "buyerBusinessName": "ShahadSaad001",
+    "buyerPfpUrl": "/mock-api/images/moon.jpg",
     "itemRating": 4,
     "writtenReviewOfItem": null,
     "createdAt": "2025-11-15T22:20:16.485Z"
@@ -263,6 +269,7 @@
     },
     "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
     "buyerBusinessName": "ShahadSaad001",
+    "buyerPfpUrl": "/mock-api/images/moon.jpg",
     "itemRating": 5,
     "writtenReviewOfItem": null,
     "createdAt": "2025-11-13T09:36:50.288Z"

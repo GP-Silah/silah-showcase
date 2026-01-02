@@ -13,6 +13,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -70,6 +71,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -127,6 +129,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -184,6 +187,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -241,6 +245,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -298,6 +303,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "2-c639a9ae-3c7d-44d8-a3cc-6b2007d9998c.png",
+        "pfpUrl": "mock-api/images/perfum.jpg",
         "categories": [{ "id": 2, "name": "Beauty & Personal Care" }],
         "isEmailVerified": true,
         "preferredLanguage": "AR",
@@ -352,6 +358,7 @@
         "role": "SUPPLIER",
         "city": "riyadh",
         "pfpFileName": "defaultavatarsb271da04eb614f4191009c2f26dd1bff-b2e80a27-ed3b-4f02-856b-0981ece2929d.png",
+        "pfpUrl": "mock-api/images/fayrouz.png",
         "categories": [{ "id": 2, "name": "Beauty & Personal Care" }],
         "isEmailVerified": true,
         "preferredLanguage": "EN",
@@ -408,6 +415,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -465,6 +473,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars4cb9d863de02418f8871e90849288f20-e465dc83-4646-41c4-82d4-9fb1888b5edc.png",
+        "pfpUrl": "mock-api/images/nonya.png",
         "categories": [{ "id": 3, "name": "Fashion & Accessories" }],
         "isEmailVerified": true,
         "preferredLanguage": "EN",

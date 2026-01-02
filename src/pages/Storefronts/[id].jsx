@@ -20,6 +20,7 @@ import ItemCard from '../../components/ItemCard/ItemCard';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import { useAuth } from '../../context/AuthContext';
 import './SupplierStorefront.css';
+import { getSupplierReviews } from '@/utils/mock-api/reviewApi';
 
 const API = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 const PLACEHOLD_BANNER = 'https://placehold.co/300x200?text=No+Image';
