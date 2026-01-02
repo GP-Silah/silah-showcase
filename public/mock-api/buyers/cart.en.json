@@ -1,0 +1,47 @@
+{
+  "cartId": "a68c4998-51b2-4155-b895-607131aefd15",
+  "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+  "productsTotal": 8063.5,
+  "deliveryFees": 75,
+  "cartTotal": 8138.5,
+  "isBought": false,
+  "totalItemsCount": 2,
+  "suppliers": [
+    {
+      "cartBySupplierId": "d4af338c-47cb-407b-b6d1-70b8a7e227d4",
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "deliveryFee": 38,
+      "subTotal": 6143.5,
+      "supplierTotalPrice": 6181.5,
+      "cartItems": [
+        {
+          "cartItemId": 62,
+          "productId": "d4056bdf-05d8-4bbf-9025-51b8dffb524c",
+          "productName": "REAL DIAMOND RING",
+          "productPrice": 5807.5,
+          "quantity": 1,
+          "itemTotalPrice": 5807.5,
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "cartBySupplierId": "329a76c0-4556-4aae-844d-3bafe6c8942b",
+      "supplierId": "570d4012-84f1-4673-9215-186fa04f0f83",
+      "deliveryFee": 37,
+      "subTotal": 1920,
+      "supplierTotalPrice": 1957,
+      "cartItems": [
+        {
+          "cartItemId": 67,
+          "productId": "e1b84dbf-49d8-4df7-a5a4-20dbc07ccf29",
+          "productName": "Cat Dry Food - 1.3 Kg",
+          "productPrice": 120,
+          "quantity": 16,
+          "itemTotalPrice": 1920,
+          "isAvailable": true
+        }
+      ]
+    }
+  ]
+}
