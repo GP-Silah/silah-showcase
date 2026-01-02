@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { getCart } from '@/utils/mock-api/buyerApi';
 
 const CartContext = createContext();
 
@@ -15,9 +16,10 @@ export const CartProvider = ({ children }) => {
   const fetchCart = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${API}/api/carts/me`, {
-        withCredentials: true,
-      });
+      // const res = await axios.get(`${API}/api/carts/me`, {
+      //   withCredentials: true,
+      // });
+      const res = await axios.get(getCart());
       setCart(res.data);
       setTotalItemsCount(res.data.totalItemsCount || 0);
     } catch (err) {

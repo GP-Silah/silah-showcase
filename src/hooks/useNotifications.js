@@ -1,5 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
+import { useAuth } from '@/context/AuthContext';
+import { getNotifications } from '@/utils/mock-api/notificationApi';
+import { useTranslation } from 'react-i18next';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 export const useNotifications = (lang, onNewNotification) => {
   const [notifications, setNotifications] = useState([]);
@@ -7,13 +11,16 @@ export const useNotifications = (lang, onNewNotification) => {
   const eventSourceRef = useRef(null);
   const seenIdsRef = useRef(new Set());
 
+  const { role } = useAuth(); // get role from AuthContext
+
   useEffect(() => {
     const fetchInitial = async () => {
       try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/notifications/me`,
-          { params: { lang }, withCredentials: true },
-        );
+        // const { data } = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/notifications/me`,
+        //   { params: { lang }, withCredentials: true },
+        // );
+        const { data } = await axios.get(getNotifications(role, lang));
         setNotifications(data);
         data.forEach((n) => seenIdsRef.current.add(n.notificationId));
       } catch (err) {
@@ -23,60 +30,64 @@ export const useNotifications = (lang, onNewNotification) => {
 
     fetchInitial();
 
-    if (eventSourceRef.current) {
-      eventSourceRef.current.close();
-    }
+    // if (eventSourceRef.current) {
+    //   eventSourceRef.current.close();
+    // }
 
-    const es = new EventSource(
-      `${import.meta.env.VITE_BACKEND_URL}/api/notifications/stream`,
-      { withCredentials: true },
-    );
-    eventSourceRef.current = es;
+    // const es = new EventSource(
+    //   `${import.meta.env.VITE_BACKEND_URL}/api/notifications/stream`,
+    //   { withCredentials: true },
+    // );
+    // eventSourceRef.current = es;
 
-    es.onmessage = async (e) => {
-      try {
-        const parsed = JSON.parse(e.data);
-        const notif = parsed.data ? JSON.parse(parsed.data) : parsed;
+    // es.onmessage = async (e) => {
+    //   try {
+    //     const parsed = JSON.parse(e.data);
+    //     const notif = parsed.data ? JSON.parse(parsed.data) : parsed;
 
-        if (seenIdsRef.current.has(notif.notificationId)) return;
-        seenIdsRef.current.add(notif.notificationId);
+    //     if (seenIdsRef.current.has(notif.notificationId)) return;
+    //     seenIdsRef.current.add(notif.notificationId);
 
-        setNotifications((prev) => [notif, ...prev]);
-        onNewNotification?.(notif);
+    //     setNotifications((prev) => [notif, ...prev]);
+    //     onNewNotification?.(notif);
 
-        const senderId = notif.sender?.userId;
-        if (senderId && !profilePics[senderId]) {
-          try {
-            const { data } = await axios.get(
-              `${
-                import.meta.env.VITE_BACKEND_URL
-              }/api/users/${senderId}/profile-picture`,
-              { withCredentials: true },
-            );
-            if (data.pfpUrl) {
-              setProfilePics((prev) => ({ ...prev, [senderId]: data.pfpUrl }));
-            }
-          } catch (err) {
-            console.error('Failed to fetch pfp', err);
-          }
-        }
-      } catch (err) {
-        console.error('SSE parse error', err);
-      }
-    };
+    //     const senderId = notif.sender?.userId;
+    //     if (senderId && !profilePics[senderId]) {
+    //       try {
+    //         const { data } = await axios.get(
+    //           `${
+    //             import.meta.env.VITE_BACKEND_URL
+    //           }/api/users/${senderId}/profile-picture`,
+    //           { withCredentials: true },
+    //         );
+    //         if (data.pfpUrl) {
+    //           setProfilePics((prev) => ({ ...prev, [senderId]: data.pfpUrl }));
+    //         }
+    //       } catch (err) {
+    //         console.error('Failed to fetch pfp', err);
+    //       }
+    //     }
+    //   } catch (err) {
+    //     console.error('SSE parse error', err);
+    //   }
+    // };
 
-    es.onerror = () => {
-      console.error('SSE error – browser will retry');
-    };
+    // es.onerror = () => {
+    //   console.error('SSE error – browser will retry');
+    // };
 
+    // return () => {
+    //   es.close();
+    //   eventSourceRef.current = null;
+    //   seenIdsRef.current.clear();
+    // };
     return () => {
-      es.close();
-      eventSourceRef.current = null;
       seenIdsRef.current.clear();
     };
   }, [lang, onNewNotification]);
 
-  const markAllAsRead = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const markAllAsRead = async (e) => {
     const unreadIds = notifications
       .filter((n) => !n.isRead)
       .map((n) => n.notificationId);
@@ -84,34 +95,44 @@ export const useNotifications = (lang, onNewNotification) => {
     if (unreadIds.length === 0) return;
 
     try {
-      await axios.patch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/notifications/read-many`,
-        { notificationIds: unreadIds },
-        { withCredentials: true },
-      );
+      // await axios.patch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/notifications/read-many`,
+      //   { notificationIds: unreadIds },
+      //   { withCredentials: true },
+      // );
 
-      setNotifications((prev) =>
-        prev.map((n) =>
-          unreadIds.includes(n.notificationId) ? { ...n, isRead: true } : n,
-        ),
-      );
+      // setNotifications((prev) =>
+      //   prev.map((n) =>
+      //     unreadIds.includes(n.notificationId) ? { ...n, isRead: true } : n,
+      //   ),
+      // );
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error('Failed to mark all as read', err);
     }
   };
 
-  const markSingleAsRead = async (notificationId) => {
+  const markSingleAsRead = async (e, notificationId) => {
     try {
-      const { data } = await axios.patch(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/api/notifications/${notificationId}/read`,
-        {},
-        { withCredentials: true },
-      );
-      setNotifications((prev) =>
-        prev.map((n) => (n.notificationId === notificationId ? data : n)),
-      );
+      // const { data } = await axios.patch(
+      //   `${
+      //     import.meta.env.VITE_BACKEND_URL
+      //   }/api/notifications/${notificationId}/read`,
+      //   {},
+      //   { withCredentials: true },
+      // );
+      // setNotifications((prev) =>
+      //   prev.map((n) => (n.notificationId === notificationId ? data : n)),
+      // );
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error('Failed to mark single as read', err);
     }

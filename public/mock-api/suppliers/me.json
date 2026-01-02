@@ -1,0 +1,50 @@
+{
+  "user": {
+    "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+    "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+    "name": "SHAHAD SAAD",
+    "email": "shahadsaad001.dev@gmail.com",
+    "crn": "1234567899",
+    "businessName": "ShahadSaad001",
+    "role": "SUPPLIER",
+    "city": "Riyadh",
+    "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+    "pfpUrl": "/mock-api/images/moon.jpg",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Software & IT Solutions"
+      },
+      {
+        "id": 14,
+        "name": "Technical & Repair Services"
+      }
+    ],
+    "isEmailVerified": true,
+    "preferredLanguage": "EN",
+    "createdAt": "2025-10-25T13:07:44.792Z",
+    "updatedAt": "2025-12-31T11:39:26.194Z"
+  },
+  "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+  "supplierName": "SHAHAD SAAD",
+  "supplierEmail": "shahadsaad001.dev@gmail.com",
+  "businessName": "ShahadSaad001",
+  "city": "Riyadh",
+  "storeStatus": "OPEN",
+  "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+  "storeBio": "Developer",
+  "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+  "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
+  "deliveryFees": 38,
+  "avgRating": 4.5,
+  "ratingsCount": 14,
+  "usedFreeTrail": true,
+  "supplierStatus": "ACTIVE",
+  "plan": "PREMIUM",
+  "favoriteCategories": [
+    {
+      "id": 42,
+      "name": "Web & App Development"
+    }
+  ]
+}

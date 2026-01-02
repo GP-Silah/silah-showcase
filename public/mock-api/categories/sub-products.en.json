@@ -1,0 +1,146 @@
+[
+  {
+    "id": 16,
+    "name": "Animal Feed",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 1, "name": "Agricultural & Pet Supplies" }
+  },
+  {
+    "id": 17,
+    "name": "Fertilizers",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 1, "name": "Agricultural & Pet Supplies" }
+  },
+  {
+    "id": 18,
+    "name": "Pet Accessories & Toys",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 1, "name": "Agricultural & Pet Supplies" }
+  },
+  {
+    "id": 19,
+    "name": "Pet Food & Treats",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 1, "name": "Agricultural & Pet Supplies" }
+  },
+  {
+    "id": 20,
+    "name": "Skincare & Body Care",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 2, "name": "Beauty & Personal Care" }
+  },
+  {
+    "id": 21,
+    "name": "Hair Care",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 2, "name": "Beauty & Personal Care" }
+  },
+  {
+    "id": 22,
+    "name": "Personal Hygiene",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 2, "name": "Beauty & Personal Care" }
+  },
+  {
+    "id": 23,
+    "name": "Makeup & Fragrances",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 2, "name": "Beauty & Personal Care" }
+  },
+  {
+    "id": 24,
+    "name": "Furniture",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 5, "name": "Home & Living" }
+  },
+  {
+    "id": 25,
+    "name": "Household & Cleaning Supplies",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 5, "name": "Home & Living" }
+  },
+  {
+    "id": 26,
+    "name": "Kitchen & Dining",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 5, "name": "Home & Living" }
+  },
+  {
+    "id": 27,
+    "name": "Power Tools",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 6, "name": "Hardware & Tools" }
+  },
+  {
+    "id": 28,
+    "name": "Industrial Equipment",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 6, "name": "Hardware & Tools" }
+  },
+  {
+    "id": 29,
+    "name": "Snacks & Beverages",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 4, "name": "Food, Beverages & Health" }
+  },
+  {
+    "id": 30,
+    "name": "Dairy & Dairy Alternatives",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 4, "name": "Food, Beverages & Health" }
+  },
+  {
+    "id": 31,
+    "name": "Health Supplements",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 4, "name": "Food, Beverages & Health" }
+  },
+  {
+    "id": 32,
+    "name": "Clothing",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 3, "name": "Fashion & Accessories" }
+  },
+  {
+    "id": 33,
+    "name": "Jewelry & Watches",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 3, "name": "Fashion & Accessories" }
+  },
+  {
+    "id": 34,
+    "name": "Footwear",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 3, "name": "Fashion & Accessories" }
+  },
+  {
+    "id": 35,
+    "name": "Bottles & Containers",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 7, "name": "Packaging & Raw Materials" }
+  },
+  {
+    "id": 36,
+    "name": "Textiles & Fabrics",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 7, "name": "Packaging & Raw Materials" }
+  },
+  {
+    "id": 37,
+    "name": "Dyes & Chemicals",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 7, "name": "Packaging & Raw Materials" }
+  },
+  {
+    "id": 38,
+    "name": "Eco-Friendly Materials",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 8, "name": "Energy & Sustainability" }
+  },
+  {
+    "id": 39,
+    "name": "Renewable Energy Products",
+    "usedFor": "PRODUCT",
+    "parentCategory": { "id": 8, "name": "Energy & Sustainability" }
+  }
+]

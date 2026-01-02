@@ -53,7 +53,9 @@ const SupplierSidebar = ({ unreadCount }) => {
   };
 
   const logoSrc =
-    i18n.language === 'ar' ? '/sidebar-logo-ar.png' : '/sidebar-logo.png';
+    i18n.language === 'ar'
+      ? '/silah-showcase/sidebar-logo-ar.png'
+      : '/silah-showcase/sidebar-logo.png';
 
   return (
     <aside

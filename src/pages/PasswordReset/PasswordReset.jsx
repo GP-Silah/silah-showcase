@@ -3,6 +3,7 @@ import './Reset.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 function PasswordReset() {
   const { t } = useTranslation('password');
@@ -41,7 +42,8 @@ function PasswordReset() {
     return regex.test(pw);
   };
 
-  const handleSave = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleSave = async (e) => {
     setError('');
     setBanner(null);
 
@@ -62,15 +64,20 @@ function PasswordReset() {
 
     try {
       setLoading(true);
-      await axios.post(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/api/auth/reset-password?token=${token}`,
-        { newPassword: newPw },
-      );
+      // await axios.post(
+      //   `${
+      //     import.meta.env.VITE_BACKEND_URL
+      //   }/api/auth/reset-password?token=${token}`,
+      //   { newPassword: newPw },
+      // );
 
-      setBanner('success');
-      setTimeout(() => navigate('/login'), 2000);
+      // setBanner('success');
+      // setTimeout(() => navigate('/login'), 2000);
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       const msg =

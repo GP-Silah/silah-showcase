@@ -1,0 +1,20 @@
+{
+  "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+  "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+  "name": "SHAHAD SAAD",
+  "email": "shahadsaad001.dev@gmail.com",
+  "crn": "1234567899",
+  "businessName": "ShahadSaad001",
+  "role": "BUYER",
+  "city": "Riyadh",
+  "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+  "pfpUrl": "/mock-api/images/moon.jpg",
+  "categories": [
+    { "id": 10, "name": "Software & IT Solutions" },
+    { "id": 14, "name": "Technical & Repair Services" }
+  ],
+  "isEmailVerified": true,
+  "preferredLanguage": "EN",
+  "createdAt": "2025-10-25T13:07:44.792Z",
+  "updatedAt": "2025-12-30T10:53:23.731Z"
+}

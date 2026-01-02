@@ -3,6 +3,7 @@ import '../PasswordReset/Reset.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 const COUNTDOWN_SECONDS = 300;
 
@@ -39,7 +40,8 @@ function RequestPasswordReset() {
   const mm = String(Math.floor(secondsLeft / 60)).padStart(2, '0');
   const ss = String(secondsLeft % 60).padStart(2, '0');
 
-  const handleSend = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleSend = async (e) => {
     setError('');
     setSuccess('');
 
@@ -49,13 +51,18 @@ function RequestPasswordReset() {
     }
 
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/auth/request-password-reset`,
-        { email },
-      );
-      setSent(true);
-      setSecondsLeft(COUNTDOWN_SECONDS);
-      setSuccess(response.data.message || t('req.successMessage'));
+      // const response = await axios.post(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/auth/request-password-reset`,
+      //   { email },
+      // );
+      // setSent(true);
+      // setSecondsLeft(COUNTDOWN_SECONDS);
+      // setSuccess(response.data.message || t('req.successMessage'));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       const msg =

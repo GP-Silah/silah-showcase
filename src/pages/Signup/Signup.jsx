@@ -10,6 +10,8 @@ function Signup() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
+  const MOCK_AUTH_KEY = 'mock-authenticated';
+
   useEffect(() => {
     document.title = t('pageTitle.signup', { ns: 'common' });
   }, [t, i18n.language]);
@@ -139,11 +141,12 @@ function Signup() {
           preferredLanguage: i18n.language.toUpperCase(),
         };
 
-        const response = await axios.post(
-          `${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`,
-          payload,
-          { withCredentials: true }, // << important, used to store the token cookie
-        );
+        // const response = await axios.post(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`,
+        //   payload,
+        //   { withCredentials: true }, // << important, used to store the token cookie
+        // );
+        sessionStorage.setItem(MOCK_AUTH_KEY, '1');
 
         // ✅ Clear local storage after successful signup
         localStorage.removeItem('signupForm');
@@ -377,7 +380,9 @@ function Signup() {
 
         <div className="signup-image">
           <img
-            src={`/step${step}${i18n.language === 'ar' ? '-ar' : ''}.png`}
+            src={`/silah-showcase/step${step}${
+              i18n.language === 'ar' ? '-ar' : ''
+            }.png`}
             alt="Step"
           />
         </div>

@@ -3,6 +3,9 @@ import Select, { components } from 'react-select';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import { FaStar, FaRegStar } from 'react-icons/fa';
+import { getCategories } from '@/utils/mock-api/categoryApi';
+import { getFavoriteCategories } from '@/utils/mock-api/supplierApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 export default function SupplierSelectSubCategory({
   value,
@@ -20,19 +23,30 @@ export default function SupplierSelectSubCategory({
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // const [subRes, favRes] = await Promise.all([
+        //   axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/categories/sub`, {
+        //     params: { lang, usedFor },
+        //     withCredentials: true,
+        //   }),
+        //   axios.get(
+        //     `${
+        //       import.meta.env.VITE_BACKEND_URL
+        //     }/api/suppliers/me/favorite-categories`,
+        //     {
+        //       withCredentials: true,
+        //     },
+        //   ),
+        // ]);
         const [subRes, favRes] = await Promise.all([
-          axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/categories/sub`, {
-            params: { lang, usedFor },
-            withCredentials: true,
-          }),
           axios.get(
-            `${
-              import.meta.env.VITE_BACKEND_URL
-            }/api/suppliers/me/favorite-categories`,
-            {
-              withCredentials: true,
-            },
+            getCategories({
+              main: false,
+              lang,
+              sub: true,
+              type: usedFor.toLowerCase(), // e.g., 'product'
+            }),
           ),
+          axios.get(getFavoriteCategories()),
         ]);
 
         setFavorites(favRes.data || []);
@@ -48,16 +62,22 @@ export default function SupplierSelectSubCategory({
   }, [lang, usedFor]);
 
   // Toggle favorite
-  const toggleFavorite = async (categoryId) => {
+  const { t: tDemo } = useTranslation('demo');
+  const toggleFavorite = async (e, categoryId) => {
     try {
-      const res = await axios.patch(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/api/suppliers/me/favorite-categories`,
-        { categoryId },
-        { withCredentials: true },
-      );
-      setFavorites(res.data.favoriteCategories || []);
+      // const res = await axios.patch(
+      //   `${
+      //     import.meta.env.VITE_BACKEND_URL
+      //   }/api/suppliers/me/favorite-categories`,
+      //   { categoryId },
+      //   { withCredentials: true },
+      // );
+      // setFavorites(res.data.favoriteCategories || []);
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error('Error toggling favorite:', err);
     }
