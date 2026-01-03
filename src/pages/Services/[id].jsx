@@ -170,7 +170,7 @@ export default function ServiceDetails() {
   }, [service]);
 
   // Open Chat with Supplier
-  const openChat = async () => {
+  const openChat = async (e) => {
     if (!service?.supplier?.user?.userId) return;
     const partner = {
       userId: service.supplier.user.userId,

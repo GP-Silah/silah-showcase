@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import ItemCard from '@/components/ItemCard/ItemCard';
 import './SmartSearch.css';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
+import { mockSmartSearch } from '@/utils/mock-api/smartSearchApi';
 
 export default function Alternatives() {
   const { t, i18n } = useTranslation('smartSearch');
@@ -55,64 +57,107 @@ export default function Alternatives() {
 
       const base = import.meta.env.VITE_BACKEND_URL;
 
+      // try {
+      //   // Try product first
+      //   const res = await axios.get(
+      //     `${base}/api/products/${rawItemId}?lang=${lang}`,
+      //     {
+      //       withCredentials: true,
+      //     },
+      //   );
+      //   setOriginalQuery(res.data.name);
+      // } catch (e1) {
+      //   // Not a product → try service
+      //   try {
+      //     const res = await axios.get(
+      //       `${base}/api/services/${rawItemId}?lang=${lang}`,
+      //       {
+      //         withCredentials: true,
+      //       },
+      //     );
+      //     setOriginalQuery(res.data.name);
+      //   } catch (e2) {
+      //     // Invalid ID (404 or malformed) → show user-friendly error
+      //     setError(t('itemNotFound'));
+      //     setLoading(false);
+      //   }
+      // }
       try {
-        // Try product first
-        const res = await axios.get(
-          `${base}/api/products/${rawItemId}?lang=${lang}`,
-          {
-            withCredentials: true,
-          },
+        const [prodRes, servRes] = await Promise.all([
+          axios.get(getSearchResults({ type: 'products', lang, isAll: true })),
+          axios.get(getSearchResults({ type: 'services', lang, isAll: true })),
+        ]);
+
+        const allItems = [...(prodRes.data || []), ...(servRes.data || [])];
+
+        const found = allItems.find(
+          (i) => i.productId === rawItemId || i.serviceId === rawItemId,
         );
-        setOriginalQuery(res.data.name);
-      } catch (e1) {
-        // Not a product → try service
-        try {
-          const res = await axios.get(
-            `${base}/api/services/${rawItemId}?lang=${lang}`,
-            {
-              withCredentials: true,
-            },
-          );
-          setOriginalQuery(res.data.name);
-        } catch (e2) {
-          // Invalid ID (404 or malformed) → show user-friendly error
+
+        if (!found) {
           setError(t('itemNotFound'));
           setLoading(false);
+          return;
         }
+
+        setOriginalQuery(found.name);
+      } catch (err) {
+        console.error(err);
+        setError(t('itemNotFound'));
+        setLoading(false);
       }
     };
 
     // -----------------------------------------------------------------
     // 3. Call AI smart-search
     // -----------------------------------------------------------------
+    // const callSmartSearch = async () => {
+    //   setLoading(true);
+    //   setError(null);
+
+    //   try {
+    //     const base = import.meta.env.VITE_BACKEND_URL;
+    //     const body = rawItemId ? { itemId: rawItemId } : { text };
+    //     const res = await axios.post(
+    //       `${base}/api/smart-search?lang=${lang}`,
+    //       body,
+    //       {
+    //         withCredentials: true,
+    //       },
+    //     );
+
+    //     // Sort by rank (rank 1 = first)
+    //     const sorted = (res.data ?? [])
+    //       .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity))
+    //       .slice(0, 10); // max 10
+
+    //     setItems(sorted);
+    //   } catch (err) {
+    //     const msg =
+    //       err.response?.data?.error?.message ||
+    //       err.response?.data?.message ||
+    //       t('genericError');
+    //     setError(msg);
+    //     console.error(err);
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
     const callSmartSearch = async () => {
       setLoading(true);
       setError(null);
 
       try {
-        const base = import.meta.env.VITE_BACKEND_URL;
-        const body = rawItemId ? { itemId: rawItemId } : { text };
-        const res = await axios.post(
-          `${base}/api/smart-search?lang=${lang}`,
-          body,
-          {
-            withCredentials: true,
-          },
-        );
+        const res = await mockSmartSearch({
+          text,
+          itemId: rawItemId,
+          lang,
+        });
 
-        // Sort by rank (rank 1 = first)
-        const sorted = (res.data ?? [])
-          .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity))
-          .slice(0, 10); // max 10
-
-        setItems(sorted);
+        setItems(res);
       } catch (err) {
-        const msg =
-          err.response?.data?.error?.message ||
-          err.response?.data?.message ||
-          t('genericError');
-        setError(msg);
         console.error(err);
+        setError(t('genericError'));
       } finally {
         setLoading(false);
       }
