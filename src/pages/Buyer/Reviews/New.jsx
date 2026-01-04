@@ -4,6 +4,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Star } from 'lucide-react';
 import './WriteReview.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -26,6 +27,12 @@ export default function WriteReview() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
 
   // Set page title & dir
   useEffect(() => {
@@ -150,25 +157,31 @@ export default function WriteReview() {
   );
 
   // Submit
-  const handleSubmit = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleSubmit = async (e) => {
     if (submitting) return;
     setSubmitting(true);
     try {
-      const payload = {
-        supplierRating,
-        writtenReviewOfSupplier: supplierReview.trim() || undefined,
-        itemsReview: Object.entries(itemRatings)
-          .filter(([_, v]) => v.rating > 0)
-          .map(([itemId, v]) => ({
-            [data.type === 'order' ? 'orderItemId' : 'invoiceItemId']:
-              Number(itemId),
-            itemRating: v.rating,
-            writtenReviewOfItem: v.review.trim() || undefined,
-          })),
-      };
+      // const payload = {
+      //   supplierRating,
+      //   writtenReviewOfSupplier: supplierReview.trim() || undefined,
+      //   itemsReview: Object.entries(itemRatings)
+      //     .filter(([_, v]) => v.rating > 0)
+      //     .map(([itemId, v]) => ({
+      //       [data.type === 'order' ? 'orderItemId' : 'invoiceItemId']:
+      //         Number(itemId),
+      //       itemRating: v.rating,
+      //       writtenReviewOfItem: v.review.trim() || undefined,
+      //     })),
+      // };
 
-      await axios.post(`${API_BASE}/api/reviews/${id}`, payload, {
-        withCredentials: true,
+      // await axios.post(`${API_BASE}/api/reviews/${id}`, payload, {
+      //   withCredentials: true,
+      // });
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
       });
 
       localStorage.removeItem(REVIEW_DRAFT_KEY);
@@ -193,8 +206,10 @@ export default function WriteReview() {
   const items = data.items || [];
   const companyName = supplier.businessName || supplier.supplierName;
   const bannerUrl =
-    supplier.storeBannerFileUrl || 'https://via.placeholder.com/900x200';
-  const logoUrl = supplier.user.pfpUrl || 'https://via.placeholder.com/60';
+    normalizeUrl(supplier.storeBannerFileUrl) ||
+    'https://via.placeholder.com/900x200';
+  const logoUrl =
+    normalizeUrl(supplier.user.pfpUrl) || 'https://via.placeholder.com/60';
 
   return (
     <div className="wrb-page" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -247,8 +262,8 @@ export default function WriteReview() {
                 const product = item.product || item.relatedProduct;
                 const name = product?.name || item.name;
                 const image =
-                  product?.imagesFilesUrls?.[0] ||
-                  item.imagesFilesUrls?.[0] ||
+                  normalizeUrl(product?.imagesFilesUrls?.[0]) ||
+                  normalizeUrl(item.imagesFilesUrls?.[0]) ||
                   'https://via.placeholder.com/70';
 
                 return (

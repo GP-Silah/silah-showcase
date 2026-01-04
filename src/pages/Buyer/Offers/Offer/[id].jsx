@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { getRecievedOffers } from '@/utils/mock-api/offerApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 export default function OfferDetails() {
   const { t, i18n } = useTranslation('offerDetails');
@@ -24,6 +26,12 @@ export default function OfferDetails() {
     return `${day}/${month}/${year}`;
   };
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // Fetch offer
   useEffect(() => {
     const fetchOffer = async () => {
@@ -37,12 +45,24 @@ export default function OfferDetails() {
         setLoading(true);
         setError(null);
 
-        const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/offers/${offerId}`,
-          { withCredentials: true },
+        // const response = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/offers/${offerId}`,
+        //   { withCredentials: true },
+        // );
+
+        // setOffer(response.data);
+        const { data } = await axios.get(getRecievedOffers());
+
+        const foundOffer = data.find(
+          (o) => String(o.offerId || o._id) === String(offerId),
         );
 
-        setOffer(response.data);
+        if (!foundOffer) {
+          setError(t('offerNotFound'));
+          return;
+        }
+
+        setOffer(foundOffer);
       } catch (err) {
         const message =
           err.response?.data?.error?.message ||
@@ -59,30 +79,36 @@ export default function OfferDetails() {
   }, [offerId, t]);
 
   // Accept / Decline
-  const handleStatusChange = async (status) => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleStatusChange = async (e, status) => {
     if (updating || offer?.status !== 'PENDING') return;
 
     setUpdating(true);
 
     try {
-      await axios.patch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/offers/${offerId}`,
-        null,
-        {
-          params: { status },
-          withCredentials: true,
-        },
-      );
+      // await axios.patch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/offers/${offerId}`,
+      //   null,
+      //   {
+      //     params: { status },
+      //     withCredentials: true,
+      //   },
+      // );
 
-      // Update local state
-      setOffer((prev) => ({ ...prev, status }));
+      // // Update local state
+      // setOffer((prev) => ({ ...prev, status }));
 
-      toast.success(
-        status === 'ACCEPTED' ? t('offerAccepted') : t('offerDeclined'),
-      );
+      // toast.success(
+      //   status === 'ACCEPTED' ? t('offerAccepted') : t('offerDeclined'),
+      // );
 
-      // Navigate back after 1.5s
-      setTimeout(() => navigate(-1), 1500);
+      // // Navigate back after 1.5s
+      // setTimeout(() => navigate(-1), 1500);
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const message =
         err.response?.data?.error?.message ||
@@ -150,7 +176,7 @@ export default function OfferDetails() {
               {/* Optional logo */}
               {supplier.user?.pfpUrl ? (
                 <img
-                  src={supplier.user.pfpUrl}
+                  src={normalizeUrl(supplier.user.pfpUrl)}
                   alt={supplier.businessName}
                   className="supplier-avatar"
                 />
