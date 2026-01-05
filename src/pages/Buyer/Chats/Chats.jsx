@@ -5,6 +5,7 @@ import { FaEnvelope, FaSearch, FaPaperPlane } from 'react-icons/fa';
 import axios from 'axios';
 import { socket } from '../../../utils/socket';
 import styles from './Chats.module.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
