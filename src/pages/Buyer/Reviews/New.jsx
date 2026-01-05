@@ -5,6 +5,9 @@ import axios from 'axios';
 import { Star } from 'lucide-react';
 import './WriteReview.css';
 import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getOrders, getInvoices } from '@/utils/mock-api/buyerApi';
+
+//! Images (Banner, Logo, Product/Service First Image) won't show up as the json files doesn't have the "pfpUrl" and other image related feilds, and I am too lazy to actually add them sorry.. it would take a lot of time and I am already late on submitting this..
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -48,40 +51,91 @@ export default function WriteReview() {
       return;
     }
 
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        setError(null);
+    // const fetchData = async () => {
+    //   try {
+    //     setLoading(true);
+    //     setError(null);
 
-        let res;
-        try {
-          res = await axios.get(`${API_BASE}/api/invoices/me/${id}`, {
-            withCredentials: true,
-          });
-          if (res.data.type === 'PRE_INVOICE') {
+    //     let res;
+    //     try {
+    //       res = await axios.get(`${API_BASE}/api/invoices/me/${id}`, {
+    //         withCredentials: true,
+    //       });
+    //       if (res.data.type === 'PRE_INVOICE') {
+    //         setError(t('errors.preInvoiceNotAllowed'));
+    //         setLoading(false);
+    //         return;
+    //       }
+    //       setData({ type: 'invoice', ...res.data });
+    //     } catch (err) {
+    //       res = await axios.get(`${API_BASE}/api/orders/${id}`, {
+    //         withCredentials: true,
+    //       });
+    //       setData({ type: 'order', ...res.data });
+    //     }
+
+    //     // Initialize item ratings to 5
+    //     const items = res.data.items || [];
+    //     const initial = {};
+    //     items.forEach((item) => {
+    //       const itemId = item.orderItemId || item.invoiceItemId;
+    //       initial[itemId] = { rating: 5, review: '' }; // DEFAULT 5
+    //     });
+    //     setItemRatings(initial);
+    //   } catch (err) {
+    //     const msg = err.response?.data?.error?.message || err.message;
+    //     setError(msg);
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        // 1️⃣ Try invoices first
+        const { data: invoices } = await axios.get(getInvoices());
+        const invoice = invoices.find(
+          (inv) => inv.invoiceId === id || inv.preInvoiceId === id,
+        );
+
+        if (invoice) {
+          if (invoice.type === 'PRE_INVOICE') {
             setError(t('errors.preInvoiceNotAllowed'));
-            setLoading(false);
             return;
           }
-          setData({ type: 'invoice', ...res.data });
-        } catch (err) {
-          res = await axios.get(`${API_BASE}/api/orders/${id}`, {
-            withCredentials: true,
+
+          setData({ type: 'invoice', ...invoice });
+
+          const initial = {};
+          (invoice.items || []).forEach((item) => {
+            const itemId = item.invoiceItemId;
+            initial[itemId] = { rating: 5, review: '' };
           });
-          setData({ type: 'order', ...res.data });
+          setItemRatings(initial);
+          return;
         }
 
-        // Initialize item ratings to 5
-        const items = res.data.items || [];
+        // 2️⃣ Fallback to orders
+        const { data: orders } = await axios.get(getOrders());
+        const order = orders.find((o) => o.orderId === id);
+
+        if (!order) {
+          setError(t('errors.notFound'));
+          return;
+        }
+
+        setData({ type: 'order', ...order });
+
         const initial = {};
-        items.forEach((item) => {
-          const itemId = item.orderItemId || item.invoiceItemId;
-          initial[itemId] = { rating: 5, review: '' }; // DEFAULT 5
+        (order.items || []).forEach((item) => {
+          const itemId = item.orderItemId;
+          initial[itemId] = { rating: 5, review: '' };
         });
         setItemRatings(initial);
       } catch (err) {
-        const msg = err.response?.data?.error?.message || err.message;
-        setError(msg);
+        setError(t('errors.notFound'));
       } finally {
         setLoading(false);
       }

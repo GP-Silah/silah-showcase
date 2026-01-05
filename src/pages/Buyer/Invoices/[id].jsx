@@ -12,6 +12,8 @@ import {
   FiInfo,
 } from 'react-icons/fi';
 import styles from '../../Supplier/Invoices/InvoiceDetails.module.css';
+import { getInvoices } from '@/utils/mock-api/buyerApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL;
 
@@ -35,6 +37,12 @@ const InvoiceDetails = () => {
   const [hasReviewed, setHasReviewed] = useState(null); // null = checking, false = can review
   const [hasDraft, setHasDraft] = useState(false);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // -------------------------------------------------
   // FETCH INVOICE
   // -------------------------------------------------
@@ -49,20 +57,38 @@ const InvoiceDetails = () => {
       setLoading(true);
       setError(null);
       try {
-        const res = await axios.get(`${API_BASE}/api/invoices/me/${id}`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        });
-        setInvoice(res.data);
+        // const res = await axios.get(`${API_BASE}/api/invoices/me/${id}`, {
+        //   withCredentials: true,
+        //   headers: { 'accept-language': i18n.language },
+        // });
+        // setInvoice(res.data);
+        const { data } = await axios.get(getInvoices());
+        const invoiceData = data.find(
+          (invoice) => invoice.invoiceId === id || invoice.preInvoiceId === id,
+        );
+        setInvoice(invoiceData);
 
         // === NEW: Check if already reviewed (only if FULLY_PAID)
-        if (res.data.status === 'FULLY_PAID') {
+        // if (res.data.status === 'FULLY_PAID') {
+        //   try {
+        //     const reviewRes = await axios.get(
+        //       `${API_BASE}/api/reviews/has-reviewed/${id}`,
+        //       { withCredentials: true },
+        //     );
+        //     setHasReviewed(reviewRes.data.hasReviewed); // true or false
+        //   } catch (err) {
+        //     // 404 → not reviewed
+        //     // 401/403 → ignore, assume false
+        //     setHasReviewed(false);
+        //   }
+        // }
+        if (invoiceData.status === 'FULLY_PAID') {
           try {
-            const reviewRes = await axios.get(
-              `${API_BASE}/api/reviews/has-reviewed/${id}`,
-              { withCredentials: true },
-            );
-            setHasReviewed(reviewRes.data.hasReviewed); // true or false
+            // const reviewRes = await axios.get(
+            //   `${API_BASE}/api/reviews/has-reviewed/${id}`,
+            //   { withCredentials: true },
+            // );
+            setHasReviewed(false);
           } catch (err) {
             // 404 → not reviewed
             // 401/403 → ignore, assume false
@@ -71,7 +97,12 @@ const InvoiceDetails = () => {
         }
 
         // === CHECK FOR DRAFT ===
-        if (res.data.status === 'FULLY_PAID') {
+        // if (res.data.status === 'FULLY_PAID') {
+        //   const draftKey = `review_draft_${id}`;
+        //   const draft = localStorage.getItem(draftKey);
+        //   setHasDraft(!!draft);
+        // }
+        if (invoiceData.status === 'FULLY_PAID') {
           const draftKey = `review_draft_${id}`;
           const draft = localStorage.getItem(draftKey);
           setHasDraft(!!draft);
@@ -79,7 +110,6 @@ const InvoiceDetails = () => {
       } catch (err) {
         const msg = err.response?.data?.error?.message || t('errors.notFound');
         setError(msg);
-        toast.error(msg);
       } finally {
         setLoading(false);
       }
@@ -99,7 +129,8 @@ const InvoiceDetails = () => {
   // -------------------------------------------------
   // UPDATE STATUS (ACCEPT / REJECT)
   // -------------------------------------------------
-  const updateStatus = async (newStatus) => {
+  const { t: tDemo } = useTranslation('demo');
+  const updateStatus = async (e, newStatus) => {
     if (
       updating ||
       !invoice ||
@@ -110,13 +141,18 @@ const InvoiceDetails = () => {
 
     setUpdating(true);
     try {
-      await axios.patch(
-        `${API_BASE}/api/invoices/me/${id}/status?status=${newStatus}`,
-        {}, // empty body
-        { withCredentials: true },
-      );
-      setInvoice((prev) => ({ ...prev, status: newStatus }));
-      toast.success(t(`statusUpdated.${newStatus}`));
+      // await axios.patch(
+      //   `${API_BASE}/api/invoices/me/${id}/status?status=${newStatus}`,
+      //   {}, // empty body
+      //   { withCredentials: true },
+      // );
+      // setInvoice((prev) => ({ ...prev, status: newStatus }));
+      // toast.success(t(`statusUpdated.${newStatus}`));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg =
         err.response?.data?.error?.message || t('errors.statusUpdateFailed');
@@ -129,33 +165,38 @@ const InvoiceDetails = () => {
   // -------------------------------------------------
   // PAY INVOICE (PARTIAL OR FULL)
   // -------------------------------------------------
-  const payInvoice = async () => {
+  const payInvoice = async (e) => {
     if (paying || !invoice) return;
 
     setPaying(true);
     try {
-      const redirectUrl = `${window.location.origin}/buyer/payment/callback?type=invoice&invoiceId=${id}`;
+      // const redirectUrl = `${window.location.origin}/buyer/payment/callback?type=invoice&invoiceId=${id}`;
 
-      const res = await axios.post(
-        `${API_BASE}/api/invoices/me/${id}/pay`,
-        { redirectUrl },
-        { withCredentials: true },
-      );
+      // const res = await axios.post(
+      //   `${API_BASE}/api/invoices/me/${id}/pay`,
+      //   { redirectUrl },
+      //   { withCredentials: true },
+      // );
 
-      const { redirectUrl: tapRedirectUrl, tapChargeId } = res.data;
+      // const { redirectUrl: tapRedirectUrl, tapChargeId } = res.data;
 
-      if (tapRedirectUrl) {
-        // 3-DS required → go to Tap
-        window.location.href = tapRedirectUrl;
-      } else {
-        // Instant success (rare, but possible)
-        toast.success(t('success.invoicePaid'));
-        // For FULL payment we set a flag so the button disappears
-        setInvoice((prev) => ({
-          ...prev,
-          tapChargeIdForUpfront: tapChargeId, // reuse field for FULL as well
-        }));
-      }
+      // if (tapRedirectUrl) {
+      //   // 3-DS required → go to Tap
+      //   window.location.href = tapRedirectUrl;
+      // } else {
+      //   // Instant success (rare, but possible)
+      //   toast.success(t('success.invoicePaid'));
+      //   // For FULL payment we set a flag so the button disappears
+      //   setInvoice((prev) => ({
+      //     ...prev,
+      //     tapChargeIdForUpfront: tapChargeId, // reuse field for FULL as well
+      //   }));
+      // }
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg =
         err.response?.data?.error?.message || t('errors.paymentFailed');
@@ -297,7 +338,11 @@ const InvoiceDetails = () => {
           <label>{t('totalAmount')}</label>
           <div className={`${styles.readonlyField} ${styles.highlight}`}>
             <FiDollarSign /> {invoice.amount.toFixed(2)}{' '}
-            <img src="/riyal.png" alt="SAR" className={styles.sar} />
+            <img
+              src="/silah-showcase/riyal.png"
+              alt="SAR"
+              className={styles.sar}
+            />
           </div>
         </div>
       </div>
@@ -341,7 +386,7 @@ const InvoiceDetails = () => {
             <div className={styles.linkedItem}>
               <img
                 src={
-                  invoice.product.imagesFilesUrls?.[0] ||
+                  normalizeUrl(invoice.product.imagesFilesUrls?.[0]) ||
                   '/images/placeholder.png'
                 }
                 alt={invoice.product.name}
@@ -350,7 +395,11 @@ const InvoiceDetails = () => {
                 <strong>{invoice.product.name}</strong>
                 <p className={styles.price}>
                   {invoice.product.price.toFixed(2)}
-                  <img src="/riyal.png" alt="SAR" className={styles.sar} />
+                  <img
+                    src="/silah-showcase/riyal.png"
+                    alt="SAR"
+                    className={styles.sar}
+                  />
                 </p>
               </div>
             </div>
@@ -377,7 +426,11 @@ const InvoiceDetails = () => {
               </p>
               <p>
                 {t('proposed')}: {invoice.offer.proposedAmount.toFixed(2)}{' '}
-                <img src="/riyal.png" alt="SAR" className={styles.sar} />
+                <img
+                  src="/silah-showcase/riyal.png"
+                  alt="SAR"
+                  className={styles.sar}
+                />
               </p>
               {invoice.offer.offerDetails && (
                 <p>
@@ -454,8 +507,9 @@ const InvoiceDetails = () => {
                         <div className={styles.linkedTooltip}>
                           <img
                             src={
-                              item.relatedProduct.imagesFilesUrls?.[0] ||
-                              '/images/placeholder.png'
+                              normalizeUrl(
+                                item.relatedProduct.imagesFilesUrls?.[0],
+                              ) || '/images/placeholder.png'
                             }
                             alt=""
                           />
@@ -468,8 +522,9 @@ const InvoiceDetails = () => {
                         <div className={styles.linkedTooltip}>
                           <img
                             src={
-                              item.relatedService.imagesFilesUrls?.[0] ||
-                              '/images/placeholder.png'
+                              normalizeUrl(
+                                item.relatedService.imagesFilesUrls?.[0],
+                              ) || '/images/placeholder.png'
                             }
                             alt=""
                           />
@@ -487,7 +542,11 @@ const InvoiceDetails = () => {
           <div className={styles.totalSummary}>
             <strong>
               {t('total')}: {invoice.amount.toFixed(2)}{' '}
-              <img src="/riyal.png" alt="SAR" className={styles.sar} />
+              <img
+                src="/silah-showcase/riyal.png"
+                alt="SAR"
+                className={styles.sar}
+              />
             </strong>
           </div>
         </div>
@@ -508,7 +567,11 @@ const InvoiceDetails = () => {
             <span>{t('upfrontAmount')}</span>
             <strong>
               {invoice.upfrontAmount?.toFixed(2) || '0.00'}{' '}
-              <img src="/riyal.png" alt="SAR" className={styles.sar} />
+              <img
+                src="/silah-showcase/riyal.png"
+                alt="SAR"
+                className={styles.sar}
+              />
             </strong>
           </div>
           {upfrontPaid && (
@@ -521,7 +584,11 @@ const InvoiceDetails = () => {
             <span>{t('uponDeliveryAmount')}</span>
             <strong>
               {(invoice.amount - (invoice.upfrontAmount || 0)).toFixed(2)}{' '}
-              <img src="/riyal.png" alt="SAR" className={styles.sar} />
+              <img
+                src="/silah-showcase/riyal.png"
+                alt="SAR"
+                className={styles.sar}
+              />
             </strong>
           </div>
         </div>
@@ -564,7 +631,12 @@ const InvoiceDetails = () => {
               <>
                 {t(upfrontPaid && hasRemaining ? 'payRemaining' : 'payNow')} (
                 {amountToPay.toFixed(2)}{' '}
-                <img src="/riyal.png" alt="SAR" className={styles.sar} />)
+                <img
+                  src="/silah-showcase/riyal.png"
+                  alt="SAR"
+                  className={styles.sar}
+                />
+                )
               </>
             )}
           </button>
