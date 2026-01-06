@@ -75,8 +75,12 @@ export default function ChatDetail() {
 
   // === GET CURRENT USER ===
   useEffect(() => {
+    // axios
+    //   .get(`${API_BASE}/api/users/me`, { withCredentials: true })
+    //   .then((res) => setCurrentUserId(res.data.userId))
+    //   .catch(() => navigate('/buyer/chats'));
     axios
-      .get(`${API_BASE}/api/users/me`, { withCredentials: true })
+      .get(getUser())
       .then((res) => setCurrentUserId(res.data.userId))
       .catch(() => navigate('/buyer/chats'));
   }, [navigate]);
@@ -84,7 +88,10 @@ export default function ChatDetail() {
   // === LOAD MESSAGES ===
   const loadMessages = async (id) => {
     try {
-      const res = await axios.get(`${API_BASE}/api/chats/me/${id}/messages`, {
+      // const res = await axios.get(`${API_BASE}/api/chats/me/${id}/messages`, {
+      //   withCredentials: true,
+      // });
+      const res = await axios.get(getMessages(), {
         withCredentials: true,
       });
       return res.data.map((m) => ({
@@ -104,10 +111,12 @@ export default function ChatDetail() {
   // === LOAD CHAT INFO ===
   const loadChatInfo = async (id) => {
     try {
-      const res = await axios.get(`${API_BASE}/api/chats/me/${id}`, {
-        withCredentials: true,
-      });
-      const chat = res.data;
+      // const res = await axios.get(`${API_BASE}/api/chats/me/${id}`, {
+      //   withCredentials: true,
+      // });
+      // const chat = res.data;
+      const res = await axios.get(getChats());
+      const chat = res.data.map((c) => c.chatId === chatId);
       setPartner({
         userId: chat.otherUser.userId,
         name: chat.otherUser.businessName || chat.otherUser.name,
@@ -133,23 +142,21 @@ export default function ChatDetail() {
     if (unreadMessageIds.length === 0) return;
 
     try {
-      const res = await axios.patch(
-        `${API_BASE}/api/chats/me/${chatId}/read`,
-        { messageIds: unreadMessageIds },
-        { withCredentials: true },
-      );
-
-      console.log(
-        `✅ Marked ${res.data.updatedCount} message(s) as read`,
-        res.data.message,
-      );
-
-      // Optimistically update UI
-      setMessages((prev) =>
-        prev.map((m) =>
-          unreadMessageIds.includes(m.messageId) ? { ...m, isRead: true } : m,
-        ),
-      );
+      // const res = await axios.patch(
+      //   `${API_BASE}/api/chats/me/${chatId}/read`,
+      //   { messageIds: unreadMessageIds },
+      //   { withCredentials: true },
+      // );
+      // console.log(
+      //   `✅ Marked ${res.data.updatedCount} message(s) as read`,
+      //   res.data.message,
+      // );
+      // // Optimistically update UI
+      // setMessages((prev) =>
+      //   prev.map((m) =>
+      //     unreadMessageIds.includes(m.messageId) ? { ...m, isRead: true } : m,
+      //   ),
+      // );
     } catch (err) {
       console.error('❌ Failed to mark messages as read', err);
     }
