@@ -16,7 +16,8 @@ import axios from 'axios';
 // import { socket } from '../../../utils/socket';
 import './Chat.css';
 import { demoAction } from '@/components/DemoAction/DemoAction';
-import { getChats } from '@/utils/mock-api/chatApi';
+import { getChats, getMessages } from '@/utils/mock-api/chatApi';
+import { getUser } from '@/utils/mock-api/userApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -40,6 +41,12 @@ export default function ChatDetail() {
 
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
 
   // Focus input on mount
   useEffect(() => {
@@ -158,7 +165,7 @@ export default function ChatDetail() {
     }
 
     setCurrentChatId(chatId);
-    socket.emit('join_chat', chatId);
+    // socket.emit('join_chat', chatId);
 
     Promise.all([loadMessages(chatId), loadChatInfo(chatId)])
       .then(([msgs]) => {
@@ -167,7 +174,7 @@ export default function ChatDetail() {
       .finally(() => setLoading(false));
 
     return () => {
-      if (currentChatId) socket.emit('leave_chat', currentChatId);
+      // if (currentChatId) socket.emit('leave_chat', currentChatId);
     };
   }, [chatId, isNewChat, receiverId, navigate, partnerFromState]);
 
@@ -247,126 +254,137 @@ export default function ChatDetail() {
       }
     };
 
-    socket.on('new_message', handleNewMessage);
+    // socket.on('new_message', handleNewMessage);
     return () => {
-      socket.off('new_message', handleNewMessage);
+      // socket.off('new_message', handleNewMessage);
       clearTimeout(window._readTimeout);
     };
   }, [currentUserId, currentChatId]);
 
   // === SEND TEXT MESSAGE ===
-  const sendMessage = () => {
+  const { t: tDemo } = useTranslation('demo');
+  const sendMessage = async (e) => {
     if (!input.trim() || !currentUserId) return;
 
-    const tempId = `temp-${Date.now()}`;
-    const payload = { text: input };
-    if (isNewChat) {
-      payload.receiverId = receiverId;
-    } else {
-      payload.chatId = currentChatId;
-      payload.receiverId = partner?.userId;
-    }
+    // const tempId = `temp-${Date.now()}`;
+    // const payload = { text: input };
+    // if (isNewChat) {
+    //   payload.receiverId = receiverId;
+    // } else {
+    //   payload.chatId = currentChatId;
+    //   payload.receiverId = partner?.userId;
+    // }
 
-    // 1. Optimistic UI
-    setMessages((prev) => [
-      ...prev,
-      {
-        messageId: tempId,
-        text: input,
-        senderId: currentUserId,
-        createdAt: new Date().toISOString(),
-        imageUrl: null,
-        isRead: false,
-      },
-    ]);
+    // // 1. Optimistic UI
+    // setMessages((prev) => [
+    //   ...prev,
+    //   {
+    //     messageId: tempId,
+    //     text: input,
+    //     senderId: currentUserId,
+    //     createdAt: new Date().toISOString(),
+    //     imageUrl: null,
+    //     isRead: false,
+    //   },
+    // ]);
 
-    // 2. CLEAR INPUT + DRAFT IMMEDIATELY
-    setInput('');
-    const draftKey = isNewChat
-      ? getDraftKey(`new_${receiverId}`)
-      : getDraftKey(currentChatId);
-    localStorage.removeItem(draftKey);
+    // // 2. CLEAR INPUT + DRAFT IMMEDIATELY
+    // setInput('');
+    // const draftKey = isNewChat
+    //   ? getDraftKey(`new_${receiverId}`)
+    //   : getDraftKey(currentChatId);
+    // localStorage.removeItem(draftKey);
 
-    // 3. Send via socket
-    socket.emit('send_message', payload, (ack) => {
-      console.log('ACK received:', ack);
+    // // 3. Send via socket
+    // socket.emit('send_message', payload, (ack) => {
+    //   console.log('ACK received:', ack);
 
-      if (!ack?.message) return;
+    //   if (!ack?.message) return;
 
-      const backendMsg = ack.message;
-      const newChatIdFromServer = backendMsg.chatId;
+    //   const backendMsg = ack.message;
+    //   const newChatIdFromServer = backendMsg.chatId;
 
-      // Replace temp message
-      setMessages((prev) => {
-        const idx = prev.findIndex((m) => m.messageId === tempId);
-        if (idx === -1) return prev;
-        const updated = [...prev];
-        updated[idx] = {
-          messageId: backendMsg.messageId,
-          text: backendMsg.text,
-          senderId: currentUserId,
-          createdAt: backendMsg.createdAt,
-          imageUrl: backendMsg.imageUrl || null,
-          isRead: true,
-        };
-        return updated;
-      });
+    //   // Replace temp message
+    //   setMessages((prev) => {
+    //     const idx = prev.findIndex((m) => m.messageId === tempId);
+    //     if (idx === -1) return prev;
+    //     const updated = [...prev];
+    //     updated[idx] = {
+    //       messageId: backendMsg.messageId,
+    //       text: backendMsg.text,
+    //       senderId: currentUserId,
+    //       createdAt: backendMsg.createdAt,
+    //       imageUrl: backendMsg.imageUrl || null,
+    //       isRead: true,
+    //     };
+    //     return updated;
+    //   });
 
-      // Handle new chat → real chat
-      if (isNewChat && newChatIdFromServer) {
-        setCurrentChatId(newChatIdFromServer);
-        navigate(`/buyer/chats/${newChatIdFromServer}`, { replace: true });
+    //   // Handle new chat → real chat
+    //   if (isNewChat && newChatIdFromServer) {
+    //     setCurrentChatId(newChatIdFromServer);
+    //     navigate(`/buyer/chats/${newChatIdFromServer}`, { replace: true });
 
-        setTimeout(
-          () => markReceivedMessagesAsReadBulk(newChatIdFromServer),
-          500,
-        );
-      }
+    //     setTimeout(
+    //       () => markReceivedMessagesAsReadBulk(newChatIdFromServer),
+    //       500,
+    //     );
+    //   }
+    // });
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
     });
   };
 
   // === SEND IMAGE ===
-  const sendImage = async (file) => {
+  const sendImage = async (e, file) => {
     if (!file || isNewChat || !currentChatId) {
       alert('Send a text message first.');
       return;
     }
-    if (file.size > 5 * 1024 * 1024) {
-      alert('Max 5MB.');
-      return;
-    }
+    // if (file.size > 5 * 1024 * 1024) {
+    //   alert('Max 5MB.');
+    //   return;
+    // }
 
-    const tempId = `temp-${Date.now()}`;
-    const previewUrl = URL.createObjectURL(file);
+    // const tempId = `temp-${Date.now()}`;
+    // const previewUrl = URL.createObjectURL(file);
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        messageId: tempId,
-        text: null,
-        senderId: currentUserId,
-        createdAt: new Date().toISOString(),
-        imageUrl: previewUrl,
-        isRead: true,
-      },
-    ]);
+    // setMessages((prev) => [
+    //   ...prev,
+    //   {
+    //     messageId: tempId,
+    //     text: null,
+    //     senderId: currentUserId,
+    //     createdAt: new Date().toISOString(),
+    //     imageUrl: previewUrl,
+    //     isRead: true,
+    //   },
+    // ]);
 
-    const formData = new FormData();
-    formData.append('file', file);
+    // const formData = new FormData();
+    // formData.append('file', file);
 
-    try {
-      await axios.post(
-        `${API_BASE}/api/chats/me/${currentChatId}/upload`,
-        formData,
-        {
-          headers: { 'Content-Type': 'multipart/form-data' },
-          withCredentials: true,
-        },
-      );
-    } catch (err) {
-      alert('Failed to send image.');
-      setMessages((prev) => prev.filter((m) => m.messageId !== tempId));
-    }
+    // try {
+    //   await axios.post(
+    //     `${API_BASE}/api/chats/me/${currentChatId}/upload`,
+    //     formData,
+    //     {
+    //       headers: { 'Content-Type': 'multipart/form-data' },
+    //       withCredentials: true,
+    //     },
+    //   );
+    // } catch (err) {
+    //   alert('Failed to send image.');
+    //   setMessages((prev) => prev.filter((m) => m.messageId !== tempId));
+    // }
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   };
 
   // === LOADING STATE ===
@@ -381,7 +399,7 @@ export default function ChatDetail() {
         <div className="chat-header-left">
           <div className="partner-avatar">
             {partner?.avatar ? (
-              <img src={partner.avatar} alt={partner.name} />
+              <img src={normalizeUrl(partner.avatar)} alt={partner.name} />
             ) : (
               <FaEnvelope />
             )}
@@ -411,7 +429,11 @@ export default function ChatDetail() {
             >
               {msg.text && <div className="message-text">{msg.text}</div>}
               {msg.imageUrl && (
-                <img src={msg.imageUrl} alt="sent" className="message-image" />
+                <img
+                  src={normalizeUrl(msg.imageUrl)}
+                  alt="sent"
+                  className="message-image"
+                />
               )}
               <div className="message-time">
                 {new Date(msg.createdAt).toLocaleTimeString([], {

@@ -5,7 +5,6 @@ import { FaEnvelope, FaSearch, FaPaperPlane } from 'react-icons/fa';
 import axios from 'axios';
 // import { socket } from '../../../utils/socket';
 import styles from './Chats.module.css';
-import { demoAction } from '@/components/DemoAction/DemoAction';
 import { getChats } from '@/utils/mock-api/chatApi';
 import { getSearchResults } from '@/utils/mock-api/searchApi';
 
@@ -249,24 +248,13 @@ export default function ChatsSupplier() {
     return () => document.removeEventListener('click', handler);
   }, []);
 
-  const { t: tDemo } = useTranslation('demo');
-  const openChat = async (e, chatId) => {
-    // navigate(`/buyer/chats/${chatId}`);
-    await demoAction({
-      e,
-      title: tDemo('action.title'),
-      text: tDemo('action.description'),
-    });
+  const openChat = async (chatId) => {
+    navigate(`/buyer/chats/${chatId}`);
   };
 
-  const startNewChat = async (e, userId, partnerData) => {
-    // navigate(`/buyer/chats/new?with=${userId}`, {
-    //   state: { partner: partnerData },
-    // });
-    await demoAction({
-      e,
-      title: tDemo('action.title'),
-      text: tDemo('action.description'),
+  const startNewChat = async (userId, partnerData) => {
+    navigate(`/buyer/chats/new?with=${userId}`, {
+      state: { partner: partnerData },
     });
   };
 
