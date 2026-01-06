@@ -13,8 +13,10 @@ import {
   FaEnvelope,
 } from 'react-icons/fa';
 import axios from 'axios';
-import { socket } from '../../../utils/socket';
+// import { socket } from '../../../utils/socket';
 import './Chat.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getChats } from '@/utils/mock-api/chatApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
