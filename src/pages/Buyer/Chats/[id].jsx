@@ -116,7 +116,7 @@ export default function ChatDetail() {
       // });
       // const chat = res.data;
       const res = await axios.get(getChats());
-      const chat = res.data.map((c) => c.chatId === chatId);
+      const chat = res.data.find((c) => c.chatId === chatId);
       setPartner({
         userId: chat.otherUser.userId,
         name: chat.otherUser.businessName || chat.otherUser.name,
@@ -347,10 +347,10 @@ export default function ChatDetail() {
 
   // === SEND IMAGE ===
   const sendImage = async (e, file) => {
-    if (!file || isNewChat || !currentChatId) {
-      alert('Send a text message first.');
-      return;
-    }
+    // if (!file || isNewChat || !currentChatId) {
+    //   alert('Send a text message first.');
+    //   return;
+    // }
     // if (file.size > 5 * 1024 * 1024) {
     //   alert('Max 5MB.');
     //   return;
