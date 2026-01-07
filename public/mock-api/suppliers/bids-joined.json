@@ -1,0 +1,231 @@
+[
+  {
+    "bidId": "50af2b66-7a9d-46b0-bb44-1f6880aeae93",
+    "bidName": "توفير ادوية",
+    "mainActivity": "صحي",
+    "submissionDeadline": "2025-11-27T00:00:00.000Z",
+    "expectedResponseTime": "TWO_WEEKS",
+    "status": "CLOSED",
+    "buyer": {
+      "buyerId": "b6913faf-3fdd-4206-b49a-efedd70373b3",
+      "user": {
+        "userId": "d3402aaa-1c6e-45f3-bae8-ba937548cb9c",
+        "tapCustomerId": "cus_TS04A1620251502u8BJ2011330",
+        "name": "naif",
+        "email": "naifalotaibi883399@gmail.com",
+        "crn": "9381983918",
+        "businessName": "naifshabbab",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "defaultavatarsd3402aaa1c6e45f3bae8ba937548cb9c-35ee2c2a-b313-406d-a2d1-739d4b4d175e.png",
+        "categories": [{ "id": 4, "name": "Food, Beverages & Health" }],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-11-20T15:02:16.478Z",
+        "updatedAt": "2025-11-20T15:43:37.322Z"
+      },
+      "card": null
+    },
+    "createdAt": "2025-11-20T15:19:33.940Z"
+  },
+  {
+    "bidId": "4517944b-30d5-4362-ac80-3f25cfc1bff2",
+    "bidName": "Test Decline",
+    "mainActivity": "I will decline you, sorry!",
+    "submissionDeadline": "2025-11-18T00:00:00.000Z",
+    "expectedResponseTime": "ONE_WEEK",
+    "status": "CLOSED",
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "createdAt": "2025-11-18T01:13:56.901Z"
+  },
+  {
+    "bidId": "90cf9beb-305b-4cdf-a68d-3621d7604119",
+    "bidName": "Test Accepted",
+    "mainActivity": "I will accept  you!",
+    "submissionDeadline": "2025-11-18T00:00:00.000Z",
+    "expectedResponseTime": "ONE_WEEK",
+    "status": "CLOSED",
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "createdAt": "2025-11-18T01:13:25.905Z"
+  },
+  {
+    "bidId": "43a0c6fa-1586-46e7-9117-482c00829df2",
+    "bidName": "Test No Responed",
+    "mainActivity": "Submit 1",
+    "submissionDeadline": "2025-11-18T00:00:00.000Z",
+    "expectedResponseTime": "ONE_WEEK",
+    "status": "CLOSED",
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "createdAt": "2025-11-09T00:00:00.000Z"
+  },
+  {
+    "bidId": "f19955a9-4de1-485e-a5b6-09d06b7e6c5e",
+    "bidName": "توفير موارد بناء",
+    "mainActivity": "نحتاج 100,000 بلاط أبيض مساحة 24سم في 12سم",
+    "submissionDeadline": "2025-11-09T00:00:00.000Z",
+    "expectedResponseTime": "ONE_WEEK",
+    "status": "CLOSED",
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "createdAt": "2025-11-09T00:00:00.000Z"
+  },
+  {
+    "bidId": "f2d0a7ee-2cd0-415d-89aa-5c912e90c8d8",
+    "bidName": "Test ",
+    "mainActivity": "testing the feature",
+    "submissionDeadline": "2025-11-01T00:00:00.000Z",
+    "expectedResponseTime": "ONE_WEEK",
+    "status": "CLOSED",
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "createdAt": "2025-10-27T21:54:20.648Z"
+  }
+]

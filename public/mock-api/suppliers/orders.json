@@ -1,0 +1,3469 @@
+[
+  {
+    "orderId": "d5f4c027-8182-471b-a384-561d6a0f5454",
+    "tapChargeId": "chg_TS04A5720250230p3PO2411707",
+    "buyerId": "edbda00b-f056-42ca-a39f-79f3e6c2d2e4",
+    "cartId": "6b066188-70c0-49aa-a0f4-c37d6cf05689",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 118,
+    "status": "PENDING",
+    "createdAt": "2025-11-24T02:31:15.290Z",
+    "items": [
+      {
+        "orderItemId": 42,
+        "orderId": "d5f4c027-8182-471b-a384-561d6a0f5454",
+        "product": {
+          "productId": "c9a58d4a-81f4-4a44-a515-565c29688946",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Bread",
+          "description": "Freshly Baked",
+          "price": 4,
+          "stock": 150,
+          "category": { "id": 29, "name": "Snacks & Beverages" },
+          "imagesFilesNames": [
+            "bread-b04c9b86-4270-4739-b407-1bb683a9e79e.jpg",
+            "bread-2880ba58-d860-48c4-a2cf-904b93051994.jpg",
+            "bread-e0589c79-6e76-47e1-aadf-cb8b34bb2f79.jpg"
+          ],
+          "caseQuantity": 10,
+          "minOrderQuantity": 10,
+          "maxOrderQuantity": 30,
+          "allowGroupPurchase": false,
+          "minGroupOrderQuantity": 1,
+          "groupPurchaseDuration": "THREE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 5,
+          "ratingsCount": 1,
+          "createdAt": "2025-10-25T19:06:09.884Z",
+          "updatedAt": "2025-11-24T02:31:15.300Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 20,
+        "unitPrice": 4,
+        "totalPrice": 80,
+        "createdAt": "2025-11-24T02:31:15.290Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "edbda00b-f056-42ca-a39f-79f3e6c2d2e4",
+      "user": {
+        "userId": "b271da04-eb61-4f41-9100-9c2f26dd1bff",
+        "tapCustomerId": "cus_TS05A3120250133Rg102411379",
+        "name": "fayrouz",
+        "email": "video1223334444@gmail.com",
+        "crn": "0987654365",
+        "businessName": "araba",
+        "role": "SUPPLIER",
+        "city": "riyadh",
+        "pfpFileName": "defaultavatarsb271da04eb614f4191009c2f26dd1bff-b2e80a27-ed3b-4f02-856b-0981ece2929d.png",
+        "categories": [{ "id": 2, "name": "Beauty & Personal Care" }],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-11-24T01:33:31.531Z",
+        "updatedAt": "2025-11-24T05:22:31.016Z"
+      },
+      "card": {
+        "id": "a543e69d-59e8-4b21-9f98-716ba9d0c05c",
+        "tapCardId": "card_TS84A3525151LyWr24Pq10Q849",
+        "cardHolderName": "FAYROUZ SAGGA",
+        "last4": "0008",
+        "brand": "MASTERCARD",
+        "expMonth": "01",
+        "expYear": "39"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "fa8e1bdb-b957-480e-aa13-b95767c00651",
+    "tapChargeId": "chg_TS02A0720250026Dy1q2311097",
+    "buyerId": "0e3bc168-fb16-4238-983d-47525a48a7b7",
+    "cartId": "54c74f1a-a6df-4f39-bef4-f6a57064c9b2",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 374,
+    "status": "PENDING",
+    "createdAt": "2025-11-23T00:26:25.433Z",
+    "items": [
+      {
+        "orderItemId": 40,
+        "orderId": "fa8e1bdb-b957-480e-aa13-b95767c00651",
+        "product": {
+          "productId": "0c2c3bef-884e-4d5c-ba0f-81690d8be092",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Hair Brushes",
+          "description": "Hair Brushes Made From REAL Wood!",
+          "price": 28,
+          "stock": 0,
+          "category": { "id": 21, "name": "Hair Care" },
+          "imagesFilesNames": [
+            "hairbrushes-a8272a14-cc47-481d-bb37-bfe3c0494289.jpg"
+          ],
+          "caseQuantity": 6,
+          "minOrderQuantity": 12,
+          "maxOrderQuantity": 42,
+          "allowGroupPurchase": false,
+          "minGroupOrderQuantity": 1,
+          "groupPurchaseDuration": "THREE_DAYS",
+          "isPublished": true,
+          "stockStatus": "VERY LOW",
+          "avgRating": 5,
+          "ratingsCount": 1,
+          "createdAt": "2025-10-25T19:04:34.755Z",
+          "updatedAt": "2025-11-23T00:26:25.442Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 12,
+        "unitPrice": 28,
+        "totalPrice": 336,
+        "createdAt": "2025-11-23T00:26:25.433Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "0e3bc168-fb16-4238-983d-47525a48a7b7",
+      "user": {
+        "userId": "4cb9d863-de02-418f-8871-e90849288f20",
+        "tapCustomerId": "cus_TS07A1620252023j8R21711598",
+        "name": "naonya",
+        "email": "noof8saad@gmail.com",
+        "crn": "1231231231",
+        "businessName": "nonayabyuissness",
+        "role": "BUYER",
+        "city": "Riyadh",
+        "pfpFileName": "defaultavatars4cb9d863de02418f8871e90849288f20-e465dc83-4646-41c4-82d4-9fb1888b5edc.png",
+        "categories": [{ "id": 3, "name": "Fashion & Accessories" }],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-11-17T20:23:16.751Z",
+        "updatedAt": "2025-11-23T00:30:30.074Z"
+      },
+      "card": {
+        "id": "c47f96ff-c87a-4764-b017-96922da8da11",
+        "tapCardId": "card_TS50A5252039Pfmy172p10H417",
+        "cardHolderName": "HAHA",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "39"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "5c6ff5cd-8575-498c-8de2-48bbc8501390",
+    "tapChargeId": "chg_TS06A1020250021q1B22311968",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "11782682-1637-4c5f-ac82-011c9518a0ef",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 1382,
+    "status": "PENDING",
+    "createdAt": "2025-11-23T00:21:57.336Z",
+    "items": [
+      {
+        "orderItemId": 39,
+        "orderId": "5c6ff5cd-8575-498c-8de2-48bbc8501390",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 56,
+        "unitPrice": 24,
+        "totalPrice": 1344,
+        "createdAt": "2025-11-23T00:21:57.336Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "3cb085de-99c7-49d2-8579-03017c65e326",
+    "tapChargeId": "chg_TS06A4320252058a6RK2211707",
+    "buyerId": "fd6fa90d-b2d2-46c7-8b05-5f41ed4c8025",
+    "cartId": "6f9ebba8-13c7-40dd-b6fd-a642346c3fd9",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 710,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-22T20:59:08.806Z",
+    "items": [
+      {
+        "orderItemId": 34,
+        "orderId": "3cb085de-99c7-49d2-8579-03017c65e326",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 28,
+        "unitPrice": 24,
+        "totalPrice": 672,
+        "createdAt": "2025-11-22T20:59:08.806Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "fd6fa90d-b2d2-46c7-8b05-5f41ed4c8025",
+      "user": {
+        "userId": "abd85066-cc6f-413d-8308-7cebe00bca00",
+        "tapCustomerId": "cus_TS05A5520251908Jk362111225",
+        "name": "أمل",
+        "email": "Amal.majed403@gmail.com",
+        "crn": "7000000000",
+        "businessName": "Alkadi perfumes",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "2-c639a9ae-3c7d-44d8-a3cc-6b2007d9998c.png",
+        "categories": [{ "id": 2, "name": "Beauty & Personal Care" }],
+        "isEmailVerified": true,
+        "preferredLanguage": "AR",
+        "createdAt": "2025-11-21T19:08:55.398Z",
+        "updatedAt": "2025-11-24T00:52:55.830Z"
+      },
+      "card": {
+        "id": "a4c2af05-bab2-4cb8-bfd8-a31736dae55c",
+        "tapCardId": "card_TS08A4251857yTR022rr10Y612",
+        "cardHolderName": "AMAL",
+        "last4": "0010",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "39"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "95cb3a58-b3cd-453f-aa4f-050423083ee7",
+    "tapChargeId": "chg_TS03A5420251725Mr3k1911694",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "18c6e43b-a419-42e8-b040-a96547e6245b",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 878,
+    "status": "PENDING",
+    "createdAt": "2025-11-19T17:26:16.923Z",
+    "items": [
+      {
+        "orderItemId": 11,
+        "orderId": "95cb3a58-b3cd-453f-aa4f-050423083ee7",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 35,
+        "unitPrice": 24,
+        "totalPrice": 840,
+        "createdAt": "2025-11-19T17:26:16.923Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "9823a5d2-bb94-4990-a149-dc6005c2db42",
+    "tapChargeId": "seeded_1763576899624_c2s00y",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "55f832fc-3906-4c15-a414-0769c1475603",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 326,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-15T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "c23c7f51-f3e2-418f-9f65-2ef5eef094c0",
+    "tapChargeId": "chg_TS03A5820251023q6MZ1311061",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "d8bfb237-835b-46ca-a528-3c76462ed281",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 710,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-13T10:24:22.209Z",
+    "items": [
+      {
+        "orderItemId": 8,
+        "orderId": "c23c7f51-f3e2-418f-9f65-2ef5eef094c0",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 28,
+        "unitPrice": 24,
+        "totalPrice": 672,
+        "createdAt": "2025-11-13T10:24:22.209Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "7bb0e677-4655-416b-9289-bebcc5c49ca9",
+    "tapChargeId": "chg_TS03A5820251023q6MZ1311061",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "d8bfb237-835b-46ca-a528-3c76462ed281",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 710,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-13T10:24:21.983Z",
+    "items": [
+      {
+        "orderItemId": 7,
+        "orderId": "7bb0e677-4655-416b-9289-bebcc5c49ca9",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 28,
+        "unitPrice": 24,
+        "totalPrice": 672,
+        "createdAt": "2025-11-13T10:24:21.983Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "cb0b2168-c372-4812-b395-689d1b7e984f",
+    "tapChargeId": "seeded_1763576899169_thptck",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "056b9c6a-0c0e-4837-9d18-ddffe9c491be",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 230,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-11T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "f818487c-ea03-4061-9681-8e2697bac5cb",
+    "tapChargeId": "chg_TS05A3520251148i0N21111956",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "1fb9fe6c-bba6-4a53-8fe1-21167d16f88f",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 158,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-11T11:49:02.015Z",
+    "items": [
+      {
+        "orderItemId": 6,
+        "orderId": "f818487c-ea03-4061-9681-8e2697bac5cb",
+        "product": {
+          "productId": "c9a58d4a-81f4-4a44-a515-565c29688946",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Bread",
+          "description": "Freshly Baked",
+          "price": 4,
+          "stock": 150,
+          "category": { "id": 29, "name": "Snacks & Beverages" },
+          "imagesFilesNames": [
+            "bread-b04c9b86-4270-4739-b407-1bb683a9e79e.jpg",
+            "bread-2880ba58-d860-48c4-a2cf-904b93051994.jpg",
+            "bread-e0589c79-6e76-47e1-aadf-cb8b34bb2f79.jpg"
+          ],
+          "caseQuantity": 10,
+          "minOrderQuantity": 10,
+          "maxOrderQuantity": 30,
+          "allowGroupPurchase": false,
+          "minGroupOrderQuantity": 1,
+          "groupPurchaseDuration": "THREE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 5,
+          "ratingsCount": 1,
+          "createdAt": "2025-10-25T19:06:09.884Z",
+          "updatedAt": "2025-11-24T02:31:15.300Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 30,
+        "unitPrice": 4,
+        "totalPrice": 120,
+        "createdAt": "2025-11-11T11:49:02.015Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "0a26feb4-b374-4c56-b67b-97a6b78de8d4",
+    "tapChargeId": "chg_TS05A3520251148i0N21111956",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "1fb9fe6c-bba6-4a53-8fe1-21167d16f88f",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 158,
+    "status": "PROCESSING",
+    "createdAt": "2025-11-11T11:49:01.818Z",
+    "items": [
+      {
+        "orderItemId": 5,
+        "orderId": "0a26feb4-b374-4c56-b67b-97a6b78de8d4",
+        "product": {
+          "productId": "c9a58d4a-81f4-4a44-a515-565c29688946",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Bread",
+          "description": "Freshly Baked",
+          "price": 4,
+          "stock": 150,
+          "category": { "id": 29, "name": "Snacks & Beverages" },
+          "imagesFilesNames": [
+            "bread-b04c9b86-4270-4739-b407-1bb683a9e79e.jpg",
+            "bread-2880ba58-d860-48c4-a2cf-904b93051994.jpg",
+            "bread-e0589c79-6e76-47e1-aadf-cb8b34bb2f79.jpg"
+          ],
+          "caseQuantity": 10,
+          "minOrderQuantity": 10,
+          "maxOrderQuantity": 30,
+          "allowGroupPurchase": false,
+          "minGroupOrderQuantity": 1,
+          "groupPurchaseDuration": "THREE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 5,
+          "ratingsCount": 1,
+          "createdAt": "2025-10-25T19:06:09.884Z",
+          "updatedAt": "2025-11-24T02:31:15.300Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 30,
+        "unitPrice": 4,
+        "totalPrice": 120,
+        "createdAt": "2025-11-11T11:49:01.818Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "12ef3b9c-93bf-4e75-90b4-2b10e3d058fe",
+    "tapChargeId": "chg_TS01A5820251141b2F11111048",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "b435710a-fbf0-43a8-a185-a69561c71ae0",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 710,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-11T11:42:36.798Z",
+    "items": [
+      {
+        "orderItemId": 4,
+        "orderId": "12ef3b9c-93bf-4e75-90b4-2b10e3d058fe",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 28,
+        "unitPrice": 24,
+        "totalPrice": 672,
+        "createdAt": "2025-11-11T11:42:36.798Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "1694228d-ae05-4291-8d00-2e1d294d5bdf",
+    "tapChargeId": "chg_TS01A5820251141b2F11111048",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "b435710a-fbf0-43a8-a185-a69561c71ae0",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 710,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-11T11:42:36.299Z",
+    "items": [
+      {
+        "orderItemId": 3,
+        "orderId": "1694228d-ae05-4291-8d00-2e1d294d5bdf",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 28,
+        "unitPrice": 24,
+        "totalPrice": 672,
+        "createdAt": "2025-11-11T11:42:36.299Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "8b71fd25-30da-4dd2-b950-1bb8c2452c0e",
+    "tapChargeId": "chg_TS07A1820252211j3D21011700",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "d1f6f106-c652-4a7e-b5f7-c68e44a8d5a1",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 710,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-10T22:11:39.808Z",
+    "items": [
+      {
+        "orderItemId": 2,
+        "orderId": "8b71fd25-30da-4dd2-b950-1bb8c2452c0e",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 28,
+        "unitPrice": 24,
+        "totalPrice": 672,
+        "createdAt": "2025-11-10T22:11:39.808Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "8a81aef6-464f-4f9f-a271-405fbe6d8111",
+    "tapChargeId": "chg_TS07A1820252211j3D21011700",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "d1f6f106-c652-4a7e-b5f7-c68e44a8d5a1",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 710,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-10T22:11:39.724Z",
+    "items": [
+      {
+        "orderItemId": 1,
+        "orderId": "8a81aef6-464f-4f9f-a271-405fbe6d8111",
+        "product": {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+          "supplier": null,
+          "name": "Lipstick",
+          "description": "Red Lipstick",
+          "price": 24,
+          "stock": 500,
+          "category": { "id": 23, "name": "Makeup & Fragrances" },
+          "imagesFilesNames": [
+            "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
+          ],
+          "caseQuantity": 7,
+          "minOrderQuantity": 28,
+          "allowGroupPurchase": true,
+          "minGroupOrderQuantity": 50,
+          "groupPurchasePrice": 20,
+          "groupPurchaseDuration": "FIVE_DAYS",
+          "isPublished": true,
+          "stockStatus": "GOOD",
+          "avgRating": 3.571428571428572,
+          "ratingsCount": 7,
+          "createdAt": "2025-10-25T19:07:39.806Z",
+          "updatedAt": "2025-11-29T05:19:21.764Z",
+          "isDeleted": false,
+          "targetLang": "en-US,en;q=0.5"
+        },
+        "quantity": 28,
+        "unitPrice": 24,
+        "totalPrice": 672,
+        "createdAt": "2025-11-10T22:11:39.724Z"
+      }
+    ],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "57fa35a5-201f-40a5-8f8b-0d5dc1d366a3",
+    "tapChargeId": "seeded_1763576898209_g0as3j",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "057c139a-2d5a-4ec1-9c22-11c15e1f02f7",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 254,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-07T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "a6c04f40-f71a-4011-ae35-43358b61d9e9",
+    "tapChargeId": "seeded_1763576897361_a4e9b6",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "3831bfd3-1c87-4862-9d5b-e6ad96d8c6e5",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 62,
+    "status": "COMPLETED",
+    "createdAt": "2025-11-03T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "0fb14305-3c82-4eea-a690-c5add8abfe46",
+    "tapChargeId": "seeded_1763576896177_4dfl29",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "9aa300f0-f369-4c95-885b-b0eadb161ec4",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 278,
+    "status": "COMPLETED",
+    "createdAt": "2025-10-30T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "b59d7375-9b48-4b50-b0ca-6850535838c2",
+    "tapChargeId": "seeded_1763576895050_fl1ltc",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "669225bf-897c-480f-9903-b4b75c466bc3",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 86,
+    "status": "COMPLETED",
+    "createdAt": "2025-10-26T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "70429717-9dd1-4dfb-88cd-53e0ecb593d6",
+    "tapChargeId": "seeded_1763576894387_x6n0gb",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "fe90ac0f-a0bc-4073-abdd-9aec02993601",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 134,
+    "status": "COMPLETED",
+    "createdAt": "2025-10-22T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "5ea720e7-16e3-4f1c-a996-f007535b610e",
+    "tapChargeId": "seeded_1763576893631_puryl3",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "18d845c7-186b-470d-a323-d67338aa6e6a",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 326,
+    "status": "COMPLETED",
+    "createdAt": "2025-10-18T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "ecafbc56-0d77-4d4b-adcf-5feb789adba9",
+    "tapChargeId": "seeded_1763576892950_ft5lkv",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "8fdfd9fc-f4a3-4696-b28f-f7f137a9c3fd",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 302,
+    "status": "COMPLETED",
+    "createdAt": "2025-10-14T18:27:57.517Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "308650f0-e879-4fd9-8f55-e1ef7f50342c",
+    "tapChargeId": "seeded_1763576892482_owyzal",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "3b862f2e-b603-4287-a0d9-781a9ec972db",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 182,
+    "status": "COMPLETED",
+    "createdAt": "2025-10-10T18:27:57.516Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "8df45d84-b4ff-4830-a8f1-f466c76562ad",
+    "tapChargeId": "seeded_1763576891651_23ar88",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "78c28afd-6c9a-43e5-b78f-699358cadd2e",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 158,
+    "status": "COMPLETED",
+    "createdAt": "2025-10-06T18:27:57.516Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "e10aad1a-2fd0-4725-bd3c-427ed10be938",
+    "tapChargeId": "seeded_1763576891040_mr1qzh",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "e12bfdeb-c2c8-4c5c-a676-4fcee76be5e6",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 86,
+    "status": "COMPLETED",
+    "createdAt": "2025-10-02T18:27:57.516Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "1d368945-f089-4957-a896-1dbbc7a2e49c",
+    "tapChargeId": "seeded_1763576890813_aj5ntw",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "2f7bd684-568a-4568-91b9-30796a9bab50",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 110,
+    "status": "COMPLETED",
+    "createdAt": "2025-09-28T18:27:57.516Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "a61165c9-c909-4b92-bb79-11acc818575f",
+    "tapChargeId": "seeded_1763576890457_fs6igq",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "e7bedfeb-6f7d-4ff6-9ee4-f6a51b3ff749",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 278,
+    "status": "COMPLETED",
+    "createdAt": "2025-09-24T18:27:57.516Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "f71481bf-8acd-4b1c-9ca2-2b570de9e27d",
+    "tapChargeId": "seeded_1763576889718_0jpxvv",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "5a042159-40cb-463e-9033-ad8338510058",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 182,
+    "status": "COMPLETED",
+    "createdAt": "2025-09-20T18:27:57.516Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "7363ef39-44fc-4df9-9d7e-acea77245950",
+    "tapChargeId": "seeded_1763576889340_7wzqi3",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "d86ba874-c736-4e46-ab4c-bff782af6a55",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 62,
+    "status": "COMPLETED",
+    "createdAt": "2025-09-16T18:27:57.516Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "06730ec7-a4e4-4685-8d74-4411a19f93af",
+    "tapChargeId": "seeded_1763576889150_nts786",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "3b310adc-6f08-4bf7-9813-227187251c3c",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 62,
+    "status": "COMPLETED",
+    "createdAt": "2025-09-12T18:27:57.511Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "7683d443-2f48-4d68-a68b-4e735ffa23ee",
+    "tapChargeId": "seeded_1763576888247_ac2glh",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "fd185fe7-0095-492d-b413-2aaed8efa085",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 326,
+    "status": "COMPLETED",
+    "createdAt": "2025-09-08T18:27:57.506Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "f091a01a-d3ff-4631-8eb6-3e44a270c21a",
+    "tapChargeId": "seeded_1763576887051_2g9gfz",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "2c820d57-0c25-4d45-81a4-41cdf2e288dd",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 326,
+    "status": "COMPLETED",
+    "createdAt": "2025-09-04T18:27:57.506Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "4c24e942-ea93-498d-afc2-dd728c6f2ceb",
+    "tapChargeId": "seeded_1763576885573_ve8qry",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "6661382b-78ae-4b34-9df4-d6fdd9de2436",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 278,
+    "status": "COMPLETED",
+    "createdAt": "2025-08-31T18:27:57.506Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "cdb6e070-996b-4278-b3d8-2342438c8afa",
+    "tapChargeId": "seeded_1763576882307_d1uhrn",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "8632c5ef-6060-4dc6-81ed-ec69e35ac401",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 134,
+    "status": "COMPLETED",
+    "createdAt": "2025-08-27T18:27:57.506Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "910c5034-b56e-473a-8a16-12f2ea9137c1",
+    "tapChargeId": "seeded_1763576880186_zhimbk",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "051158e0-cfe4-4afc-a4a6-efb9a3f41ffa",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 302,
+    "status": "COMPLETED",
+    "createdAt": "2025-08-23T18:27:57.506Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "bcbc38f4-e000-4546-a2e1-d6185ed607aa",
+    "tapChargeId": "seeded_1763576879514_kjyooz",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "6f25ca3b-baf1-4769-b9ac-324ff052bfab",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 86,
+    "status": "COMPLETED",
+    "createdAt": "2025-08-19T18:27:57.506Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "54b3b0ad-c794-4e7b-b905-106fbd59696e",
+    "tapChargeId": "seeded_1763576878975_xqb195",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "7bf10298-69bb-4525-acb9-e269135a4df9",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 278,
+    "status": "COMPLETED",
+    "createdAt": "2025-08-15T18:27:57.503Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  },
+  {
+    "orderId": "23423918-e4a2-478a-954c-b77c5fcb43e9",
+    "tapChargeId": "seeded_1763576878368_epfibt",
+    "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+    "cartId": "deaa64bd-26f0-4fb5-9e37-75a65bd2ec19",
+    "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+    "finalPrice": 230,
+    "status": "COMPLETED",
+    "createdAt": "2025-08-11T18:27:57.471Z",
+    "items": [],
+    "buyer": {
+      "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "card": {
+        "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+        "tapCardId": "card_TS48A10251648oyy23cO10q816",
+        "cardHolderName": "SHAHAD SAAD",
+        "last4": "1019",
+        "brand": "VISA",
+        "expMonth": "01",
+        "expYear": "30"
+      }
+    },
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-07T08:42:29.922Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    }
+  }
+]

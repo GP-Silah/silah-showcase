@@ -1,0 +1,11 @@
+{
+  "message": "Notification preferences retrieved successfully",
+  "notificationPreferences": {
+    "allowNotifications": true,
+    "newMessageNotify": true,
+    "newOrderNotify": true,
+    "newReviewNotify": true,
+    "biddingStatusNotify": true,
+    "invoiceStatusNotify": true
+  }
+}
