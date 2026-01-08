@@ -47,9 +47,7 @@
     "imagesFilesNames": [
       "hairbrushes-a8272a14-cc47-481d-bb37-bfe3c0494289.jpg"
     ],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/hairbrushes-a8272a14-cc47-481d-bb37-bfe3c0494289.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=ef5bb5239c39403ab23504b50c80bd6787412bf10e26efbcd4ba08e2fa139778&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/hair brushes.jpg"],
     "caseQuantity": 6,
     "minOrderQuantity": 12,
     "maxOrderQuantity": 42,
@@ -112,9 +110,7 @@
     "stock": 20,
     "category": { "id": 33, "name": "Jewelry & Watches" },
     "imagesFilesNames": ["jewelary-b111892c-72da-49fe-a00f-89338d0f70b9.jpg"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/jewelary-b111892c-72da-49fe-a00f-89338d0f70b9.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=678068b038fa2d1887a8a11b4364ba4c7a139765e2bb1461190aca26d2fbc5ae&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/jewelary.jpg"],
     "caseQuantity": 1,
     "minOrderQuantity": 1,
     "maxOrderQuantity": 3,
@@ -182,9 +178,9 @@
       "bread-e0589c79-6e76-47e1-aadf-cb8b34bb2f79.jpg"
     ],
     "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/bread-b04c9b86-4270-4739-b407-1bb683a9e79e.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=b8a818e4627b08cb6280771c96190b4222310f5d390daeefde323ddf26067a1c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/bread-2880ba58-d860-48c4-a2cf-904b93051994.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=e86bd5dd61edebf3758455c4bf1a0e68b84b3df045f6c5fdbb2f9da906533d87&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/bread-e0589c79-6e76-47e1-aadf-cb8b34bb2f79.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=bcb701b914d59d59de8c4e9bad532d19b87507a0d91279385ba1336e3178bf29&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      "mock-api/images/bread.jpg",
+      "mock-api/images/bread.jpg",
+      "mock-api/images/bread.jpg"
     ],
     "caseQuantity": 10,
     "minOrderQuantity": 10,
@@ -248,9 +244,7 @@
     "stock": 0,
     "category": { "id": 30, "name": "Dairy & Dairy Alternatives" },
     "imagesFilesNames": ["yogurt-e8d94e03-8cb8-4e06-a272-add628bada9b.jpg"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/yogurt-e8d94e03-8cb8-4e06-a272-add628bada9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=40ea124a7b945b3f91eb523c458852c8682bd23f9a6bf22743ccfb68bf4d06f5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/yogurt.jpg"],
     "caseQuantity": 3,
     "minOrderQuantity": 6,
     "allowGroupPurchase": true,
@@ -313,9 +307,7 @@
     "stock": 500,
     "category": { "id": 23, "name": "Makeup & Fragrances" },
     "imagesFilesNames": ["lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=93b174bdf3eeec4f4ded69abbe926f631c061582621b766c48aafadc7167f8e1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
     "caseQuantity": 7,
     "minOrderQuantity": 28,
     "allowGroupPurchase": true,
@@ -378,9 +370,7 @@
     "stock": 2000,
     "category": { "id": 34, "name": "Footwear" },
     "imagesFilesNames": ["shoes-b5450f8c-340e-4736-9359-49a59759a9a2.jpg"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/shoes-b5450f8c-340e-4736-9359-49a59759a9a2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=5799a38cdaeb31178d86729579cf9ec64713fede01e2e630a44630bcc5bc9490&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/shoes.jpg"],
     "caseQuantity": 6,
     "minOrderQuantity": 6,
     "allowGroupPurchase": true,
@@ -443,9 +433,7 @@
     "stock": 2000,
     "category": { "id": 32, "name": "Clothing" },
     "imagesFilesNames": ["suit-d5bf9b09-b1d3-4c52-8a25-6ca2c91e0745.jpg"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/suit-d5bf9b09-b1d3-4c52-8a25-6ca2c91e0745.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=d1838eecf108cf00f1403e31213e3b9eaa456b937d7d936f9bdf07130e0d1356&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/suit.jpg"],
     "caseQuantity": 6,
     "minOrderQuantity": 6,
     "allowGroupPurchase": true,

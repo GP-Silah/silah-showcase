@@ -44,14 +44,8 @@
     "price": 3000,
     "isPriceNegotiable": true,
     "category": { "id": 42, "name": "Web & App Development" },
-    "imagesFilesNames": [
-      "code-8dbaaa84-f5db-4515-91d5-91c13e6344df.webp",
-      "shahadlogo-51f09075-4936-435b-a7b6-2063d38d0689.jpg"
-    ],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/code-8dbaaa84-f5db-4515-91d5-91c13e6344df.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=359c2dcf93487cd1347375d51638f87de5965e152d2459b9f4ff39aefc39d1a3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/shahadlogo-51f09075-4936-435b-a7b6-2063d38d0689.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=27c3b646f0506abb60fa4c2a5db4d91d9bb41faac461f2fc071cf667d1189351&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesNames": ["code-8dbaaa84-f5db-4515-91d5-91c13e6344df.webp"],
+    "imagesFilesUrls": ["mock-api/images/code.webp"],
     "serviceAvailability": "TWENTY_FOUR_SEVEN",
     "isPublished": true,
     "wishlistCount": 1,
@@ -107,16 +101,8 @@
     "price": 3000,
     "isPriceNegotiable": true,
     "category": { "id": 42, "name": "Web & App Development" },
-    "imagesFilesNames": [
-      "code-11456135-bb82-4c5c-b076-de9bdad14009.webp",
-      "shahadlogo-a8c8cdf1-035e-4bfa-ae28-4321bfbbc402.jpg",
-      "logo-28ee28f1-49d2-49e1-b491-21db04c83a2b.jpg"
-    ],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/code-11456135-bb82-4c5c-b076-de9bdad14009.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=eb58c038539a272daa0612673b4fd4ab94543dad71aed4367ce213864ed70b1c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/shahadlogo-a8c8cdf1-035e-4bfa-ae28-4321bfbbc402.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=20aff7dccd4644edbf235aa5cfcbbf8f6dea6831b5962702a3f7303cbae6f823&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/logo-28ee28f1-49d2-49e1-b491-21db04c83a2b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=357817d64c87d02ac8a4291c8772ffd61cfaa24dcc4d8fffc8bb9a8a5a843954&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesNames": ["code-11456135-bb82-4c5c-b076-de9bdad14009.webp"],
+    "imagesFilesUrls": ["mock-api/images/code.webp"],
     "serviceAvailability": "TWENTY_FOUR_SEVEN",
     "isPublished": true,
     "wishlistCount": 1,
@@ -173,9 +159,7 @@
     "isPriceNegotiable": true,
     "category": { "id": 43, "name": "IT & Cloud Services" },
     "imagesFilesNames": ["database-9b599fdc-6ea7-4d9b-b9c9-67dc81c17291.webp"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/database-9b599fdc-6ea7-4d9b-b9c9-67dc81c17291.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=a8f613255e71746aa822b101ee2000afc90eb1ce3659ff8d540cd812e3c5d28d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/database.webp"],
     "serviceAvailability": "WEEKDAYS",
     "isPublished": true,
     "wishlistCount": 0,
@@ -232,9 +216,7 @@
     "isPriceNegotiable": false,
     "category": { "id": 43, "name": "IT & Cloud Services" },
     "imagesFilesNames": ["itsupport-197bb257-971b-4e08-b7ab-9cc2eabbf9c6.png"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/itsupport-197bb257-971b-4e08-b7ab-9cc2eabbf9c6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=8c8f2292ce4cc222408abb93970fa2dde88c46cb37e634ea13bda09602d33848&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/it-support.png"],
     "serviceAvailability": "APPOINTMENT",
     "isPublished": true,
     "wishlistCount": 0,
@@ -291,9 +273,7 @@
     "isPriceNegotiable": true,
     "category": { "id": 51, "name": "General & Computer Repair" },
     "imagesFilesNames": ["2147922175-55908013-34fe-4dca-8701-41e18d79c026.jpg"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/2147922175-55908013-34fe-4dca-8701-41e18d79c026.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=b8088d39b80d1973aec980359206ba8e4db4997461e9e0ee613345a0a3484202&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/repair.jpg"],
     "serviceAvailability": "APPOINTMENT",
     "isPublished": true,
     "wishlistCount": 0,
@@ -350,9 +330,7 @@
     "isPriceNegotiable": false,
     "category": { "id": 48, "name": "UI/UX & Graphic Design" },
     "imagesFilesNames": ["stealthis-dc68e773-7079-4a41-a11e-28e9dc48d0ee.png"],
-    "imagesFilesUrls": [
-      "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/stealthis-dc68e773-7079-4a41-a11e-28e9dc48d0ee.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084409Z&X-Amz-Expires=3600&X-Amz-Signature=30f7c0ee0bb7cccb4422d8149b419b9689a9bc85e22966e239ac4412a0c42918&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-    ],
+    "imagesFilesUrls": ["mock-api/images/design.png"],
     "serviceAvailability": "EVERYDAY",
     "isPublished": true,
     "wishlistCount": 1,

@@ -14,6 +14,11 @@ import {
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import styles from './Listings.module.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import {
+  getProductListings,
+  getServiceListings,
+} from '@/utils/mock-api/supplierApi';
 
 const API_BASE = `${import.meta.env.VITE_BACKEND_URL}`;
 
