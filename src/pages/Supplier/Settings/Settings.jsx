@@ -4,6 +4,10 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import styles from './Settings.module.css';
 import SignupBusinessActivity from '@/components/SingupBusinessActivity/SignupBusinessActivity';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getUser } from '@/utils/mock-api/userApi';
+import { getSupplier, getPlan } from '@/utils/mock-api/supplierApi';
+import { getPreferences } from '@/utils/mock-api/supplierApi';
 
 const SupplierSettings = () => {
   const { t, i18n } = useTranslation('settings');
@@ -59,6 +63,12 @@ const SupplierSettings = () => {
   const profileRef = useRef(null);
   const bannerRef = useRef(null);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   useEffect(() => {
     document.title = t('pageTitle.settings', { ns: 'common' });
     document.documentElement.setAttribute('dir', i18n.dir());
@@ -72,13 +82,16 @@ const SupplierSettings = () => {
         setLoading(true);
         setError('');
 
-        const userResponse = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
-          {
-            withCredentials: true,
-            signal: controller.signal,
-          },
-        );
+        // const userResponse = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
+        //   {
+        //     withCredentials: true,
+        //     signal: controller.signal,
+        //   },
+        // );
+        const userResponse = await axios.get(getUser(), {
+          signal: controller.signal,
+        });
         const userData = userResponse.data;
         setUser({ name: userData.name || '', nid: userData.nid || '' });
         setEmail(userData.email || '');
@@ -98,13 +111,16 @@ const SupplierSettings = () => {
           );
         }
 
-        const supplierResponse = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me`,
-          {
-            withCredentials: true,
-            signal: controller.signal,
-          },
-        );
+        // const supplierResponse = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me`,
+        //   {
+        //     withCredentials: true,
+        //     signal: controller.signal,
+        //   },
+        // );
+        const supplierResponse = await axios.get(getSupplier(), {
+          signal: controller.signal,
+        });
         const supplierData = supplierResponse.data;
 
         if (supplierData.supplierStatus !== 'ACTIVE')
@@ -127,21 +143,25 @@ const SupplierSettings = () => {
           });
         }
 
-        const planResponse = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me/plan`,
-          {
-            withCredentials: true,
-            signal: controller.signal,
-          },
-        );
+        // const planResponse = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me/plan`,
+        //   {
+        //     withCredentials: true,
+        //     signal: controller.signal,
+        //   },
+        // );
+        const planResponse = await axios.get(getPlan(), {
+          signal: controller.signal,
+        });
         setSubscriptionPlan(planResponse.data.plan || 'BASIC');
 
-        const notifResponse = await axios.get(
-          `${
-            import.meta.env.VITE_BACKEND_URL
-          }/api/notifications/me/preferences`,
-          { withCredentials: true },
-        );
+        // const notifResponse = await axios.get(
+        //   `${
+        //     import.meta.env.VITE_BACKEND_URL
+        //   }/api/notifications/me/preferences`,
+        //   { withCredentials: true },
+        // );
+        const notifResponse = await axios.get(getPreferences());
         const prefs = notifResponse.data.notificationPreferences || {};
         setNotifications(prefs.allowNotifications ?? true);
         setNotifTypes({
@@ -188,7 +208,8 @@ const SupplierSettings = () => {
     return error;
   };
 
-  const handlePasswordSubmit = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const handlePasswordSubmit = async (e) => {
     setError('');
     const errors = {
       currentPassword: passwordForm.currentPassword ? '' : t('errors.required'),
@@ -202,25 +223,30 @@ const SupplierSettings = () => {
 
     if (!Object.values(errors).some((error) => error)) {
       try {
-        await axios.patch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/auth/me/change-password`,
-          {
-            oldPassword: passwordForm.currentPassword,
-            newPassword: passwordForm.newPassword,
-          },
-          { withCredentials: true },
-        );
-        setSuccess(t('success.passwordUpdated'));
-        setShowPasswordFields(false);
-        setPasswordForm({
-          currentPassword: '',
-          newPassword: '',
-          confirmPassword: '',
-        });
-        setPasswordErrors({
-          currentPassword: '',
-          newPassword: '',
-          confirmPassword: '',
+        // await axios.patch(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/auth/me/change-password`,
+        //   {
+        //     oldPassword: passwordForm.currentPassword,
+        //     newPassword: passwordForm.newPassword,
+        //   },
+        //   { withCredentials: true },
+        // );
+        // setSuccess(t('success.passwordUpdated'));
+        // setShowPasswordFields(false);
+        // setPasswordForm({
+        //   currentPassword: '',
+        //   newPassword: '',
+        //   confirmPassword: '',
+        // });
+        // setPasswordErrors({
+        //   currentPassword: '',
+        //   newPassword: '',
+        //   confirmPassword: '',
+        // });
+        await demoAction({
+          e,
+          title: tDemo('action.title'),
+          text: tDemo('action.description'),
         });
       } catch (err) {
         setError(
@@ -231,7 +257,7 @@ const SupplierSettings = () => {
     }
   };
 
-  const handleImageUpload = async (file, type) => {
+  const handleImageUpload = async (e, file, type) => {
     if (!file) return;
     if (file.size > 5 * 1024 * 1024) {
       setError(t('errors.fileTooLarge'));
@@ -243,45 +269,50 @@ const SupplierSettings = () => {
     }
 
     try {
-      const formData = new FormData();
-      formData.append('file', file);
+      // const formData = new FormData();
+      // formData.append('file', file);
 
-      const baseUrl = import.meta.env.VITE_BACKEND_URL || '';
-      const endpoint =
-        type === 'profile'
-          ? `${baseUrl}/api/users/me/profile-picture`
-          : `${baseUrl}/api/suppliers/me/store-banner`;
+      // const baseUrl = import.meta.env.VITE_BACKEND_URL || '';
+      // const endpoint =
+      //   type === 'profile'
+      //     ? `${baseUrl}/api/users/me/profile-picture`
+      //     : `${baseUrl}/api/suppliers/me/store-banner`;
 
-      await axios.post(endpoint, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-        withCredentials: true,
+      // await axios.post(endpoint, formData, {
+      //   headers: { 'Content-Type': 'multipart/form-data' },
+      //   withCredentials: true,
+      // });
+
+      // // Re-fetch updated info (this is key!)
+      // if (type === 'profile') {
+      //   const { data } = await axios.get(`${baseUrl}/api/users/me`, {
+      //     withCredentials: true,
+      //   });
+
+      //   setStore((prev) => ({
+      //     ...prev,
+      //     pfpFileName: data.pfpFileName,
+      //     pfpUrl: data.pfpUrl,
+      //     isDefaultPfp: data.pfpFileName?.includes('defaultavatars'),
+      //   }));
+      // } else {
+      //   const { data } = await axios.get(`${baseUrl}/api/suppliers/me`, {
+      //     withCredentials: true,
+      //   });
+
+      //   setStore((prev) => ({
+      //     ...prev,
+      //     bannerFileName: data?.storeBannerFileName,
+      //     bannerUrl: data?.storeBannerFileUrl,
+      //   }));
+      // }
+
+      // setSuccess(t(`success.${type}Uploaded`));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
       });
-
-      // Re-fetch updated info (this is key!)
-      if (type === 'profile') {
-        const { data } = await axios.get(`${baseUrl}/api/users/me`, {
-          withCredentials: true,
-        });
-
-        setStore((prev) => ({
-          ...prev,
-          pfpFileName: data.pfpFileName,
-          pfpUrl: data.pfpUrl,
-          isDefaultPfp: data.pfpFileName?.includes('defaultavatars'),
-        }));
-      } else {
-        const { data } = await axios.get(`${baseUrl}/api/suppliers/me`, {
-          withCredentials: true,
-        });
-
-        setStore((prev) => ({
-          ...prev,
-          bannerFileName: data?.storeBannerFileName,
-          bannerUrl: data?.storeBannerFileUrl,
-        }));
-      }
-
-      setSuccess(t(`success.${type}Uploaded`));
     } catch (err) {
       setError(
         err.response?.data?.error?.message || t(`errors.${type}UploadFailed`),
@@ -289,32 +320,37 @@ const SupplierSettings = () => {
     }
   };
 
-  const handleImageDelete = async (type) => {
+  const handleImageDelete = async (e, type) => {
     try {
-      const baseUrl = import.meta.env.VITE_BACKEND_URL || '';
-      if (type === 'profile' && store.pfpFileName) {
-        await axios.delete(`${baseUrl}/api/users/me/profile-picture`, {
-          withCredentials: true,
-        });
+      // const baseUrl = import.meta.env.VITE_BACKEND_URL || '';
+      // if (type === 'profile' && store.pfpFileName) {
+      //   await axios.delete(`${baseUrl}/api/users/me/profile-picture`, {
+      //     withCredentials: true,
+      //   });
 
-        // ✅ Re-fetch to get the default avatar URL
-        const { data } = await axios.get(`${baseUrl}/api/users/me`, {
-          withCredentials: true,
-        });
+      //   // ✅ Re-fetch to get the default avatar URL
+      //   const { data } = await axios.get(`${baseUrl}/api/users/me`, {
+      //     withCredentials: true,
+      //   });
 
-        setStore((prev) => ({
-          ...prev,
-          pfpFileName: data.pfpFileName,
-          pfpUrl: data.pfpUrl,
-          isDefaultPfp: data.pfpFileName?.includes('defaultavatars'),
-        }));
-      } else if (type === 'banner' && store.bannerFileName) {
-        await axios.delete(`${baseUrl}/api/suppliers/me/store-banner`, {
-          withCredentials: true,
-        });
-        setStore({ ...store, bannerFileName: '' });
-      }
-      setSuccess(t(`success.${type}Deleted`));
+      //   setStore((prev) => ({
+      //     ...prev,
+      //     pfpFileName: data.pfpFileName,
+      //     pfpUrl: data.pfpUrl,
+      //     isDefaultPfp: data.pfpFileName?.includes('defaultavatars'),
+      //   }));
+      // } else if (type === 'banner' && store.bannerFileName) {
+      //   await axios.delete(`${baseUrl}/api/suppliers/me/store-banner`, {
+      //     withCredentials: true,
+      //   });
+      //   setStore({ ...store, bannerFileName: '' });
+      // }
+      // setSuccess(t(`success.${type}Deleted`));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       setError(
         err.response?.data?.error?.message || t(`errors.${type}DeleteFailed`),
@@ -329,7 +365,7 @@ const SupplierSettings = () => {
     }
   }, [success]);
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
     try {
       setError('');
       setSuccess('');
@@ -355,27 +391,27 @@ const SupplierSettings = () => {
         deliveryFees: store.fees !== '' ? Number(store.fees) : null,
       };
 
-      if (Object.keys(userUpdates).length > 0) {
-        await axios.patch(`${baseUrl}/api/users/me`, userUpdates, {
-          withCredentials: true,
-        });
-      }
-      if (Object.keys(supplierUpdates).length > 0) {
-        await axios.patch(`${baseUrl}/api/suppliers/me`, supplierUpdates, {
-          withCredentials: true,
-        });
-      }
+      // if (Object.keys(userUpdates).length > 0) {
+      //   await axios.patch(`${baseUrl}/api/users/me`, userUpdates, {
+      //     withCredentials: true,
+      //   });
+      // }
+      // if (Object.keys(supplierUpdates).length > 0) {
+      //   await axios.patch(`${baseUrl}/api/suppliers/me`, supplierUpdates, {
+      //     withCredentials: true,
+      //   });
+      // }
 
       // Update notification preferences
       try {
-        await axios.patch(
-          `${baseUrl}/api/notifications/me/preferences`,
-          {
-            allowNotifications: notifications,
-            ...notifTypes,
-          },
-          { withCredentials: true },
-        );
+        // await axios.patch(
+        //   `${baseUrl}/api/notifications/me/preferences`,
+        //   {
+        //     allowNotifications: notifications,
+        //     ...notifTypes,
+        //   },
+        //   { withCredentials: true },
+        // );
       } catch (err) {
         console.error('Failed to update notifications:', err);
         setError(
@@ -384,7 +420,12 @@ const SupplierSettings = () => {
         );
       }
 
-      setSuccess(t('success.settingsUpdated'));
+      // setSuccess(t('success.settingsUpdated'));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       setError(err.response?.data?.error?.message || t('errors.saveFailed'));
     }
@@ -735,7 +776,7 @@ const SupplierSettings = () => {
                   {store.pfpFileName ? (
                     <div className={styles['image-wrapper']}>
                       <img
-                        src={store.pfpUrl}
+                        src={normalizeUrl(store.pfpUrl)}
                         alt="profile"
                         onError={(e) => (e.target.style.display = 'none')}
                       />
@@ -784,7 +825,7 @@ const SupplierSettings = () => {
                 >
                   {store.bannerFileName ? (
                     <div className={styles['banner-wrapper']}>
-                      <img src={store.bannerUrl} alt="banner" />
+                      <img src={normalizeUrl(store.bannerUrl)} alt="banner" />
                       <div className={styles['delete-image-icon-bg']}>
                         <button
                           type="button"

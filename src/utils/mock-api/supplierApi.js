@@ -35,3 +35,7 @@ export function getOrders() {
 export function getInvoices() {
   return `${API_BASE_URL}/suppliers/invoices-all.json`;
 }
+
+export function getPreferences() {
+  return `${API_BASE_URL}/suppliers/preferences.json`;
+}
