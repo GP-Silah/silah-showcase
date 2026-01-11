@@ -7,8 +7,6 @@ import './WriteReview.css';
 import { demoAction } from '@/components/DemoAction/DemoAction';
 import { getOrders, getInvoices } from '@/utils/mock-api/buyerApi';
 
-//! Images (Banner, Logo, Product/Service First Image) won't show up as the json files doesn't have the "pfpUrl" and other image related feilds, and I am too lazy to actually add them sorry.. it would take a lot of time and I am already late on submitting this..
-
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
 export default function WriteReview() {

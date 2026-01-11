@@ -37,6 +37,7 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "2-c639a9ae-3c7d-44d8-a3cc-6b2007d9998c.png",
+        "pfpUrl": "/mock-api/images/perfum.jpg",
         "categories": [{ "id": 2, "name": "Beauty & Personal Care" }],
         "isEmailVerified": true,
         "preferredLanguage": "AR",
@@ -52,6 +53,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later.",
       "storeBio": "متجر عطور راقٍ يقدّم توليفات فاخرة مصممة من أجود المكونات، ويمنحك تجربة عطرية استثنائية تجمع بين الأناقة والابتكار. نعتني بكل تفصيلة لنصنع عطراً يليق بذوقك ويعبّر عن حضورك الخاص.",
       "storeBannerFileName": "file-2df923ce-f8f3-4d92-994a-52f1a39220cd.jpg",
+      "storeBannerFileUrl": "/mock-api/images/perfum.jpg",
       "deliveryFees": 15,
       "avgRating": 5,
       "ratingsCount": 3,
@@ -74,6 +76,7 @@
           "role": "SUPPLIER",
           "city": "Riyadh",
           "pfpFileName": "2-c639a9ae-3c7d-44d8-a3cc-6b2007d9998c.png",
+          "pfpUrl": "/mock-api/images/perfum.jpg",
           "categories": [{ "id": 2, "name": "Beauty & Personal Care" }],
           "isEmailVerified": true,
           "preferredLanguage": "AR",
@@ -89,6 +92,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later.",
         "storeBio": "متجر عطور راقٍ يقدّم توليفات فاخرة مصممة من أجود المكونات، ويمنحك تجربة عطرية استثنائية تجمع بين الأناقة والابتكار. نعتني بكل تفصيلة لنصنع عطراً يليق بذوقك ويعبّر عن حضورك الخاص.",
         "storeBannerFileName": "file-2df923ce-f8f3-4d92-994a-52f1a39220cd.jpg",
+        "storeBannerFileUrl": "/mock-api/images/perfum.jpg",
         "deliveryFees": 15,
         "avgRating": 5,
         "ratingsCount": 3,
@@ -189,6 +193,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -207,6 +212,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -244,6 +250,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+              "pfpUrl": "/mock-api/images/moon.jpg",
               "categories": [
                 { "id": 10, "name": "Software & IT Solutions" },
                 { "id": 14, "name": "Technical & Repair Services" }
@@ -262,6 +269,7 @@
             "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
             "storeBio": "Developer",
             "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+            "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
             "deliveryFees": 38,
             "avgRating": 4.5,
             "ratingsCount": 14,
@@ -341,6 +349,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -359,6 +368,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -386,6 +396,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -404,6 +415,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,
@@ -487,6 +499,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -505,6 +518,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -527,6 +541,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -545,6 +560,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,
@@ -645,6 +661,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -663,6 +680,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -685,6 +703,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -703,6 +722,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,
@@ -805,6 +825,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -823,6 +844,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -880,6 +902,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -898,6 +921,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -925,6 +949,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -943,6 +968,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,
@@ -1026,6 +1052,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -1044,6 +1071,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -1071,6 +1099,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -1089,6 +1118,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,
@@ -1172,6 +1202,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -1190,6 +1221,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -1217,6 +1249,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -1235,6 +1268,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,
@@ -1318,6 +1352,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -1336,6 +1371,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -1358,6 +1394,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -1376,6 +1413,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,
@@ -1478,6 +1516,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "defaultavatars4cb9d863de02418f8871e90849288f20-e465dc83-4646-41c4-82d4-9fb1888b5edc.png",
+        "pfpUrl": "/mock-api/images/nonya.png",
         "categories": [{ "id": 3, "name": "Fashion & Accessories" }],
         "isEmailVerified": true,
         "preferredLanguage": "EN",
@@ -1531,6 +1570,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "defaultavatars4cb9d863de02418f8871e90849288f20-e465dc83-4646-41c4-82d4-9fb1888b5edc.png",
+              "pfpUrl": "/mock-api/images/nonya.png",
               "categories": [{ "id": 3, "name": "Fashion & Accessories" }],
               "isEmailVerified": true,
               "preferredLanguage": "EN",
@@ -1598,6 +1638,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "defaultavatars4cb9d863de02418f8871e90849288f20-e465dc83-4646-41c4-82d4-9fb1888b5edc.png",
+              "pfpUrl": "/mock-api/images/nonya.png",
               "categories": [{ "id": 3, "name": "Fashion & Accessories" }],
               "isEmailVerified": true,
               "preferredLanguage": "EN",
@@ -1685,6 +1726,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -1703,6 +1745,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -1741,6 +1784,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+              "pfpUrl": "/mock-api/images/moon.jpg",
               "categories": [
                 { "id": 10, "name": "Software & IT Solutions" },
                 { "id": 14, "name": "Technical & Repair Services" }
@@ -1759,6 +1803,7 @@
             "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
             "storeBio": "Developer",
             "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+            "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
             "deliveryFees": 38,
             "avgRating": 4.5,
             "ratingsCount": 14,
@@ -1831,6 +1876,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -1849,6 +1895,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -1887,6 +1934,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+              "pfpUrl": "/mock-api/images/moon.jpg",
               "categories": [
                 { "id": 10, "name": "Software & IT Solutions" },
                 { "id": 14, "name": "Technical & Repair Services" }
@@ -1905,6 +1953,7 @@
             "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
             "storeBio": "Developer",
             "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+            "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
             "deliveryFees": 38,
             "avgRating": 4.5,
             "ratingsCount": 14,
@@ -1977,6 +2026,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -1995,6 +2045,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -2033,6 +2084,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+              "pfpUrl": "/mock-api/images/moon.jpg",
               "categories": [
                 { "id": 10, "name": "Software & IT Solutions" },
                 { "id": 14, "name": "Technical & Repair Services" }
@@ -2051,6 +2103,7 @@
             "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
             "storeBio": "Developer",
             "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+            "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
             "deliveryFees": 38,
             "avgRating": 4.5,
             "ratingsCount": 14,
@@ -2123,6 +2176,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -2141,6 +2195,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -2178,6 +2233,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+              "pfpUrl": "/mock-api/images/moon.jpg",
               "categories": [
                 { "id": 10, "name": "Software & IT Solutions" },
                 { "id": 14, "name": "Technical & Repair Services" }
@@ -2196,6 +2252,7 @@
             "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
             "storeBio": "Developer",
             "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+            "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
             "deliveryFees": 38,
             "avgRating": 4.5,
             "ratingsCount": 14,
@@ -2275,6 +2332,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -2293,6 +2351,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -2331,6 +2390,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+              "pfpUrl": "/mock-api/images/moon.jpg",
               "categories": [
                 { "id": 10, "name": "Software & IT Solutions" },
                 { "id": 14, "name": "Technical & Repair Services" }
@@ -2349,6 +2409,7 @@
             "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
             "storeBio": "Developer",
             "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+            "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
             "deliveryFees": 38,
             "avgRating": 4.5,
             "ratingsCount": 14,
@@ -2421,6 +2482,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -2439,6 +2501,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -2476,6 +2539,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+              "pfpUrl": "/mock-api/images/moon.jpg",
               "categories": [
                 { "id": 10, "name": "Software & IT Solutions" },
                 { "id": 14, "name": "Technical & Repair Services" }
@@ -2494,6 +2558,7 @@
             "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
             "storeBio": "Developer",
             "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+            "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
             "deliveryFees": 38,
             "avgRating": 4.5,
             "ratingsCount": 14,
@@ -2573,6 +2638,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -2591,6 +2657,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -2628,6 +2695,7 @@
               "role": "BUYER",
               "city": "Riyadh",
               "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+              "pfpUrl": "/mock-api/images/moon.jpg",
               "categories": [
                 { "id": 10, "name": "Software & IT Solutions" },
                 { "id": 14, "name": "Technical & Repair Services" }
@@ -2646,6 +2714,7 @@
             "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
             "storeBio": "Developer",
             "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+            "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
             "deliveryFees": 38,
             "avgRating": 4.5,
             "ratingsCount": 14,
@@ -2731,6 +2800,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -2749,6 +2819,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -2771,6 +2842,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -2789,6 +2861,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,
@@ -2889,6 +2962,7 @@
         "role": "BUYER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "/mock-api/images/moon.jpg",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -2907,6 +2981,7 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -2934,6 +3009,7 @@
           "role": "BUYER",
           "city": "Riyadh",
           "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "/mock-api/images/moon.jpg",
           "categories": [
             { "id": 10, "name": "Software & IT Solutions" },
             { "id": 14, "name": "Technical & Repair Services" }
@@ -2952,6 +3028,7 @@
         "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
         "storeBio": "Developer",
         "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+        "storeBannerFileUrl": "/mock-api/images/flowers.jpg",
         "deliveryFees": 38,
         "avgRating": 4.5,
         "ratingsCount": 14,

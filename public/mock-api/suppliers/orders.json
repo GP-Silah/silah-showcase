@@ -24,6 +24,7 @@
           "imagesFilesNames": [
             "hairbrushes-a8272a14-cc47-481d-bb37-bfe3c0494289.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/hair brushes.jpg"],
           "caseQuantity": 6,
           "minOrderQuantity": 12,
           "maxOrderQuantity": 42,
@@ -136,6 +137,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
@@ -251,6 +253,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
@@ -363,6 +366,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
@@ -557,6 +561,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
@@ -672,6 +677,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
@@ -868,6 +874,11 @@
             "bread-2880ba58-d860-48c4-a2cf-904b93051994.jpg",
             "bread-e0589c79-6e76-47e1-aadf-cb8b34bb2f79.jpg"
           ],
+          "imagesFilesUrls": [
+            "mock-api/images/bread.jpg",
+            "mock-api/images/bread.jpg",
+            "mock-api/images/bread.jpg"
+          ],
           "caseQuantity": 10,
           "minOrderQuantity": 10,
           "maxOrderQuantity": 30,
@@ -985,6 +996,11 @@
             "bread-2880ba58-d860-48c4-a2cf-904b93051994.jpg",
             "bread-e0589c79-6e76-47e1-aadf-cb8b34bb2f79.jpg"
           ],
+          "imagesFilesUrls": [
+            "mock-api/images/bread.jpg",
+            "mock-api/images/bread.jpg",
+            "mock-api/images/bread.jpg"
+          ],
           "caseQuantity": 10,
           "minOrderQuantity": 10,
           "maxOrderQuantity": 30,
@@ -1100,6 +1116,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
@@ -1215,6 +1232,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
@@ -1330,6 +1348,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
@@ -1445,6 +1464,7 @@
           "imagesFilesNames": [
             "lipsticks-848adb95-f84a-4366-aa3f-3e9f610a331c.jpg"
           ],
+          "imagesFilesUrls": ["mock-api/images/lipsticks.jpg"],
           "caseQuantity": 7,
           "minOrderQuantity": 28,
           "allowGroupPurchase": true,
