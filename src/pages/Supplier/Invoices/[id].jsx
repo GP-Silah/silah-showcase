@@ -13,6 +13,8 @@ import {
 } from 'react-icons/fi';
 import { MessageCircle } from 'lucide-react';
 import styles from './InvoiceDetails.module.css';
+import { getInvoices } from '@/utils/mock-api/supplierApi';
+import { getChats } from '@/utils/mock-api/chatApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL;
 
@@ -31,6 +33,12 @@ const InvoiceDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   useEffect(() => {
     document.title = t('pageTitle');
     document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
@@ -47,11 +55,16 @@ const InvoiceDetails = () => {
       setLoading(true);
       setError(null);
       try {
-        const res = await axios.get(`${API_BASE}/api/invoices/me/${id}`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        });
-        setInvoice(res.data);
+        // const res = await axios.get(`${API_BASE}/api/invoices/me/${id}`, {
+        //   withCredentials: true,
+        //   headers: { 'accept-language': i18n.language },
+        // });
+        // setInvoice(res.data);
+        const { data } = await axios.get(getInvoices());
+        const invoiceData = data.find(
+          (invoice) => invoice.invoiceId === id || invoice.preInvoiceId === id,
+        );
+        setInvoice(invoiceData);
       } catch (err) {
         const msg = err.response?.data?.error?.message || t('errors.notFound');
         setError(msg);
@@ -75,9 +88,10 @@ const InvoiceDetails = () => {
     };
 
     try {
-      const { data: chats } = await axios.get(`${API_BASE}/api/chats/me`, {
-        withCredentials: true,
-      });
+      // const { data: chats } = await axios.get(`${API_BASE}/api/chats/me`, {
+      //   withCredentials: true,
+      // });
+      const { data: chats } = await axios.get(getChats());
 
       const existing = (chats || []).find(
         (c) => c.otherUser?.userId === partner.userId,
@@ -195,7 +209,11 @@ const InvoiceDetails = () => {
           <label>{t('totalAmount')}</label>
           <div className={`${styles.readonlyField} ${styles.highlight}`}>
             <FiDollarSign /> {invoice.amount.toFixed(2)}{' '}
-            <img src="/riyal.png" alt="SAR" className={styles.sar} />
+            <img
+              src="/silah-showcase/riyal.png"
+              alt="SAR"
+              className={styles.sar}
+            />
           </div>
         </div>
       </div>
@@ -238,7 +256,7 @@ const InvoiceDetails = () => {
             <div className={styles.linkedItem}>
               <img
                 src={
-                  invoice.product.imagesFilesUrls?.[0] ||
+                  normalizeUrl(invoice.product.imagesFilesUrls?.[0]) ||
                   '/images/placeholder.png'
                 }
                 alt={invoice.product.name}
@@ -247,7 +265,11 @@ const InvoiceDetails = () => {
                 <strong>{invoice.product.name}</strong>
                 <p className={styles.price}>
                   {invoice.product.price.toFixed(2)}
-                  <img src="/riyal.png" alt="SAR" className={styles.sar} />
+                  <img
+                    src="/silah-showcase/riyal.png"
+                    alt="SAR"
+                    className={styles.sar}
+                  />
                 </p>
               </div>
             </div>
@@ -274,7 +296,11 @@ const InvoiceDetails = () => {
               </p>
               <p>
                 {t('proposed')}: {invoice.offer.proposedAmount.toFixed(2)}{' '}
-                <img src="/riyal.png" alt="SAR" className={styles.sar} />
+                <img
+                  src="/silah-showcase/riyal.png"
+                  alt="SAR"
+                  className={styles.sar}
+                />
               </p>
               {invoice.offer.offerDetails && (
                 <p>
@@ -351,8 +377,9 @@ const InvoiceDetails = () => {
                         <div className={styles.linkedTooltip}>
                           <img
                             src={
-                              item.relatedProduct.imagesFilesUrls?.[0] ||
-                              '/images/placeholder.png'
+                              normalizeUrl(
+                                item.relatedProduct.imagesFilesUrls?.[0],
+                              ) || '/images/placeholder.png'
                             }
                             alt=""
                           />
@@ -365,8 +392,9 @@ const InvoiceDetails = () => {
                         <div className={styles.linkedTooltip}>
                           <img
                             src={
-                              item.relatedService.imagesFilesUrls?.[0] ||
-                              '/images/placeholder.png'
+                              normalizeUrl(
+                                item.relatedService.imagesFilesUrls?.[0],
+                              ) || '/images/placeholder.png'
                             }
                             alt=""
                           />
@@ -384,7 +412,11 @@ const InvoiceDetails = () => {
           <div className={styles.totalSummary}>
             <strong>
               {t('total')}: {invoice.amount.toFixed(2)}{' '}
-              <img src="/riyal.png" alt="SAR" className={styles.sar} />
+              <img
+                src="/silah-showcase/riyal.png"
+                alt="SAR"
+                className={styles.sar}
+              />
             </strong>
           </div>
         </div>
@@ -405,7 +437,11 @@ const InvoiceDetails = () => {
             <span>{t('upfrontAmount')}</span>
             <strong>
               {invoice.upfrontAmount?.toFixed(2) || '0.00'}{' '}
-              <img src="/riyal.png" alt="SAR" className={styles.sar} />
+              <img
+                src="/silah-showcase/riyal.png"
+                alt="SAR"
+                className={styles.sar}
+              />
             </strong>
           </div>
           {upfrontPaid && (
@@ -418,7 +454,11 @@ const InvoiceDetails = () => {
             <span>{t('uponDeliveryAmount')}</span>
             <strong>
               {(invoice.amount - (invoice.upfrontAmount || 0)).toFixed(2)}{' '}
-              <img src="/riyal.png" alt="SAR" className={styles.sar} />
+              <img
+                src="/silah-showcase/riyal.png"
+                alt="SAR"
+                className={styles.sar}
+              />
             </strong>
           </div>
         </div>
