@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../../App.css';
 import './Bids.css';
+import { getBids, getJoinedBids } from '@/utils/mock-api/supplierApi';
 
 export default function Bids() {
   const { t, i18n } = useTranslation('bids');
@@ -18,21 +19,16 @@ export default function Bids() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  // Remove handleDetails or fix it
-  // If you need it elsewhere, define it properly
-  // const handleDetails = () => {
-  //   navigate('/supplier/bid-details');
-  // };
-
   // -------------------------------------------------
   // 1. Load *all* bids (public)
   // -------------------------------------------------
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/bids`,
-        );
+        // const { data } = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/bids`,
+        // );
+        const { data } = await axios.get(getBids());
         setAllBids(data);
       } catch (err) {
         setError(t('errors.fetchAll'));
@@ -49,10 +45,11 @@ export default function Bids() {
   useEffect(() => {
     const fetchJoined = async () => {
       try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/bids/joined/me`,
-          { withCredentials: true },
-        );
+        // const { data } = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/bids/joined/me`,
+        //   { withCredentials: true },
+        // );
+        const { data } = await axios.get(getJoinedBids());
         setJoinedBids(data);
       } catch (err) {
         console.error('Failed to fetch joined bids:', err);

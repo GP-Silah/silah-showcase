@@ -39,3 +39,11 @@ export function getInvoices() {
 export function getPreferences() {
   return `${API_BASE_URL}/suppliers/preferences.json`;
 }
+
+export function getBids() {
+  return `${API_BASE_URL}/suppliers/bids.json`;
+}
+
+export function getJoinedBids() {
+  return `${API_BASE_URL}/suppliers/bids-joined.json`;
+}
