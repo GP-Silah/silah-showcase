@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Document, Page } from 'react-pdf';
 import styles from './AboutTheProject.module.css';
 
 export default function AboutTheProject() {
   const { t, i18n } = useTranslation('project');
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
 
   const team = t('members', { returnObjects: true });
 
@@ -26,11 +23,6 @@ export default function AboutTheProject() {
     );
     sections.forEach((sec) => observer.observe(sec));
   }, [t, i18n.language]);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-    setPageNumber(1);
-  };
 
   return (
     <main className={`${styles['about-project']} lang-${i18n.language}`}>
@@ -108,29 +100,6 @@ export default function AboutTheProject() {
             {t('pdfLinkText')}
           </a>
         </p>
-
-        <Document
-          file="/silah-showcase/1447-1-CS-GP2-8C2-Silah.pdf"
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-
-        {numPages && (
-          <div className={styles['pdf-controls']}>
-            <button onClick={() => setPageNumber((p) => Math.max(p - 1, 1))}>
-              {t('prevPage')}
-            </button>
-            <span>
-              {t('page')} {pageNumber} / {numPages}
-            </span>
-            <button
-              onClick={() => setPageNumber((p) => Math.min(p + 1, numPages))}
-            >
-              {t('nextPage')}
-            </button>
-          </div>
-        )}
       </section>
     </main>
   );
