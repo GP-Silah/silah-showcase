@@ -9,7 +9,7 @@ export function getSupplier() {
 }
 
 export function getPendingOrdersCount() {
-  return `${API_BASE_URL}/supplieres/pending-orders-count.json`;
+  return `${API_BASE_URL}/suppliers/pending-orders-count.json`;
 }
 
 export function getStockLevels() {
