@@ -1,24 +1,55 @@
-# Silah Frontend
+# Silah Showcase
 
-_Last Updated: December 2025_
+_Last Updated: January 2026_
 
 This is the permenant showcase of the frontend application for [Silah](https://github.com/GP-Silah), an AI-augmented full-stack B2B platform that connects suppliers and buyers. Built using [React](https://reactjs.org/) and [Vite](https://vitejs.dev/).
+You can find the actual production frontend repository at [Silah Frontend](https://github.com/GP-Silah/silah-frontend).
 
 > **Silah** (Arabic: صِلَة) _\[noun]_ Connection, bond, link; often used to describe the ties between people, family, or communities.
 
 ---
 
-## Architecture Overview
+## About This Showcase
 
-The frontend handles:
+This repository represents a UI and UX showcase of the Silah platform.
 
-- **User Interfaces** (Landing, Login, Signup, Buyer/Supplier dashboards)
-- **Routing** (Dynamic route discovery and lazy-loading pages)
-- **Multi-language Support** (i18n with Arabic and English)
-- **Forms & Validation** (Signup, Login, Password Reset, Buyer/Supplier forms)
-- **File Uploads** (Images & documents integration with backend)
-- **Payment Integration UI** (Tap Payments frontend flows)
-- **Responsive Layouts** (RTL/LTR support)
+- All data is mocked
+- Backend interactions are simulated
+- Some user flows are intentionally limited or disabled
+- Demo notices are shown instead of executing real actions (e.g. chat messaging, payments)
+
+This allows viewers to explore the platform’s structure, design, and user journeys without requiring a live backend.
+
+From a project perspective, this approach also allows the platform to remain publicly accessible as a live demo without relying on continuously running backend services or external infrastructure. By deploying the showcase as a static frontend on GitHub Pages, the project can be preserved long-term, free of operational costs, while still presenting the complete user experience and design vision of Silah.
+
+For the real architecture, full functionality, and production implementation, please refer to the main [Silah Frontend](https://github.com/GP-Silah/silah-frontend) repository.
+
+---
+
+## Showcase Scope
+
+The showcase focuses on demonstrating:
+
+- Landing page and marketing sections
+- Buyer and Supplier interface layouts
+- Navigation and routing structure
+- Multi-language support (Arabic / English)
+- RTL and LTR layout behavior
+- Chat UI flows using mock data
+- Demo-only interactions with contextual notices
+
+The following features are **NOT** implemented in this showcase:
+
+- Real-time messaging
+- Payments or checkout flows
+- File uploads
+
+Instead, these actions trigger demo context popups instead of real functionality.
+
+In the full application, these actions rely on real CRUD operations and integrations with external services (such as translations and object storage).  
+In this showcase, those interactions are intentionally disabled or simulated, and informative popups are shown instead.
+
+This ensures the user experience, UI flows, and state transitions can be explored without executing real backend logic or third-party service calls.
 
 ---
 
@@ -26,7 +57,7 @@ The frontend handles:
 
 - **Framework:** React 18 + Vite
 - **Routing:** react-router-dom v6
-- **State Management:** React Context + Hooks
+- **State Management:** React Hooks
 - **Styling:** CSS
 - **Translation:** react-i18next
 - **Testing:** Vitest + React Testing Library
@@ -50,8 +81,8 @@ Make sure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/GP-Silah/silah-frontend.git
-cd silah-frontend
+git clone https://github.com/GP-Silah/silah-showcase.git
+cd silah-showcase
 ```
 
 ### 2. Install Dependencies
@@ -60,27 +91,33 @@ cd silah-frontend
 npm install
 ```
 
-### 3. Configure Environment Variables
-
-Copy example env file:
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` for your configuration.
-
-### 4. Start the Development Server
+### 3. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
 This starts Vite dev server with HMR. The default URL: `http://localhost:5173`
+No backend setup is required.
 
 ---
 
 ## Project Structure
+
+```bash
+public/
+├─ mock-api/          # Static JSON responses used to simulate backend APIs
+│  ├─ buyers/
+│  │  ├─ cart.en.json
+│  │  ├─ preferences.json
+│  │  └─ ...
+│  ├─ images/
+│  │  ├─ code.webp
+│  │  ├─ bread.jpg
+│  │  ├─ s.png
+│  │  └─ ...
+│  └─ ...
+```
 
 ```bash
 src/
@@ -91,10 +128,14 @@ src/
 │  ├─ Signup/
 │  ├─ Login/
 │  └─ BuyerHomePage/
+├─ utils/
+│  └─ mock-api/      # Frontend helpers for consuming mock API responses
 ├─ App.jsx           # Auto-imports all pages dynamically
 ├─ main.jsx          # ReactDOM entry point
 └─ i18n.js           # Language setup
 ```
+
+The `public/mock-api` directory contains static JSON files that act as mocked API responses. These files are fetched directly by the frontend to simulate backend behavior in the showcase environment, allowing the UI to function without a live server.
 
 > **Note:** Pages are auto-detected for routing. You can optionally export a `routePath` in your page file to override the default path.
 
@@ -160,55 +201,6 @@ Language is handled globally via `i18next`. CSS classes `lang-ar` and `lang-en` 
   <Footer />
 </div>
 ```
-
----
-
-## Development Workflow
-
-### Daily Commands
-
-```bash
-npm run dev       # Start frontend dev server with HMR
-npm run build     # Build production-ready bundle
-npm run lint      # Run ESLint
-npm run format    # Prettier formatting
-npm run test      # Run unit & integration tests
-```
-
----
-
-## Code Quality
-
-- ESLint + Prettier for consistent code style
-- All new pages/components must pass linting before PR
-
----
-
-## API Integration
-
-Frontend communicates with Silah backend using REST API endpoints:
-
-- Base URL from `.env` (`VITE_API_URL`)
-- Authorization via JWT tokens stored in cookies at `localStorage`
-- File uploads handled via Cloudflare R2 signed URLs
-
----
-
-## Troubleshooting
-
-### Common Issues
-
-- **Page not showing:** Make sure folder and file names are correct and App.jsx routes are auto-detecting.
-- **HMR not working:** Restart Vite server.
-- **CSS not applied:** Ensure import paths are correct (`import '../../App.css';`).
-
----
-
-## Getting Help
-
-- Check console and network logs
-- Verify environment variables are set correctly
-- Contact frontend team or check GitHub Issues
 
 ---
 
