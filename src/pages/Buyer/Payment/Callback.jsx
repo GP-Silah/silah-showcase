@@ -64,17 +64,17 @@ export default function PaymentCallback() {
 
       try {
         if (type === 'card') {
-          await axios.put(
-            config.confirmEndpoint,
-            config.requestBody(searchParams),
-            { withCredentials: true },
-          );
+          // await axios.put(
+          //   config.confirmEndpoint,
+          //   config.requestBody(searchParams),
+          //   { withCredentials: true },
+          // );
         } else {
-          await axios.post(
-            config.confirmEndpoint(searchParams),
-            config.requestBody(searchParams),
-            { withCredentials: true },
-          );
+          // await axios.post(
+          //   config.confirmEndpoint(searchParams),
+          //   config.requestBody(searchParams),
+          //   { withCredentials: true },
+          // );
         }
 
         setMessage(t(config.successKey));

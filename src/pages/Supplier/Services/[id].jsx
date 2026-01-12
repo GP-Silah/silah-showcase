@@ -4,6 +4,9 @@ import { useTranslation } from 'react-i18next';
 import SupplierSelectSubCategory from '@/components/SupplierSelectSubCategory/SupplierSelectSubCategory';
 import { FaRegEye, FaRegEyeSlash, FaRegTrashAlt } from 'react-icons/fa';
 import '../Products/SupplierProductDetails.css'; // Reuse the same CSS
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getServiceListings } from '@/utils/mock-api/supplierApi';
+import { getCategories } from '@/utils/mock-api/categoryApi';
 
 // ======================================
 // Main Component
@@ -21,6 +24,12 @@ export default function SupplierServiceDetails() {
   const [categoryDetails, setCategoryDetails] = useState(null);
 
   const LOCAL_STORAGE_KEY = 'newServiceForm'; // for new services
+
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
 
   const [form, setForm] = useState(() => {
     const emptyForm = {
@@ -69,63 +78,74 @@ export default function SupplierServiceDetails() {
   // ======================================
   // API Integration Functions
   // ======================================
-  async function createService() {
-    const formData = new FormData();
-    const dto = {
-      name: form.name,
-      description: form.description,
-      price: Number(form.price),
-      isPriceNegotiable: form.isPriceNegotiable,
-      categoryId: Number(form.category),
-      serviceAvailability: form.serviceAvailability,
-      isPublished: form.status === 'PUBLISHED',
-    };
-    formData.append('dto', JSON.stringify(dto));
+  const { t: tDemo } = useTranslation('demo');
+  async function createService(e) {
+    // const formData = new FormData();
+    // const dto = {
+    //   name: form.name,
+    //   description: form.description,
+    //   price: Number(form.price),
+    //   isPriceNegotiable: form.isPriceNegotiable,
+    //   categoryId: Number(form.category),
+    //   serviceAvailability: form.serviceAvailability,
+    //   isPublished: form.status === 'PUBLISHED',
+    // };
+    // formData.append('dto', JSON.stringify(dto));
 
-    // Add images in create mode
-    (form._newFiles || []).forEach((file) => formData.append('files', file));
+    // // Add images in create mode
+    // (form._newFiles || []).forEach((file) => formData.append('files', file));
 
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/services`,
-      {
-        method: 'POST',
-        body: formData,
-        credentials: 'include',
-      },
-    );
-    const data = await res.json();
-    if (!res.ok)
-      throw new Error(data?.error?.message || 'Failed to create service');
-    return data;
+    // const res = await fetch(
+    //   `${import.meta.env.VITE_BACKEND_URL}/api/services`,
+    //   {
+    //     method: 'POST',
+    //     body: formData,
+    //     credentials: 'include',
+    //   },
+    // );
+    // const data = await res.json();
+    // if (!res.ok)
+    //   throw new Error(data?.error?.message || 'Failed to create service');
+    // return data;
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   }
 
-  async function updateService() {
-    const payload = {
-      name: form.name,
-      description: form.description,
-      price: Number(form.price),
-      isPriceNegotiable: form.isPriceNegotiable,
-      categoryId: Number(form.category),
-      serviceAvailability: form.serviceAvailability,
-      isPublished: form.status === 'PUBLISHED',
-    };
+  async function updateService(e) {
+    // const payload = {
+    //   name: form.name,
+    //   description: form.description,
+    //   price: Number(form.price),
+    //   isPriceNegotiable: form.isPriceNegotiable,
+    //   categoryId: Number(form.category),
+    //   serviceAvailability: form.serviceAvailability,
+    //   isPublished: form.status === 'PUBLISHED',
+    // };
 
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/services/${serviceId}`,
-      {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        credentials: 'include',
-      },
-    );
-    const data = await res.json();
-    if (!res.ok)
-      throw new Error(data?.error?.message || 'Failed to update service');
-    return data;
+    // const res = await fetch(
+    //   `${import.meta.env.VITE_BACKEND_URL}/api/services/${serviceId}`,
+    //   {
+    //     method: 'PATCH',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(payload),
+    //     credentials: 'include',
+    //   },
+    // );
+    // const data = await res.json();
+    // if (!res.ok)
+    //   throw new Error(data?.error?.message || 'Failed to update service');
+    // return data;
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   }
 
-  const uploadServiceImage = async (file) => {
+  const uploadServiceImage = async (e, file) => {
     if (!serviceId || isCreateMode) return;
     if (!file) return;
 
@@ -153,30 +173,35 @@ export default function SupplierServiceDetails() {
     try {
       setSaving(true);
       setError('');
-      const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/services/${serviceId}/images`,
-        {
-          method: 'PATCH',
-          body: formData,
-          credentials: 'include',
-        },
-      );
+      // const res = await fetch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/services/${serviceId}/images`,
+      //   {
+      //     method: 'PATCH',
+      //     body: formData,
+      //     credentials: 'include',
+      //   },
+      // );
 
-      const data = await res.json();
-      if (!res.ok)
-        throw new Error(data?.error?.message || 'Failed to upload image');
+      // const data = await res.json();
+      // if (!res.ok)
+      //   throw new Error(data?.error?.message || 'Failed to upload image');
 
-      // Add new image URL to local state
-      setForm((p) => ({
-        ...p,
-        images: [
-          ...(p.images || []),
-          {
-            url: data.imagesFilesUrls.slice(-1)[0],
-            fileName: data.imagesFilesNames.slice(-1)[0] || null,
-          },
-        ],
-      }));
+      // // Add new image URL to local state
+      // setForm((p) => ({
+      //   ...p,
+      //   images: [
+      //     ...(p.images || []),
+      //     {
+      //       url: data.imagesFilesUrls.slice(-1)[0],
+      //       fileName: data.imagesFilesNames.slice(-1)[0] || null,
+      //     },
+      //   ],
+      // }));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message);
@@ -185,44 +210,54 @@ export default function SupplierServiceDetails() {
     }
   };
 
-  async function deleteImage(fileName, idx) {
+  async function deleteImage(e, fileName, idx) {
     if (!serviceId || isCreateMode) return;
     try {
-      const res = await fetch(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/api/services/${serviceId}/image/${fileName}`,
-        { method: 'DELETE', credentials: 'include' },
-      );
-      const data = await res.json();
-      if (!res.ok)
-        throw new Error(data?.error?.message || 'Failed to delete image');
+      // const res = await fetch(
+      //   `${
+      //     import.meta.env.VITE_BACKEND_URL
+      //   }/api/services/${serviceId}/image/${fileName}`,
+      //   { method: 'DELETE', credentials: 'include' },
+      // );
+      // const data = await res.json();
+      // if (!res.ok)
+      //   throw new Error(data?.error?.message || 'Failed to delete image');
 
-      // Update local form.images (URLs)
-      setForm((p) => ({
-        ...p,
-        images: p.images.filter((_, i) => i !== idx),
-      }));
+      // // Update local form.images (URLs)
+      // setForm((p) => ({
+      //   ...p,
+      //   images: p.images.filter((_, i) => i !== idx),
+      // }));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message);
     }
   }
 
-  async function deleteService() {
+  async function deleteService(e) {
     if (!confirm('Are you sure you want to delete this service?')) return;
     try {
-      const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/services/${serviceId}`,
-        {
-          method: 'DELETE',
-          credentials: 'include',
-        },
-      );
-      const data = await res.json();
-      if (!res.ok)
-        throw new Error(data?.error?.message || 'Failed to delete service');
-      navigate('/supplier/listings');
+      // const res = await fetch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/services/${serviceId}`,
+      //   {
+      //     method: 'DELETE',
+      //     credentials: 'include',
+      //   },
+      // );
+      // const data = await res.json();
+      // if (!res.ok)
+      //   throw new Error(data?.error?.message || 'Failed to delete service');
+      // navigate('/supplier/listings');
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message);
@@ -276,33 +311,37 @@ export default function SupplierServiceDetails() {
     (async () => {
       try {
         setLoading(true);
-        const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/services/${serviceId}`,
-          {
-            credentials: 'include',
-          },
-        );
+        // const res = await fetch(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/services/${serviceId}`,
+        //   {
+        //     credentials: 'include',
+        //   },
+        // );
+        const res = await fetch(getServiceListings());
 
         const data = await res.json();
-        if (!res.ok || data.isDeleted)
+
+        const foundService = data.find((s) => s.serviceId === serviceId);
+
+        if (!res.ok || data.isDeleted || !foundService)
           throw new Error(data?.error?.message || 'Failed to load service');
 
         setForm({
           ...form,
-          id: data.serviceId,
-          name: data.name,
-          description: data.description,
-          category: data.category?.id || '',
+          id: foundService.serviceId,
+          name: foundService.name,
+          description: foundService.description,
+          category: foundService.category?.id || '',
           images:
-            data.imagesFilesUrls.map((url, i) => ({
+            foundService.imagesFilesUrls.map((url, i) => ({
               url,
-              fileName: data.imagesFilesNames[i],
+              fileName: foundService.imagesFilesNames[i],
             })) || [],
-          price: data.price,
+          price: foundService.price,
           currency: '﷼',
-          isPriceNegotiable: data.isPriceNegotiable,
-          status: data.isPublished ? 'PUBLISHED' : 'UNPUBLISHED',
-          createdAt: data.createdAt,
+          isPriceNegotiable: foundService.isPriceNegotiable,
+          status: foundService.isPublished ? 'PUBLISHED' : 'UNPUBLISHED',
+          createdAt: foundService.createdAt,
         });
       } catch (err) {
         setError(err.message);
@@ -320,14 +359,24 @@ export default function SupplierServiceDetails() {
     }
     const fetchCategory = async () => {
       try {
+        // const res = await fetch(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/categories/${
+        //     form.category
+        //   }?lang=${i18n.language}`,
+        // );
         const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/categories/${
-            form.category
-          }?lang=${i18n.language}`,
+          getCategories({
+            main: false,
+            lang: `${i18n.language}`,
+            sub: true,
+            type: 'services',
+          }),
         );
         if (!res.ok) throw new Error('category not found');
         const data = await res.json();
-        setCategoryDetails(data);
+        const category = data.find((c) => c.categoryId === form.categoryId);
+        // setCategoryDetails(data);
+        setCategoryDetails(category);
       } catch (err) {
         console.error('fetch category error', err);
         setCategoryDetails(null);
@@ -379,16 +428,21 @@ export default function SupplierServiceDetails() {
   const hasErrors = Object.values(errors).some(Boolean);
 
   /* ------- Actions ------- */
-  const handleTogglePublish = () => {
-    setForm((p) => ({
-      ...p,
-      status: p.status === 'PUBLISHED' ? 'UNPUBLISHED' : 'PUBLISHED',
-    }));
-    setMsg(
-      t(
-        `messages.${form.status === 'PUBLISHED' ? 'unpublished' : 'published'}`,
-      ),
-    );
+  const handleTogglePublish = async (e) => {
+    // setForm((p) => ({
+    //   ...p,
+    //   status: p.status === 'PUBLISHED' ? 'UNPUBLISHED' : 'PUBLISHED',
+    // }));
+    // setMsg(
+    //   t(
+    //     `messages.${form.status === 'PUBLISHED' ? 'unpublished' : 'published'}`,
+    //   ),
+    // );
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   };
 
   async function onSave(e) {
@@ -411,15 +465,20 @@ export default function SupplierServiceDetails() {
     setError('');
 
     try {
-      let data;
-      if (isCreateMode) {
-        data = await createService();
-        localStorage.removeItem(LOCAL_STORAGE_KEY); // clear auto-save after save
-      } else {
-        data = await updateService();
-      }
-      setMsg(t('messages.saved'));
-      if (isCreateMode) navigate(`/supplier/services/${data.serviceId}`); // go to new product page
+      // let data;
+      // if (isCreateMode) {
+      //   data = await createService();
+      //   localStorage.removeItem(LOCAL_STORAGE_KEY); // clear auto-save after save
+      // } else {
+      //   data = await updateService();
+      // }
+      // setMsg(t('messages.saved'));
+      // if (isCreateMode) navigate(`/supplier/services/${data.serviceId}`); // go to new product page
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message || t('errors.save'));
@@ -430,7 +489,14 @@ export default function SupplierServiceDetails() {
 
   /* ------- Images handling ------- */
   // Add image (create mode vs update mode)
-  const onAddImage = async (file) => {
+  const onAddImage = async (e, file) => {
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
+    return;
+
     if (!file) return;
 
     if (isCreateMode) {
@@ -631,7 +697,7 @@ export default function SupplierServiceDetails() {
           <div className="pd-image-list">
             {(form.images || []).map((img, i) => (
               <div key={i} className="pd-image-item">
-                <img src={img.url} alt={`service-${i}`} />{' '}
+                <img src={normalizeUrl(img.url)} alt={`service-${i}`} />{' '}
                 <div className="delete-image-icon-bg">
                   <button
                     type="button"
@@ -697,7 +763,11 @@ export default function SupplierServiceDetails() {
                   }}
                   onBlur={() => setTouched((t) => ({ ...t, price: true }))}
                 />
-                <img src="/riyal.png" alt="SAR" className="sar" />
+                <img
+                  src="/silah-showcase/riyal.png"
+                  alt="SAR"
+                  className="sar"
+                />
               </div>
               {errors.price && (
                 <div className="pd-error-text">{errors.price}</div>

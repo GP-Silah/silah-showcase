@@ -13,8 +13,11 @@ import {
   FaEnvelope,
 } from 'react-icons/fa';
 import axios from 'axios';
-import { socket } from '../../../utils/socket';
+// import { socket } from '../../../utils/socket';
 import './Chat.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getChats, getMessages } from '@/utils/mock-api/chatApi';
+import { getUser } from '@/utils/mock-api/userApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -38,6 +41,12 @@ export default function ChatDetail() {
 
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
 
   // Focus input on mount
   useEffect(() => {
@@ -66,8 +75,12 @@ export default function ChatDetail() {
 
   // === GET CURRENT USER ===
   useEffect(() => {
+    // axios
+    //   .get(`${API_BASE}/api/users/me`, { withCredentials: true })
+    //   .then((res) => setCurrentUserId(res.data.userId))
+    //   .catch(() => navigate('/buyer/chats'));
     axios
-      .get(`${API_BASE}/api/users/me`, { withCredentials: true })
+      .get(getUser())
       .then((res) => setCurrentUserId(res.data.userId))
       .catch(() => navigate('/buyer/chats'));
   }, [navigate]);
@@ -75,7 +88,10 @@ export default function ChatDetail() {
   // === LOAD MESSAGES ===
   const loadMessages = async (id) => {
     try {
-      const res = await axios.get(`${API_BASE}/api/chats/me/${id}/messages`, {
+      // const res = await axios.get(`${API_BASE}/api/chats/me/${id}/messages`, {
+      //   withCredentials: true,
+      // });
+      const res = await axios.get(getMessages(), {
         withCredentials: true,
       });
       return res.data.map((m) => ({
@@ -95,10 +111,12 @@ export default function ChatDetail() {
   // === LOAD CHAT INFO ===
   const loadChatInfo = async (id) => {
     try {
-      const res = await axios.get(`${API_BASE}/api/chats/me/${id}`, {
-        withCredentials: true,
-      });
-      const chat = res.data;
+      // const res = await axios.get(`${API_BASE}/api/chats/me/${id}`, {
+      //   withCredentials: true,
+      // });
+      // const chat = res.data;
+      const res = await axios.get(getChats());
+      const chat = res.data.find((c) => c.chatId === chatId);
       setPartner({
         userId: chat.otherUser.userId,
         name: chat.otherUser.businessName || chat.otherUser.name,
@@ -124,23 +142,21 @@ export default function ChatDetail() {
     if (unreadMessageIds.length === 0) return;
 
     try {
-      const res = await axios.patch(
-        `${API_BASE}/api/chats/me/${chatId}/read`,
-        { messageIds: unreadMessageIds },
-        { withCredentials: true },
-      );
-
-      console.log(
-        `✅ Marked ${res.data.updatedCount} message(s) as read`,
-        res.data.message,
-      );
-
-      // Optimistically update UI
-      setMessages((prev) =>
-        prev.map((m) =>
-          unreadMessageIds.includes(m.messageId) ? { ...m, isRead: true } : m,
-        ),
-      );
+      // const res = await axios.patch(
+      //   `${API_BASE}/api/chats/me/${chatId}/read`,
+      //   { messageIds: unreadMessageIds },
+      //   { withCredentials: true },
+      // );
+      // console.log(
+      //   `✅ Marked ${res.data.updatedCount} message(s) as read`,
+      //   res.data.message,
+      // );
+      // // Optimistically update UI
+      // setMessages((prev) =>
+      //   prev.map((m) =>
+      //     unreadMessageIds.includes(m.messageId) ? { ...m, isRead: true } : m,
+      //   ),
+      // );
     } catch (err) {
       console.error('❌ Failed to mark messages as read', err);
     }
@@ -156,7 +172,7 @@ export default function ChatDetail() {
     }
 
     setCurrentChatId(chatId);
-    socket.emit('join_chat', chatId);
+    // socket.emit('join_chat', chatId);
 
     Promise.all([loadMessages(chatId), loadChatInfo(chatId)])
       .then(([msgs]) => {
@@ -165,7 +181,7 @@ export default function ChatDetail() {
       .finally(() => setLoading(false));
 
     return () => {
-      if (currentChatId) socket.emit('leave_chat', currentChatId);
+      // if (currentChatId) socket.emit('leave_chat', currentChatId);
     };
   }, [chatId, isNewChat, receiverId, navigate, partnerFromState]);
 
@@ -245,126 +261,137 @@ export default function ChatDetail() {
       }
     };
 
-    socket.on('new_message', handleNewMessage);
+    // socket.on('new_message', handleNewMessage);
     return () => {
-      socket.off('new_message', handleNewMessage);
+      // socket.off('new_message', handleNewMessage);
       clearTimeout(window._readTimeout);
     };
   }, [currentUserId, currentChatId]);
 
   // === SEND TEXT MESSAGE ===
-  const sendMessage = () => {
+  const { t: tDemo } = useTranslation('demo');
+  const sendMessage = async (e) => {
     if (!input.trim() || !currentUserId) return;
 
-    const tempId = `temp-${Date.now()}`;
-    const payload = { text: input };
-    if (isNewChat) {
-      payload.receiverId = receiverId;
-    } else {
-      payload.chatId = currentChatId;
-      payload.receiverId = partner?.userId;
-    }
+    // const tempId = `temp-${Date.now()}`;
+    // const payload = { text: input };
+    // if (isNewChat) {
+    //   payload.receiverId = receiverId;
+    // } else {
+    //   payload.chatId = currentChatId;
+    //   payload.receiverId = partner?.userId;
+    // }
 
-    // 1. Optimistic UI
-    setMessages((prev) => [
-      ...prev,
-      {
-        messageId: tempId,
-        text: input,
-        senderId: currentUserId,
-        createdAt: new Date().toISOString(),
-        imageUrl: null,
-        isRead: false,
-      },
-    ]);
+    // // 1. Optimistic UI
+    // setMessages((prev) => [
+    //   ...prev,
+    //   {
+    //     messageId: tempId,
+    //     text: input,
+    //     senderId: currentUserId,
+    //     createdAt: new Date().toISOString(),
+    //     imageUrl: null,
+    //     isRead: false,
+    //   },
+    // ]);
 
-    // 2. CLEAR INPUT + DRAFT IMMEDIATELY
-    setInput('');
-    const draftKey = isNewChat
-      ? getDraftKey(`new_${receiverId}`)
-      : getDraftKey(currentChatId);
-    localStorage.removeItem(draftKey);
+    // // 2. CLEAR INPUT + DRAFT IMMEDIATELY
+    // setInput('');
+    // const draftKey = isNewChat
+    //   ? getDraftKey(`new_${receiverId}`)
+    //   : getDraftKey(currentChatId);
+    // localStorage.removeItem(draftKey);
 
-    // 3. Send via socket
-    socket.emit('send_message', payload, (ack) => {
-      console.log('ACK received:', ack);
+    // // 3. Send via socket
+    // socket.emit('send_message', payload, (ack) => {
+    //   console.log('ACK received:', ack);
 
-      if (!ack?.message) return;
+    //   if (!ack?.message) return;
 
-      const backendMsg = ack.message;
-      const newChatIdFromServer = backendMsg.chatId;
+    //   const backendMsg = ack.message;
+    //   const newChatIdFromServer = backendMsg.chatId;
 
-      // Replace temp message
-      setMessages((prev) => {
-        const idx = prev.findIndex((m) => m.messageId === tempId);
-        if (idx === -1) return prev;
-        const updated = [...prev];
-        updated[idx] = {
-          messageId: backendMsg.messageId,
-          text: backendMsg.text,
-          senderId: currentUserId,
-          createdAt: backendMsg.createdAt,
-          imageUrl: backendMsg.imageUrl || null,
-          isRead: true,
-        };
-        return updated;
-      });
+    //   // Replace temp message
+    //   setMessages((prev) => {
+    //     const idx = prev.findIndex((m) => m.messageId === tempId);
+    //     if (idx === -1) return prev;
+    //     const updated = [...prev];
+    //     updated[idx] = {
+    //       messageId: backendMsg.messageId,
+    //       text: backendMsg.text,
+    //       senderId: currentUserId,
+    //       createdAt: backendMsg.createdAt,
+    //       imageUrl: backendMsg.imageUrl || null,
+    //       isRead: true,
+    //     };
+    //     return updated;
+    //   });
 
-      // Handle new chat → real chat
-      if (isNewChat && newChatIdFromServer) {
-        setCurrentChatId(newChatIdFromServer);
-        navigate(`/buyer/chats/${newChatIdFromServer}`, { replace: true });
+    //   // Handle new chat → real chat
+    //   if (isNewChat && newChatIdFromServer) {
+    //     setCurrentChatId(newChatIdFromServer);
+    //     navigate(`/buyer/chats/${newChatIdFromServer}`, { replace: true });
 
-        setTimeout(
-          () => markReceivedMessagesAsReadBulk(newChatIdFromServer),
-          500,
-        );
-      }
+    //     setTimeout(
+    //       () => markReceivedMessagesAsReadBulk(newChatIdFromServer),
+    //       500,
+    //     );
+    //   }
+    // });
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
     });
   };
 
   // === SEND IMAGE ===
-  const sendImage = async (file) => {
-    if (!file || isNewChat || !currentChatId) {
-      alert('Send a text message first.');
-      return;
-    }
-    if (file.size > 5 * 1024 * 1024) {
-      alert('Max 5MB.');
-      return;
-    }
+  const sendImage = async (e, file) => {
+    // if (!file || isNewChat || !currentChatId) {
+    //   alert('Send a text message first.');
+    //   return;
+    // }
+    // if (file.size > 5 * 1024 * 1024) {
+    //   alert('Max 5MB.');
+    //   return;
+    // }
 
-    const tempId = `temp-${Date.now()}`;
-    const previewUrl = URL.createObjectURL(file);
+    // const tempId = `temp-${Date.now()}`;
+    // const previewUrl = URL.createObjectURL(file);
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        messageId: tempId,
-        text: null,
-        senderId: currentUserId,
-        createdAt: new Date().toISOString(),
-        imageUrl: previewUrl,
-        isRead: true,
-      },
-    ]);
+    // setMessages((prev) => [
+    //   ...prev,
+    //   {
+    //     messageId: tempId,
+    //     text: null,
+    //     senderId: currentUserId,
+    //     createdAt: new Date().toISOString(),
+    //     imageUrl: previewUrl,
+    //     isRead: true,
+    //   },
+    // ]);
 
-    const formData = new FormData();
-    formData.append('file', file);
+    // const formData = new FormData();
+    // formData.append('file', file);
 
-    try {
-      await axios.post(
-        `${API_BASE}/api/chats/me/${currentChatId}/upload`,
-        formData,
-        {
-          headers: { 'Content-Type': 'multipart/form-data' },
-          withCredentials: true,
-        },
-      );
-    } catch (err) {
-      alert('Failed to send image.');
-      setMessages((prev) => prev.filter((m) => m.messageId !== tempId));
-    }
+    // try {
+    //   await axios.post(
+    //     `${API_BASE}/api/chats/me/${currentChatId}/upload`,
+    //     formData,
+    //     {
+    //       headers: { 'Content-Type': 'multipart/form-data' },
+    //       withCredentials: true,
+    //     },
+    //   );
+    // } catch (err) {
+    //   alert('Failed to send image.');
+    //   setMessages((prev) => prev.filter((m) => m.messageId !== tempId));
+    // }
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   };
 
   // === LOADING STATE ===
@@ -379,7 +406,7 @@ export default function ChatDetail() {
         <div className="chat-header-left">
           <div className="partner-avatar">
             {partner?.avatar ? (
-              <img src={partner.avatar} alt={partner.name} />
+              <img src={normalizeUrl(partner.avatar)} alt={partner.name} />
             ) : (
               <FaEnvelope />
             )}
@@ -409,7 +436,11 @@ export default function ChatDetail() {
             >
               {msg.text && <div className="message-text">{msg.text}</div>}
               {msg.imageUrl && (
-                <img src={msg.imageUrl} alt="sent" className="message-image" />
+                <img
+                  src={normalizeUrl(msg.imageUrl)}
+                  alt="sent"
+                  className="message-image"
+                />
               )}
               <div className="message-time">
                 {new Date(msg.createdAt).toLocaleTimeString([], {

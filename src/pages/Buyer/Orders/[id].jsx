@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import './OrderDetails.css';
+import { getOrders } from '@/utils/mock-api/buyerApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -25,6 +27,12 @@ export default function OrderDetailsBuyer() {
   const [hasReviewed, setHasReviewed] = useState(null); // null = loading, true/false
   const [hasDraft, setHasDraft] = useState(false);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // -------------------------------------------------
   // Fetch Order
   // -------------------------------------------------
@@ -39,20 +47,24 @@ export default function OrderDetailsBuyer() {
     setError(null);
 
     try {
-      const { data } = await axios.get(`${API_BASE}/api/orders/${orderId}`, {
-        params: { lang: i18n.language },
-        withCredentials: true,
-      });
-      setOrder(data);
+      // const { data } = await axios.get(`${API_BASE}/api/orders/${orderId}`, {
+      //   params: { lang: i18n.language },
+      //   withCredentials: true,
+      // });
+      // setOrder(data);
+      const { data } = await axios.get(getOrders());
+      const orderData = data.find((order) => order.orderId === orderId);
+      setOrder(orderData);
 
       // === CHECK IF ALREADY REVIEWED (only if COMPLETED)
       if (data.status === 'COMPLETED') {
         try {
-          const reviewRes = await axios.get(
-            `${API_BASE}/api/reviews/has-reviewed/${orderId}`,
-            { withCredentials: true },
-          );
-          setHasReviewed(reviewRes.data.hasReviewed);
+          // const reviewRes = await axios.get(
+          //   `${API_BASE}/api/reviews/has-reviewed/${orderId}`,
+          //   { withCredentials: true },
+          // );
+          // setHasReviewed(reviewRes.data.hasReviewed);
+          setHasReviewed(false);
         } catch (err) {
           setHasReviewed(false); // 404, 401, 403 → not reviewed
         }
@@ -83,44 +95,50 @@ export default function OrderDetailsBuyer() {
   // -------------------------------------------------
   // Confirm Delivery
   // -------------------------------------------------
-  const handleConfirm = async () => {
-    if (isConfirming) return;
-    setIsConfirming(true);
+  const { t: tDemo } = useTranslation('demo');
+  const handleConfirm = async (e) => {
+    // if (isConfirming) return;
+    // setIsConfirming(true);
 
-    try {
-      await axios.patch(
-        `${API_BASE}/api/orders/${orderId}/confirm-delivery`,
-        {},
-        { withCredentials: true },
-      );
+    // try {
+    //   await axios.patch(
+    //     `${API_BASE}/api/orders/${orderId}/confirm-delivery`,
+    //     {},
+    //     { withCredentials: true },
+    //   );
 
-      // 1. Update order status locally
-      setOrder((prev) => ({ ...prev, status: 'COMPLETED' }));
+    //   // 1. Update order status locally
+    //   setOrder((prev) => ({ ...prev, status: 'COMPLETED' }));
 
-      // 2. === RE-RUN REVIEW CHECK ===
-      try {
-        const reviewRes = await axios.get(
-          `${API_BASE}/api/reviews/has-reviewed/${orderId}`,
-          { withCredentials: true },
-        );
-        setHasReviewed(reviewRes.data.hasReviewed);
-      } catch (err) {
-        setHasReviewed(false);
-      }
+    //   // 2. === RE-RUN REVIEW CHECK ===
+    //   try {
+    //     const reviewRes = await axios.get(
+    //       `${API_BASE}/api/reviews/has-reviewed/${orderId}`,
+    //       { withCredentials: true },
+    //     );
+    //     setHasReviewed(reviewRes.data.hasReviewed);
+    //   } catch (err) {
+    //     setHasReviewed(false);
+    //   }
 
-      // 3. === CHECK FOR DRAFT ===
-      const draftKey = `review_draft_${orderId}`;
-      const draft = localStorage.getItem(draftKey);
-      setHasDraft(!!draft);
-    } catch (err) {
-      const msg =
-        err.response?.data?.error?.message ||
-        err.response?.data?.message ||
-        t('errors.confirmFailed');
-      setError(msg);
-    } finally {
-      setIsConfirming(false);
-    }
+    //   // 3. === CHECK FOR DRAFT ===
+    //   const draftKey = `review_draft_${orderId}`;
+    //   const draft = localStorage.getItem(draftKey);
+    //   setHasDraft(!!draft);
+    // } catch (err) {
+    //   const msg =
+    //     err.response?.data?.error?.message ||
+    //     err.response?.data?.message ||
+    //     t('errors.confirmFailed');
+    //   setError(msg);
+    // } finally {
+    //   setIsConfirming(false);
+    // }
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   };
 
   // -------------------------------------------------
@@ -197,7 +215,11 @@ export default function OrderDetailsBuyer() {
         {t('order.totalPrice')}{' '}
         <b>
           {order.finalPrice.toLocaleString()}{' '}
-          <img src="/riyal.png" alt={t('sarAlt')} className="sar" />
+          <img
+            src="/silah-showcase/riyal.png"
+            alt={t('sarAlt')}
+            className="sar"
+          />
         </b>{' '}
         {t('order.paid')}
       </p>
@@ -215,7 +237,8 @@ export default function OrderDetailsBuyer() {
         </thead>
         <tbody>
           {order.items.map((item) => {
-            const imgUrl = item.product?.imagesFilesUrls?.[0] || '/riyal.png';
+            const imgUrl =
+              normalizeUrl(item.product?.imagesFilesUrls?.[0]) || '/riyal.png';
             return (
               <tr key={item.orderItemId}>
                 <td>

@@ -14,6 +14,12 @@ import {
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import styles from './Listings.module.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import {
+  getProductListings,
+  getServiceListings,
+} from '@/utils/mock-api/supplierApi';
+import { getPlan } from '@/utils/mock-api/supplierApi';
 
 const API_BASE = `${import.meta.env.VITE_BACKEND_URL}`;
 
@@ -35,6 +41,12 @@ export default function Listings() {
   const [planLoading, setPlanLoading] = useState(true);
   const isPremium = supplierPlan === 'PREMIUM';
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   useEffect(() => {
     document.title = t('pageTitle');
     const dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
@@ -42,13 +54,13 @@ export default function Listings() {
   }, [t, i18n.language]);
 
   // Show tooltip for non-premium users
- useEffect(() => {
-  if (!planLoading && !isPremium) {
-    setShowTooltip(true);
-    const timer = setTimeout(() => setShowTooltip(false), 3000);
-    return () => clearTimeout(timer);
-  }
-}, [isPremium, planLoading]);
+  useEffect(() => {
+    if (!planLoading && !isPremium) {
+      setShowTooltip(true);
+      const timer = setTimeout(() => setShowTooltip(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isPremium, planLoading]);
 
   // Fetch all items
   const fetchItems = useCallback(async () => {
@@ -58,15 +70,19 @@ export default function Listings() {
     }
     setLoading(true);
     try {
+      // const [prodRes, servRes] = await Promise.all([
+      //   axios.get(`${API_BASE}/api/products/supplier/${supplierId}`, {
+      //     withCredentials: true,
+      //     headers: { 'accept-language': i18n.language },
+      //   }),
+      //   axios.get(`${API_BASE}/api/services/supplier/${supplierId}`, {
+      //     withCredentials: true,
+      //     headers: { 'accept-language': i18n.language },
+      //   }),
+      // ]);
       const [prodRes, servRes] = await Promise.all([
-        axios.get(`${API_BASE}/api/products/supplier/${supplierId}`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        }),
-        axios.get(`${API_BASE}/api/services/supplier/${supplierId}`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        }),
+        axios.get(getProductListings()),
+        axios.get(getServiceListings()),
       ]);
 
       const products = prodRes.data || [];
@@ -122,41 +138,73 @@ export default function Listings() {
 
     const timer = setTimeout(async () => {
       try {
-        const res = await axios.get(
-          `${API_BASE}/api/search/supplier/catalog?name=${encodeURIComponent(
-            search,
-          )}`,
-          {
-            withCredentials: true,
-            headers: { 'accept-language': i18n.language },
-          },
-        );
+        // const res = await axios.get(
+        //   `${API_BASE}/api/search/supplier/catalog?name=${encodeURIComponent(
+        //     search,
+        //   )}`,
+        //   {
+        //     withCredentials: true,
+        //     headers: { 'accept-language': i18n.language },
+        //   },
+        // );
+        const [prodRes, servRes] = await Promise.all([
+          axios.get(getProductListings()),
+          axios.get(getServiceListings()),
+        ]);
+        const q = search.toLowerCase();
 
-        const results = res.data || [];
-        const mapped = results.map((r) =>
-          r.productId
-            ? {
-                id: r.productId,
-                type: 'product',
-                name: r.name,
-                img: r.imagesFilesUrls?.[0] || '/images/placeholder.png',
-                price: r.price,
-                stock: r.stock,
-                status: r.isPublished ? 'published' : 'unpublished',
-                wishlist: r.wishlistCount || 0,
-              }
-            : {
-                id: r.serviceId,
-                type: 'service',
-                name: r.name,
-                img: r.imagesFilesUrls?.[0] || '/images/placeholder.png',
-                price: r.price,
-                stock: null,
-                status: r.isPublished ? 'published' : 'unpublished',
-                wishlist: r.wishlistCount || 0,
-              },
-        );
-        setItems(mapped);
+        // const results = res.data || [];
+        // const mapped = results.map((r) =>
+        //   r.productId
+        //     ? {
+        //         id: r.productId,
+        //         type: 'product',
+        //         name: r.name,
+        //         img: r.imagesFilesUrls?.[0] || '/images/placeholder.png',
+        //         price: r.price,
+        //         stock: r.stock,
+        //         status: r.isPublished ? 'published' : 'unpublished',
+        //         wishlist: r.wishlistCount || 0,
+        //       }
+        //     : {
+        //         id: r.serviceId,
+        //         type: 'service',
+        //         name: r.name,
+        //         img: r.imagesFilesUrls?.[0] || '/images/placeholder.png',
+        //         price: r.price,
+        //         stock: null,
+        //         status: r.isPublished ? 'published' : 'unpublished',
+        //         wishlist: r.wishlistCount || 0,
+        //       },
+        // );
+        // setItems(mapped);
+        const products = (prodRes.data || [])
+          .filter((p) => p.name?.toLowerCase().includes(q))
+          .map((p) => ({
+            id: p.productId,
+            type: 'product',
+            name: p.name,
+            img: p.imagesFilesUrls?.[0] || '/images/placeholder.png',
+            price: p.price,
+            stock: p.stock,
+            status: p.isPublished ? 'published' : 'unpublished',
+            wishlist: p.wishlistCount || 0,
+          }));
+
+        const services = (servRes.data || [])
+          .filter((s) => s.name?.toLowerCase().includes(q))
+          .map((s) => ({
+            id: s.serviceId,
+            type: 'service',
+            name: s.name,
+            img: s.imagesFilesUrls?.[0] || '/images/placeholder.png',
+            price: s.price,
+            stock: null,
+            status: s.isPublished ? 'published' : 'unpublished',
+            wishlist: s.wishlistCount || 0,
+          }));
+
+        setItems([...products, ...services]);
       } catch {
         toast.error(t('errors.searchFailed'));
       }
@@ -175,10 +223,11 @@ export default function Listings() {
     const fetchSupplierPlan = async () => {
       try {
         setPlanLoading(true);
-        const res = await axios.get(`${API_BASE}/api/suppliers/me/plan`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        });
+        // const res = await axios.get(`${API_BASE}/api/suppliers/me/plan`, {
+        //   withCredentials: true,
+        //   headers: { 'accept-language': i18n.language },
+        // });
+        const res = await axios.get(getPlan());
         setSupplierPlan(res.data.plan || 'BASIC');
       } catch (err) {
         console.warn('Failed to fetch supplier plan, defaulting to BASIC');
@@ -192,7 +241,8 @@ export default function Listings() {
   }, [isSupplier, supplierId, i18n.language]);
 
   // Bulk actions
-  const performBulkAction = async (action) => {
+  const { t: tDemo } = useTranslation('demo');
+  const performBulkAction = async (e, action) => {
     if (!selectedIds.length) return;
 
     const promises = selectedIds.map(async (id) => {
@@ -205,20 +255,25 @@ export default function Listings() {
       }`;
 
       try {
-        if (action === 'delete') {
-          await axios.delete(url, { withCredentials: true });
-        } else if (action === 'duplicate') {
-          await axios.post(url, {}, { withCredentials: true });
-        } else {
-          await axios.patch(
-            url,
-            { isPublished: action === 'publish' },
-            {
-              withCredentials: true,
-              headers: { 'Content-Type': 'application/json' },
-            },
-          );
-        }
+        // if (action === 'delete') {
+        //   await axios.delete(url, { withCredentials: true });
+        // } else if (action === 'duplicate') {
+        //   await axios.post(url, {}, { withCredentials: true });
+        // } else {
+        //   await axios.patch(
+        //     url,
+        //     { isPublished: action === 'publish' },
+        //     {
+        //       withCredentials: true,
+        //       headers: { 'Content-Type': 'application/json' },
+        //     },
+        //   );
+        // }
+        await demoAction({
+          e,
+          title: tDemo('action.title'),
+          text: tDemo('action.description'),
+        });
       } catch (err) {
         const message =
           err.response?.data?.error?.message || t('errors.actionFailed');
@@ -226,15 +281,15 @@ export default function Listings() {
       }
     });
 
-    toast.promise(Promise.all(promises), {
-      loading: t(`actions.${action}ing`),
-      success: () => {
-        setSelected({});
-        fetchItems();
-        return t(`actions.${action}Success`);
-      },
-      error: (err) => err.message,
-    });
+    // toast.promise(Promise.all(promises), {
+    //   loading: t(`actions.${action}ing`),
+    //   success: () => {
+    //     setSelected({});
+    //     fetchItems();
+    //     return t(`actions.${action}Success`);
+    //   },
+    //   error: (err) => err.message,
+    // });
   };
 
   // Filtering & selection
@@ -385,16 +440,20 @@ export default function Listings() {
               </th>
               <th>{t('columns.image')}</th>
               <th>{t('columns.name')}</th>
-              <th className={`${styles['wishlist-header']} ${!isPremium && showTooltip ? styles['show-tooltip'] : ''}`}>
-  <FaHeart className={styles['wishlist-header-icon']} />
+              <th
+                className={`${styles['wishlist-header']} ${
+                  !isPremium && showTooltip ? styles['show-tooltip'] : ''
+                }`}
+              >
+                <FaHeart className={styles['wishlist-header-icon']} />
 
-  {/* Tooltip - visible on hover OR on load for Basic users */}
-  {!isPremium && (
-    <div className={styles['wishlist-tooltip']}>
-      {t('wishlistBlur')}
-    </div>
-  )}
-</th>
+                {/* Tooltip - visible on hover OR on load for Basic users */}
+                {!isPremium && (
+                  <div className={styles['wishlist-tooltip']}>
+                    {t('wishlistBlur')}
+                  </div>
+                )}
+              </th>
               <th>{t('columns.price')}</th>
               <th>{t('columns.stock')}</th>
               <th>{t('columns.status')}</th>
@@ -431,7 +490,7 @@ export default function Listings() {
                   <td>
                     <div className={styles.thumb}>
                       <img
-                        src={item.img}
+                        src={normalizeUrl(item.img)}
                         alt={item.name}
                         onError={(e) =>
                           (e.currentTarget.src = '/images/placeholder.png')

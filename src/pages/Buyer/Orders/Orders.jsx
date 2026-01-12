@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../../Supplier/Orders/Orders.css';
+import { getOrders } from '@/utils/mock-api/buyerApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -36,12 +37,21 @@ export default function Orders() {
         params.append('status', filter.toUpperCase()); // PENDING, PROCESSING, …
       }
 
-      const { data } = await axios.get(`${API_BASE}/api/orders/me`, {
-        params,
-        withCredentials: true,
-      });
+      // const { data } = await axios.get(`${API_BASE}/api/orders/me`, {
+      //   params,
+      //   withCredentials: true,
+      // });
+      const { data } = await axios.get(getOrders());
+      // frontend filtering (mock replacement for backend)
+      const filteredOrders =
+        filter === 'all'
+          ? data
+          : data.filter(
+              (order) => order.status === filter.toUpperCase(), // PENDING, PROCESSING, ...
+            );
 
-      setOrders(data);
+      // setOrders(data);
+      setOrders(filteredOrders);
     } catch (err) {
       const message =
         err.response?.data?.error?.message ||
@@ -168,7 +178,11 @@ export default function Orders() {
                   </td>
                   <td>
                     {order.finalPrice.toLocaleString()}
-                    <img src="/riyal.png" alt="SAR" className="sar" />
+                    <img
+                      src="/silah-showcase/riyal.png"
+                      alt="SAR"
+                      className="sar"
+                    />
                   </td>
                 </tr>
               );

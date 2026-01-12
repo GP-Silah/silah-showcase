@@ -8,8 +8,10 @@ import {
   FaFileInvoiceDollar,
 } from 'react-icons/fa';
 import axios from 'axios';
-import { socket } from '../../../utils/socket';
+// import { socket } from '../../../utils/socket';
 import styles from './Chats.module.css';
+import { getChats } from '@/utils/mock-api/chatApi';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -32,7 +34,13 @@ export default function ChatsSupplier() {
 
   const dropdownRef = useRef(null);
   const searchTimeout = useRef(null);
-  const socketInitialized = useRef(false);
+  // const socketInitialized = useRef(false);
+
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
 
   // Check if user has a pending invoice draft
   const hasInvoiceDraft = (userId) => {
@@ -45,39 +53,39 @@ export default function ChatsSupplier() {
     document.title = t('pageTitle');
   }, [t]);
 
-  // Real-time new message
-  useEffect(() => {
-    if (socketInitialized.current) return;
+  // // Real-time new message
+  // useEffect(() => {
+  //   if (socketInitialized.current) return;
 
-    socket.on('new_message', (data) => {
-      const msg = data.message || data;
-      if (!msg?.chatId) return;
+  //   socket.on('new_message', (data) => {
+  //     const msg = data.message || data;
+  //     if (!msg?.chatId) return;
 
-      setChats((prev) => {
-        const updated = [...prev];
-        const chatIndex = updated.findIndex((c) => c.chatId === msg.chatId);
-        if (chatIndex === -1) {
-          fetchChats();
-          return prev;
-        }
+  //     setChats((prev) => {
+  //       const updated = [...prev];
+  //       const chatIndex = updated.findIndex((c) => c.chatId === msg.chatId);
+  //       if (chatIndex === -1) {
+  //         fetchChats();
+  //         return prev;
+  //       }
 
-        const chat = updated[chatIndex];
-        updated[chatIndex] = {
-          ...chat,
-          lastMessage: msg.text || t('imageMessage'),
-          lastMessageTime: msg.createdAt,
-          unreadCount: chat.unreadCount + 1,
-          isRead: false,
-        };
+  //       const chat = updated[chatIndex];
+  //       updated[chatIndex] = {
+  //         ...chat,
+  //         lastMessage: msg.text || t('imageMessage'),
+  //         lastMessageTime: msg.createdAt,
+  //         unreadCount: chat.unreadCount + 1,
+  //         isRead: false,
+  //       };
 
-        updated.splice(chatIndex, 1);
-        updated.unshift(updated[chatIndex]);
-        return updated;
-      });
-    });
+  //       updated.splice(chatIndex, 1);
+  //       updated.unshift(updated[chatIndex]);
+  //       return updated;
+  //     });
+  //   });
 
-    socketInitialized.current = true;
-  }, [t]);
+  //   socketInitialized.current = true;
+  // }, [t]);
 
   const fetchChats = useCallback(async () => {
     setLoading(true);
@@ -102,10 +110,11 @@ export default function ChatsSupplier() {
         params.append('status', map[selectedType]);
       }
 
-      const res = await axios.get(`${API_BASE}/api/chats/me`, {
-        params,
-        withCredentials: true,
-      });
+      // const res = await axios.get(`${API_BASE}/api/chats/me`, {
+      //   params,
+      //   withCredentials: true,
+      // });
+      const res = await axios.get(getChats());
 
       const formatted = res.data.map((chat) => {
         const draftKey = `chat_draft_${chat.chatId}`;
@@ -115,7 +124,7 @@ export default function ChatsSupplier() {
           chatId: chat.chatId,
           partnerId: chat.otherUser.userId,
           partnerName: chat.otherUser.businessName || chat.otherUser.name,
-          partnerAvatar: chat.otherUser.pfpUrl || '',
+          partnerAvatar: normalizeUrl(chat.otherUser.pfpUrl) || '',
           lastMessage: draft
             ? `${t('draft')}: ${draft}`
             : chat.lastMessageIsImage
@@ -153,49 +162,76 @@ export default function ChatsSupplier() {
     if (searchTimeout.current) clearTimeout(searchTimeout.current);
 
     searchTimeout.current = setTimeout(async () => {
+      const q = searchQuery.trim().toLowerCase();
       try {
+        // const [chatRes, userRes] = await Promise.all([
+        //   axios.get(`${API_BASE}/api/search/chats`, {
+        //     params: { text: searchQuery },
+        //     withCredentials: true,
+        //   }),
+        //   axios.get(`${API_BASE}/api/search/users`, {
+        //     params: { name: searchQuery },
+        //     withCredentials: true,
+        //   }),
+        // ]);
         const [chatRes, userRes] = await Promise.all([
-          axios.get(`${API_BASE}/api/search/chats`, {
-            params: { text: searchQuery },
-            withCredentials: true,
-          }),
-          axios.get(`${API_BASE}/api/search/users`, {
-            params: { name: searchQuery },
-            withCredentials: true,
-          }),
+          axios.get(getChats()),
+          axios.get(getSearchResults({ type: 'suppliers', isAll: true })),
         ]);
 
-        const chatResults = chatRes.data.map((chat) => {
-          const draftKey = `chat_draft_${chat.chatId}`;
-          const draft = localStorage.getItem(draftKey) || '';
-          return {
-            chatId: chat.chatId,
-            partnerId: chat.otherUser.userId,
-            partnerName: chat.otherUser.businessName || chat.otherUser.name,
-            partnerAvatar: chat.otherUser.pfpUrl || '',
-            lastMessage: draft
-              ? `${t('draft')}: ${draft}`
-              : chat.lastMessageIsImage
-              ? t('imageMessage')
-              : chat.lastMessageText || '',
-            hasDraft: !!draft,
-            lastMessageTime: chat.lastMessageAt,
-            unreadCount: chat.unreadCount || 0,
-            isRead: (chat.unreadCount || 0) === 0,
-            categories: chat.otherUser.categories || [],
-            isNewUser: false,
-          };
-        });
+        // const chatResults = chatRes.data.map((chat) => {
+        const chatResults = chatRes.data
+          .filter((chat) => {
+            const name =
+              chat.otherUser.businessName || chat.otherUser.name || '';
+
+            return name.toLowerCase().includes(q);
+          })
+          .map((chat) => {
+            const draftKey = `chat_draft_${chat.chatId}`;
+            const draft = localStorage.getItem(draftKey) || '';
+            return {
+              chatId: chat.chatId,
+              partnerId: chat.otherUser.userId,
+              partnerName: chat.otherUser.businessName || chat.otherUser.name,
+              partnerAvatar: normalizeUrl(chat.otherUser.pfpUrl) || '',
+              lastMessage: draft
+                ? `${t('draft')}: ${draft}`
+                : chat.lastMessageIsImage
+                ? t('imageMessage')
+                : chat.lastMessageText || '',
+              hasDraft: !!draft,
+              lastMessageTime: chat.lastMessageAt,
+              unreadCount: chat.unreadCount || 0,
+              isRead: (chat.unreadCount || 0) === 0,
+              categories: chat.otherUser.categories || [],
+              isNewUser: false,
+            };
+          });
 
         const userResults = userRes.data
+          .filter((supplier) => {
+            const name = supplier.user.businessName || supplier.user.name || '';
+
+            return name.toLowerCase().includes(q);
+          })
           .filter(
-            (user) => !chatResults.some((c) => c.partnerId === user.userId),
+            // (user) => !chatResults.some((c) => c.partnerId === user.userId),
+            (supplier) =>
+              !chatResults.some((c) => c.partnerId === supplier.user.userId),
           )
-          .map((user) => ({
-            userId: user.userId,
-            partnerName: user.businessName || user.name,
-            partnerAvatar: user.pfpUrl || '',
-            categories: user.categories || [],
+          // .map((user) => ({
+          //   userId: user.userId,
+          //   partnerName: user.businessName || user.name,
+          //   partnerAvatar: normalizeUrl(user.pfpUrl) || '',
+          //   categories: user.categories || [],
+          //   isNewUser: true,
+          // }));
+          .map((supplier) => ({
+            userId: supplier.user.userId,
+            partnerName: supplier.user.businessName || supplier.user.name,
+            partnerAvatar: supplier.user.pfpUrl || '',
+            categories: supplier.user.categories || [],
             isNewUser: true,
           }));
 
@@ -441,7 +477,10 @@ export default function ChatsSupplier() {
                   >
                     <div className={styles['chats-avatar-circle']}>
                       {item.partnerAvatar ? (
-                        <img src={item.partnerAvatar} alt={item.partnerName} />
+                        <img
+                          src={normalizeUrl(item.partnerAvatar)}
+                          alt={item.partnerName}
+                        />
                       ) : (
                         <FaEnvelope />
                       )}

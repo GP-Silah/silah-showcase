@@ -4,6 +4,8 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Star } from 'lucide-react';
 import './WriteReview.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getOrders, getInvoices } from '@/utils/mock-api/buyerApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -27,6 +29,12 @@ export default function WriteReview() {
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // Set page title & dir
   useEffect(() => {
     document.title = t('pageTitle');
@@ -41,40 +49,91 @@ export default function WriteReview() {
       return;
     }
 
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        setError(null);
+    // const fetchData = async () => {
+    //   try {
+    //     setLoading(true);
+    //     setError(null);
 
-        let res;
-        try {
-          res = await axios.get(`${API_BASE}/api/invoices/me/${id}`, {
-            withCredentials: true,
-          });
-          if (res.data.type === 'PRE_INVOICE') {
+    //     let res;
+    //     try {
+    //       res = await axios.get(`${API_BASE}/api/invoices/me/${id}`, {
+    //         withCredentials: true,
+    //       });
+    //       if (res.data.type === 'PRE_INVOICE') {
+    //         setError(t('errors.preInvoiceNotAllowed'));
+    //         setLoading(false);
+    //         return;
+    //       }
+    //       setData({ type: 'invoice', ...res.data });
+    //     } catch (err) {
+    //       res = await axios.get(`${API_BASE}/api/orders/${id}`, {
+    //         withCredentials: true,
+    //       });
+    //       setData({ type: 'order', ...res.data });
+    //     }
+
+    //     // Initialize item ratings to 5
+    //     const items = res.data.items || [];
+    //     const initial = {};
+    //     items.forEach((item) => {
+    //       const itemId = item.orderItemId || item.invoiceItemId;
+    //       initial[itemId] = { rating: 5, review: '' }; // DEFAULT 5
+    //     });
+    //     setItemRatings(initial);
+    //   } catch (err) {
+    //     const msg = err.response?.data?.error?.message || err.message;
+    //     setError(msg);
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        // 1️⃣ Try invoices first
+        const { data: invoices } = await axios.get(getInvoices());
+        const invoice = invoices.find(
+          (inv) => inv.invoiceId === id || inv.preInvoiceId === id,
+        );
+
+        if (invoice) {
+          if (invoice.type === 'PRE_INVOICE') {
             setError(t('errors.preInvoiceNotAllowed'));
-            setLoading(false);
             return;
           }
-          setData({ type: 'invoice', ...res.data });
-        } catch (err) {
-          res = await axios.get(`${API_BASE}/api/orders/${id}`, {
-            withCredentials: true,
+
+          setData({ type: 'invoice', ...invoice });
+
+          const initial = {};
+          (invoice.items || []).forEach((item) => {
+            const itemId = item.invoiceItemId;
+            initial[itemId] = { rating: 5, review: '' };
           });
-          setData({ type: 'order', ...res.data });
+          setItemRatings(initial);
+          return;
         }
 
-        // Initialize item ratings to 5
-        const items = res.data.items || [];
+        // 2️⃣ Fallback to orders
+        const { data: orders } = await axios.get(getOrders());
+        const order = orders.find((o) => o.orderId === id);
+
+        if (!order) {
+          setError(t('errors.notFound'));
+          return;
+        }
+
+        setData({ type: 'order', ...order });
+
         const initial = {};
-        items.forEach((item) => {
-          const itemId = item.orderItemId || item.invoiceItemId;
-          initial[itemId] = { rating: 5, review: '' }; // DEFAULT 5
+        (order.items || []).forEach((item) => {
+          const itemId = item.orderItemId;
+          initial[itemId] = { rating: 5, review: '' };
         });
         setItemRatings(initial);
       } catch (err) {
-        const msg = err.response?.data?.error?.message || err.message;
-        setError(msg);
+        setError(t('errors.notFound'));
       } finally {
         setLoading(false);
       }
@@ -150,25 +209,31 @@ export default function WriteReview() {
   );
 
   // Submit
-  const handleSubmit = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleSubmit = async (e) => {
     if (submitting) return;
     setSubmitting(true);
     try {
-      const payload = {
-        supplierRating,
-        writtenReviewOfSupplier: supplierReview.trim() || undefined,
-        itemsReview: Object.entries(itemRatings)
-          .filter(([_, v]) => v.rating > 0)
-          .map(([itemId, v]) => ({
-            [data.type === 'order' ? 'orderItemId' : 'invoiceItemId']:
-              Number(itemId),
-            itemRating: v.rating,
-            writtenReviewOfItem: v.review.trim() || undefined,
-          })),
-      };
+      // const payload = {
+      //   supplierRating,
+      //   writtenReviewOfSupplier: supplierReview.trim() || undefined,
+      //   itemsReview: Object.entries(itemRatings)
+      //     .filter(([_, v]) => v.rating > 0)
+      //     .map(([itemId, v]) => ({
+      //       [data.type === 'order' ? 'orderItemId' : 'invoiceItemId']:
+      //         Number(itemId),
+      //       itemRating: v.rating,
+      //       writtenReviewOfItem: v.review.trim() || undefined,
+      //     })),
+      // };
 
-      await axios.post(`${API_BASE}/api/reviews/${id}`, payload, {
-        withCredentials: true,
+      // await axios.post(`${API_BASE}/api/reviews/${id}`, payload, {
+      //   withCredentials: true,
+      // });
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
       });
 
       localStorage.removeItem(REVIEW_DRAFT_KEY);
@@ -193,8 +258,10 @@ export default function WriteReview() {
   const items = data.items || [];
   const companyName = supplier.businessName || supplier.supplierName;
   const bannerUrl =
-    supplier.storeBannerFileUrl || 'https://via.placeholder.com/900x200';
-  const logoUrl = supplier.user.pfpUrl || 'https://via.placeholder.com/60';
+    normalizeUrl(supplier.storeBannerFileUrl) ||
+    'https://via.placeholder.com/900x200';
+  const logoUrl =
+    normalizeUrl(supplier.user.pfpUrl) || 'https://via.placeholder.com/60';
 
   return (
     <div className="wrb-page" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -247,8 +314,8 @@ export default function WriteReview() {
                 const product = item.product || item.relatedProduct;
                 const name = product?.name || item.name;
                 const image =
-                  product?.imagesFilesUrls?.[0] ||
-                  item.imagesFilesUrls?.[0] ||
+                  normalizeUrl(product?.imagesFilesUrls?.[0]) ||
+                  normalizeUrl(item.imagesFilesUrls?.[0]) ||
                   'https://via.placeholder.com/70';
 
                 return (

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import './ChoosePlan.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getPlan } from '@/utils/mock-api/supplierApi';
 
 const ChoosePlan = () => {
   const { t } = useTranslation('ChoosePlan');
@@ -20,10 +22,11 @@ const ChoosePlan = () => {
   useEffect(() => {
     const fetchCurrentPlan = async () => {
       try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me/plan`,
-          { withCredentials: true },
-        );
+        // const { data } = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me/plan`,
+        //   { withCredentials: true },
+        // );
+        const { data } = await axios.get(getPlan());
         setCurrentPlan(data.plan); // "BASIC" or "PREMIUM"
       } catch (err) {
         console.error('Failed to fetch plan:', err);
@@ -37,22 +40,27 @@ const ChoosePlan = () => {
   // -------------------------------------------------
   // 2. Handle Upgrade
   // -------------------------------------------------
-  const handleUpgrade = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleUpgrade = async (e) => {
     setLoading(true);
     setError('');
     try {
-      const { data } = await axios.post(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/api/suppliers/me/subscripe-premium`,
-        {},
-        { withCredentials: true },
-      );
-
-      setCurrentPlan('PREMIUM');
-      setModalType('upgrade');
-      setModalMessage(data.message);
-      setShowModal(true);
+      // const { data } = await axios.post(
+      //   `${
+      //     import.meta.env.VITE_BACKEND_URL
+      //   }/api/suppliers/me/subscripe-premium`,
+      //   {},
+      //   { withCredentials: true },
+      // );
+      // setCurrentPlan('PREMIUM');
+      // setModalType('upgrade');
+      // setModalMessage(data.message);
+      // setShowModal(true);
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || t('errors.upgrade');
       setError(msg);
@@ -64,20 +72,25 @@ const ChoosePlan = () => {
   // -------------------------------------------------
   // 3. Handle Start Trial
   // -------------------------------------------------
-  const handleTrial = async () => {
+  const handleTrial = async (e) => {
     setLoading(true);
     setError('');
     try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me/start-free-trail`,
-        {},
-        { withCredentials: true },
-      );
+      // const { data } = await axios.post(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/suppliers/me/start-free-trail`,
+      //   {},
+      //   { withCredentials: true },
+      // );
 
-      setCurrentPlan('PREMIUM');
-      setModalType('trial');
-      setModalMessage(data.message);
-      setShowModal(true);
+      // setCurrentPlan('PREMIUM');
+      // setModalType('trial');
+      // setModalMessage(data.message);
+      // setShowModal(true);
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || t('errors.trial');
       setError(msg);

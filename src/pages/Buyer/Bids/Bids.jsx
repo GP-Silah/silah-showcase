@@ -5,6 +5,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import './Bids.css';
+import { getMyBids } from '@/utils/mock-api/bidApi';
 
 export default function BidsYouCreated() {
   const { t, i18n } = useTranslation('BidsCreated');
@@ -20,10 +21,11 @@ export default function BidsYouCreated() {
   useEffect(() => {
     const fetchBids = async () => {
       try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/bids/created/me`,
-          { withCredentials: true },
-        );
+        // const { data } = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/bids/created/me`,
+        //   { withCredentials: true },
+        // );
+        const { data } = await axios.get(getMyBids());
         setBids(data);
       } catch (err) {
         setError(err.response?.data?.error?.message || t('errors.fetchFailed'));

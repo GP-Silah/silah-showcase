@@ -5,6 +5,12 @@ import { Bar } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
 import ReviewCard from '@/components/ReviewCard/ReviewCard';
 import styles from './Analytics.module.css';
+import {
+  getProductListings,
+  getServiceListings,
+} from '@/utils/mock-api/supplierApi';
+import { getSupplier } from '@/utils/mock-api/supplierApi';
+import { getAnalytics, getSupplierReviews } from '@/utils/mock-api/supplierApi';
 
 import {
   Chart as ChartJS,
@@ -55,6 +61,12 @@ const AnalyticsInsights = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   useEffect(() => {
     document.title = t('pageTitle');
     document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
@@ -64,15 +76,22 @@ const AnalyticsInsights = () => {
   const fetchItemDetails = async (item) => {
     if (!item || !item.itemId) return null;
     try {
+      // const endpoint =
+      //   item.type === 'PRODUCT'
+      //     ? `/api/products/${item.itemId}`
+      //     : `/api/services/${item.itemId}`;
       const endpoint =
-        item.type === 'PRODUCT'
-          ? `/api/products/${item.itemId}`
-          : `/api/services/${item.itemId}`;
-      const res = await axios.get(`${API_BASE}${endpoint}`, {
-        withCredentials: true,
-        params: { lang: i18n.language },
-      });
-      return res.data;
+        item.type === 'PRODUCT' ? getProductListings() : getServiceListings();
+      // const res = await axios.get(`${API_BASE}${endpoint}`, {
+      //   withCredentials: true,
+      //   params: { lang: i18n.language },
+      // });
+      const res = await axios.get(endpoint);
+      const foundItem = res.data.find(
+        (i) => i.productId === item.itemId || i.serviceId === item.itemId,
+      );
+      // return res.data;
+      return foundItem;
     } catch (err) {
       console.warn('Failed to fetch item:', err);
       return { name: item.name, imagesFilesUrls: [] };
@@ -82,19 +101,24 @@ const AnalyticsInsights = () => {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const profileRes = await axios.get(`${API_BASE}/api/suppliers/me`, {
-          withCredentials: true,
-        });
+        // const profileRes = await axios.get(`${API_BASE}/api/suppliers/me`, {
+        //   withCredentials: true,
+        // });
+        const profileRes = await axios.get(getSupplier());
         const supplierId = profileRes.data.supplierId;
         const plan = profileRes.data.plan;
         setProfile({ ...profileRes.data, plan });
 
+        // const [analyticsRes, reviewsRes] = await Promise.all([
+        //   axios.get(`${API_BASE}/api/analytics/me`, { withCredentials: true }),
+        //   axios.get(`${API_BASE}/api/reviews/suppliers/${supplierId}`, {
+        //     withCredentials: true,
+        //     params: { lang: i18n.language },
+        //   }),
+        // ]);
         const [analyticsRes, reviewsRes] = await Promise.all([
-          axios.get(`${API_BASE}/api/analytics/me`, { withCredentials: true }),
-          axios.get(`${API_BASE}/api/reviews/suppliers/${supplierId}`, {
-            withCredentials: true,
-            params: { lang: i18n.language },
-          }),
+          axios.get(getAnalytics()),
+          axios.get(getSupplierReviews()),
         ]);
 
         setAnalytics(analyticsRes.data);
@@ -213,7 +237,11 @@ const AnalyticsInsights = () => {
             !isPremium && isWishlisted ? styles.premiumLocked : ''
           }`}
         >
-          <img src={img} alt={name} className={styles.itemImage} />
+          <img
+            src={normalizeUrl(img)}
+            alt={name}
+            className={styles.itemImage}
+          />
           <p className={styles.itemName}>{name}</p>
           {isWishlisted && !isPremium && (
             <div className={styles.lockOverlay}>
@@ -239,7 +267,11 @@ const AnalyticsInsights = () => {
             <h2>{t('totalSales.title')}</h2>
             <div className={styles.bigNumber}>
               {totalRevenue.toLocaleString()}{' '}
-              <img src="/riyal.png" alt="SAR" className={styles.sar} />
+              <img
+                src="/silah-showcase/riyal.png"
+                alt="SAR"
+                className={styles.sar}
+              />
             </div>
             <p className={styles.ordersCount}>
               {totalOrders} {t('totalSales.orders')}
@@ -266,8 +298,9 @@ const AnalyticsInsights = () => {
                   <div className={styles.listingImageWrapper}>
                     <img
                       src={
-                        topOrderedItem.details?.imagesFilesUrls?.[0] ||
-                        '/placeholder.png'
+                        normalizeUrl(
+                          topOrderedItem.details?.imagesFilesUrls?.[0],
+                        ) || '/placeholder.png'
                       }
                       alt={topOrderedItem.details?.name || topOrderedItem.name}
                       className={styles.listingImage}
@@ -300,8 +333,9 @@ const AnalyticsInsights = () => {
                   <div className={styles.listingImageWrapper}>
                     <img
                       src={
-                        topWishlistedItem.details?.imagesFilesUrls?.[0] ||
-                        '/placeholder.png'
+                        normalizeUrl(
+                          topWishlistedItem.details?.imagesFilesUrls?.[0],
+                        ) || '/placeholder.png'
                       }
                       alt={
                         topWishlistedItem.details?.name ||

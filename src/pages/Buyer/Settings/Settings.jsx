@@ -4,6 +4,9 @@ import axios from 'axios';
 import styles from '../../Supplier/Settings/Settings.module.css';
 import SignupBusinessActivity from '@/components/SingupBusinessActivity/SignupBusinessActivity';
 import TapCardForm from '@/components/Tap/TapCardForm';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getPreferences, getCard } from '@/utils/mock-api/buyerApi';
+import { getUser } from '@/utils/mock-api/userApi';
 
 const BuyerSettings = () => {
   const { t, i18n } = useTranslation('settings');
@@ -55,6 +58,12 @@ const BuyerSettings = () => {
     !passwordForm.confirmPassword ||
     Object.values(passwordErrors).some((error) => error);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   useEffect(() => {
     document.title = t('pageTitle.settings', { ns: 'common' });
     document.documentElement.setAttribute('dir', i18n.dir());
@@ -65,20 +74,25 @@ const BuyerSettings = () => {
       const controller = new AbortController();
       setLoading(true);
       try {
-        const userRequest = axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
-          { withCredentials: true, signal: controller.signal },
-        );
-        const cardRequest = axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/card`,
-          { withCredentials: true, signal: controller.signal },
-        );
-        const notifRequest = axios.get(
-          `${
-            import.meta.env.VITE_BACKEND_URL
-          }/api/notifications/me/preferences`,
-          { withCredentials: true, signal: controller.signal },
-        );
+        // const userRequest = axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
+        //   { withCredentials: true, signal: controller.signal },
+        // );
+        const userRequest = axios.get(getUser(), { signal: controller.signal });
+        // const cardRequest = axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/card`,
+        //   { withCredentials: true, signal: controller.signal },
+        // );
+        const cardRequest = axios.get(getCard(), { signal: controller.signal });
+        // const notifRequest = axios.get(
+        //   `${
+        //     import.meta.env.VITE_BACKEND_URL
+        //   }/api/notifications/me/preferences`,
+        //   { withCredentials: true, signal: controller.signal },
+        // );
+        const notifRequest = axios.get(getPreferences(), {
+          signal: controller.signal,
+        });
 
         const [userResponse, cardResponse, notifResponse] =
           await Promise.allSettled([userRequest, cardRequest, notifRequest]);
@@ -170,16 +184,16 @@ const BuyerSettings = () => {
   const handleTokenGenerated = async (tokenId) => {
     setLoading(true);
     try {
-      const { data } = await axios.put(
-        `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/card`,
-        {
-          tokenId,
-          redirectUrl:
-            window.location.origin + '/buyer/payment/callback?type=card',
-        },
-        { withCredentials: true },
-      );
-      window.location.href = data.transactionUrl;
+      // const { data } = await axios.put(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/card`,
+      //   {
+      //     tokenId,
+      //     redirectUrl:
+      //       window.location.origin + '/buyer/payment/callback?type=card',
+      //   },
+      //   { withCredentials: true },
+      // );
+      // window.location.href = data.transactionUrl;
     } catch (err) {
       setError(
         err.response?.data?.error?.message || t('errors.saveCardFailed'),
@@ -189,15 +203,21 @@ const BuyerSettings = () => {
     }
   };
 
-  const handleCardDelete = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleCardDelete = async (e) => {
     try {
-      await axios.delete(
-        `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/card`,
-        { withCredentials: true },
-      );
-      setHasSavedCard(false);
-      setCard({ name: '', number: '', expiry: '' });
-      setSuccess(t('success.cardDeleted'));
+      // await axios.delete(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/buyers/me/card`,
+      //   { withCredentials: true },
+      // );
+      // setHasSavedCard(false);
+      // setCard({ name: '', number: '', expiry: '' });
+      // setSuccess(t('success.cardDeleted'));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       setError(
         err.response?.data?.error?.message || t('errors.cardDeleteFailed'),
@@ -205,7 +225,7 @@ const BuyerSettings = () => {
     }
   };
 
-  const handlePasswordSubmit = async () => {
+  const handlePasswordSubmit = async (e) => {
     const errors = {
       currentPassword: passwordForm.currentPassword ? '' : t('errors.required'),
       newPassword: validatePassword('newPassword', passwordForm.newPassword),
@@ -217,20 +237,25 @@ const BuyerSettings = () => {
     setPasswordErrors(errors);
     if (Object.values(errors).every((e) => !e)) {
       try {
-        await axios.patch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/auth/me/change-password`,
-          {
-            oldPassword: passwordForm.currentPassword,
-            newPassword: passwordForm.newPassword,
-          },
-          { withCredentials: true },
-        );
-        setSuccess(t('success.passwordUpdated'));
-        setShowPasswordFields(false);
-        setPasswordForm({
-          currentPassword: '',
-          newPassword: '',
-          confirmPassword: '',
+        // await axios.patch(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/auth/me/change-password`,
+        //   {
+        //     oldPassword: passwordForm.currentPassword,
+        //     newPassword: passwordForm.newPassword,
+        //   },
+        //   { withCredentials: true },
+        // );
+        // setSuccess(t('success.passwordUpdated'));
+        // setShowPasswordFields(false);
+        // setPasswordForm({
+        //   currentPassword: '',
+        //   newPassword: '',
+        //   confirmPassword: '',
+        // });
+        await demoAction({
+          e,
+          title: tDemo('action.title'),
+          text: tDemo('action.description'),
         });
       } catch (err) {
         setError(
@@ -241,7 +266,7 @@ const BuyerSettings = () => {
     }
   };
 
-  const handleImageUpload = async (file, type) => {
+  const handleImageUpload = async (e, file, type) => {
     if (!file) return;
     if (
       file.size > 5 * 1024 * 1024 ||
@@ -253,25 +278,30 @@ const BuyerSettings = () => {
     const formData = new FormData();
     formData.append('file', file);
     try {
-      await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/users/me/profile-picture`,
-        formData,
-        {
-          headers: { 'Content-Type': 'multipart/form-data' },
-          withCredentials: true,
-        },
-      );
-      const { data } = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
-        { withCredentials: true },
-      );
-      setUser((prev) => ({
-        ...prev,
-        pfpFileName: data.pfpFileName,
-        pfpUrl: data.pfpUrl,
-        isDefaultPfp: data.pfpFileName?.includes('defaultavatars'),
-      }));
-      setSuccess(t('success.profileUploaded'));
+      // await axios.post(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/users/me/profile-picture`,
+      //   formData,
+      //   {
+      //     headers: { 'Content-Type': 'multipart/form-data' },
+      //     withCredentials: true,
+      //   },
+      // );
+      // const { data } = await axios.get(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
+      //   { withCredentials: true },
+      // );
+      // setUser((prev) => ({
+      //   ...prev,
+      //   pfpFileName: data.pfpFileName,
+      //   pfpUrl: data.pfpUrl,
+      //   isDefaultPfp: data.pfpFileName?.includes('defaultavatars'),
+      // }));
+      // setSuccess(t('success.profileUploaded'));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       setError(
         err.response?.data?.error?.message || t('errors.profileUploadFailed'),
@@ -279,23 +309,28 @@ const BuyerSettings = () => {
     }
   };
 
-  const handleImageDelete = async () => {
+  const handleImageDelete = async (e) => {
     try {
-      await axios.delete(
-        `${import.meta.env.VITE_BACKEND_URL}/api/users/me/profile-picture`,
-        { withCredentials: true },
-      );
-      const { data } = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
-        { withCredentials: true },
-      );
-      setUser((prev) => ({
-        ...prev,
-        pfpFileName: data.pfpFileName,
-        pfpUrl: data.pfpUrl,
-        isDefaultPfp: true,
-      }));
-      setSuccess(t('success.profileDeleted'));
+      // await axios.delete(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/users/me/profile-picture`,
+      //   { withCredentials: true },
+      // );
+      // const { data } = await axios.get(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
+      //   { withCredentials: true },
+      // );
+      // setUser((prev) => ({
+      //   ...prev,
+      //   pfpFileName: data.pfpFileName,
+      //   pfpUrl: data.pfpUrl,
+      //   isDefaultPfp: true,
+      // }));
+      // setSuccess(t('success.profileDeleted'));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       setError(
         err.response?.data?.error?.message || t('errors.profileDeleteFailed'),
@@ -303,7 +338,7 @@ const BuyerSettings = () => {
     }
   };
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
     try {
       setError('');
       setSuccess('');
@@ -316,19 +351,24 @@ const BuyerSettings = () => {
       if (i18n.language)
         updates.preferredLanguage = i18n.language === 'ar' ? 'AR' : 'EN';
 
-      if (Object.keys(updates).length > 0) {
-        await axios.patch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
-          updates,
-          { withCredentials: true },
-        );
-      }
-      await axios.patch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/notifications/me/preferences`,
-        { allowNotifications: notifications, ...notifTypes },
-        { withCredentials: true },
-      );
-      setSuccess(t('success.settingsUpdated'));
+      // if (Object.keys(updates).length > 0) {
+      //   await axios.patch(
+      //     `${import.meta.env.VITE_BACKEND_URL}/api/users/me`,
+      //     updates,
+      //     { withCredentials: true },
+      //   );
+      // }
+      // await axios.patch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/notifications/me/preferences`,
+      //   { allowNotifications: notifications, ...notifTypes },
+      //   { withCredentials: true },
+      // );
+      // setSuccess(t('success.settingsUpdated'));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       setError(err.response?.data?.error?.message || t('errors.saveFailed'));
     }
@@ -553,7 +593,7 @@ const BuyerSettings = () => {
                   {user.pfpFileName ? (
                     <div className={styles['image-wrapper']}>
                       <img
-                        src={user.pfpUrl}
+                        src={normalizeUrl(user.pfpUrl)}
                         alt="profile"
                         onError={(e) => (e.target.style.display = 'none')}
                       />
@@ -650,7 +690,7 @@ const BuyerSettings = () => {
                   <div className={styles['saved-card']}>
                     <div className={styles['saved-card-info']}>
                       <img
-                        src="/mada-logo.svg"
+                        src="/silah-showcase/mada-logo.svg"
                         alt="Mada"
                         className={styles['mada-logo']}
                       />

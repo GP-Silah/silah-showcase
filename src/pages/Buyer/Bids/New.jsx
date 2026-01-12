@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CreateBid.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 export default function CreateBid() {
   const { t, i18n } = useTranslation('createBid');
@@ -102,6 +103,7 @@ export default function CreateBid() {
     return Object.keys(newErrors).length === 0;
   };
 
+  const { t: tDemo } = useTranslation('demo');
   const handleSubmit = async (e) => {
     e.preventDefault();
     setApiError('');
@@ -118,19 +120,25 @@ export default function CreateBid() {
         expectedResponseTime: responseTimeMap[form.responseDeadline],
       };
 
-      const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/bids`,
-        payload,
-        {
-          withCredentials: true,
-        },
-      );
+      // const response = await axios.post(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/bids`,
+      //   payload,
+      //   {
+      //     withCredentials: true,
+      //   },
+      // );
 
       // Clear localStorage on success
       localStorage.removeItem('createBidForm');
 
       // Redirect to bid details page
-      navigate(`/buyer/bids/${response.data.bidId}`);
+      // navigate(`/buyer/bids/${response.data.bidId}`);
+
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (error) {
       setApiError(error.response?.data?.error?.message || t('errors.apiError'));
     }
