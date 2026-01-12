@@ -1,0 +1,47 @@
+{
+  "pageTitle": "About The Project | Silah",
+  "title": "Silah — An Intermediary Between Businesses and Suppliers",
+  "gp": "About The Graduation Project",
+  "supervisor": "Dr. Abeer Alarfaj",
+  "supervised": "Supervised by Dr. Abeer Alarfaj",
+  "intro": "Silah is a graduation project developed by a team of five students at Princess Nourah Bint Abdul Rahman University, supervised by Dr. Abeer Alarfaj. We created an AI-augmented B2B platform to improve procurement and supplier connections in Saudi Arabia.",
+  "abstract": "The platform allows verified companies to engage in e-bidding, group purchasing, and multilingual product search. We applied modern web technologies, AI for demand forecasting and search, and built a fully functional site.",
+  "organization": {
+    "text": "Visit our GitHub organization:",
+    "github": "https://github.com/GP-Silah",
+    "name": "GP-Silah"
+  },
+  "teamTitle": "Our Team",
+  "members": [
+    {
+      "name": "Shahad Aljohani",
+      "role": "Backend Developer",
+      "github": "https://github.com/ShahadSaad001"
+    },
+    {
+      "name": "Mayar Al-Shafi",
+      "role": "Frontend Developer",
+      "github": "https://github.com/MayarAlshafi2"
+    },
+    {
+      "name": "Hend Alotaibi",
+      "role": "Frontend & AI Developer",
+      "github": "https://github.com/Hend-Alotaibi"
+    },
+    {
+      "name": "Amal Alzahrani",
+      "role": "Frontend Developer",
+      "github": "https://github.com/A201525"
+    },
+    {
+      "name": "Fayrouz Sagga",
+      "role": "Frontend & AI Developer",
+      "github": "https://github.com/fairozzsagga"
+    }
+  ],
+  "pdfTitle": "Full Project Report",
+  "pdfLinkText": "View the full report here",
+  "prevPage": "Previous",
+  "nextPage": "Next",
+  "page": "Page"
+}
