@@ -47,3 +47,11 @@ export function getBids() {
 export function getJoinedBids() {
   return `${API_BASE_URL}/suppliers/bids-joined.json`;
 }
+
+export function getAnalytics() {
+  return `${API_BASE_URL}/suppliers/analytics.json`;
+}
+
+export function getSupplierReviews() {
+  return `${API_BASE_URL}/suppliers/reviews.json`;
+}
