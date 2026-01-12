@@ -1,0 +1,15 @@
+{
+  "productName": "Lipstick",
+  "productFirstImageFileUrl": {},
+  "product_id": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+  "forecast": [
+    { "month": "2026-01", "demand": 71 },
+    { "month": "2026-02", "demand": 111 },
+    { "month": "2026-03", "demand": 126 }
+  ],
+  "lowAccuracy": false,
+  "salesCount": 155,
+  "currentStock": 500,
+  "totalForecast": 308,
+  "recommendedStock": 0
+}
