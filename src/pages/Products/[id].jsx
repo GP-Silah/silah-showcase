@@ -193,7 +193,7 @@ export default function ProductDetails() {
   }, [groupQuantity, product]);
 
   // 6. Add to Cart
-  const addToCart = async () => {
+  const addToCart = async (e) => {
     if (!isBuyer) {
       Swal.fire({ icon: 'warning', title: t('loginToAdd') });
       return;
@@ -224,7 +224,7 @@ export default function ProductDetails() {
   };
 
   // 7. Group Purchase Actions
-  const startGroupPurchase = async () => {
+  const startGroupPurchase = async (e) => {
     const err = validateQuantity(groupQuantity);
     if (err) {
       setGroupQtyError(err);
@@ -250,7 +250,7 @@ export default function ProductDetails() {
     }
   };
 
-  const joinGroupPurchase = async (groupId) => {
+  const joinGroupPurchase = async (e, groupId) => {
     const err = validateQuantity(groupQuantity);
     if (err) {
       setGroupQtyError(err);

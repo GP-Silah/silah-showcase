@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './BidOffer.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getBids } from '@/utils/mock-api/supplierApi';
 
 const STORAGE_KEY = 'bidOfferDraft'; // global
 
@@ -104,6 +106,7 @@ export default function BidOffer() {
   // -------------------------------------------------
   // 6. Submit
   // -------------------------------------------------
+  const { t: tDemo } = useTranslation('demo');
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
@@ -123,11 +126,16 @@ export default function BidOffer() {
         notes: formData.notes || undefined,
       };
 
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/offers/bid/${id}`,
-        payload,
-        { withCredentials: true },
-      );
+      // const { data } = await axios.post(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/offers/bid/${id}`,
+      //   payload,
+      //   { withCredentials: true },
+      // );
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
 
       // Clear storage & state
       localStorage.removeItem(STORAGE_KEY);

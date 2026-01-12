@@ -5,6 +5,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getRecievedOffers } from '@/utils/mock-api/offerApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 export default function BiddingOffersBuyer() {
   const { t, i18n } = useTranslation('receivedOffers');
@@ -25,6 +27,12 @@ export default function BiddingOffersBuyer() {
     return `${day}/${month}/${year}`;
   };
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // Fetch offers
   useEffect(() => {
     const fetchOffers = async () => {
@@ -38,10 +46,11 @@ export default function BiddingOffersBuyer() {
         setLoading(true);
         setError(null);
 
-        const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/offers/bid/${bidId}`,
-          { withCredentials: true },
-        );
+        // const response = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/offers/bid/${bidId}`,
+        //   { withCredentials: true },
+        // );
+        const response = await axios.get(getRecievedOffers());
         setOffers(response.data);
       } catch (err) {
         const message =
@@ -59,31 +68,37 @@ export default function BiddingOffersBuyer() {
   }, [bidId, t]);
 
   // Update offer status
-  const handleStatusChange = async (offerId, status) => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleStatusChange = async (e, offerId, status) => {
     if (updating[offerId]) return;
 
     setUpdating((prev) => ({ ...prev, [offerId]: true }));
 
     try {
-      await axios.patch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/offers/${offerId}`,
-        null,
-        {
-          params: { status },
-          withCredentials: true,
-        },
-      );
+      // await axios.patch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/offers/${offerId}`,
+      //   null,
+      //   {
+      //     params: { status },
+      //     withCredentials: true,
+      //   },
+      // );
 
-      // Optimistically update UI
-      setOffers((prev) =>
-        prev.map((offer) =>
-          offer.offerId === offerId ? { ...offer, status } : offer,
-        ),
-      );
+      // // Optimistically update UI
+      // setOffers((prev) =>
+      //   prev.map((offer) =>
+      //     offer.offerId === offerId ? { ...offer, status } : offer,
+      //   ),
+      // );
 
-      toast.success(
-        status === 'ACCEPTED' ? t('offerAccepted') : t('offerDeclined'),
-      );
+      // toast.success(
+      //   status === 'ACCEPTED' ? t('offerAccepted') : t('offerDeclined'),
+      // );
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const message =
         err.response?.data?.error?.message ||
@@ -152,7 +167,7 @@ export default function BiddingOffersBuyer() {
                 >
                   {supplier.user?.pfpUrl ? (
                     <img
-                      src={supplier.user.pfpUrl}
+                      src={normalizeUrl(supplier.user.pfpUrl)}
                       alt={supplier.businessName}
                       className="supplier-avatar"
                     />

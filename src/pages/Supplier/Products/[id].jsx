@@ -5,6 +5,12 @@ import SupplierSelectSubCategory from '@/components/SupplierSelectSubCategory/Su
 import { FiPackage, FiClock } from 'react-icons/fi';
 import { FaRegEye, FaRegEyeSlash, FaRegTrashAlt } from 'react-icons/fa';
 import './SupplierProductDetails.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import {
+  getProductListings,
+  getServiceListings,
+} from '@/utils/mock-api/supplierApi';
+import { getCategories } from '@/utils/mock-api/categoryApi';
 
 /* ======================================================== */
 
@@ -27,6 +33,12 @@ export default function SupplierProductDetails() {
   };
 
   const LOCAL_STORAGE_KEY = 'newProductForm';
+
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
 
   const [form, setForm] = useState(() => {
     const emptyForm = {
@@ -87,87 +99,96 @@ export default function SupplierProductDetails() {
     }
   }, [form]);
 
-  async function createProduct() {
-    const formData = new FormData();
-    const dto = {
-      name: form.name,
-      description: form.description,
-      price: Number(form.pricePerUnit),
-      stock: form.stockQty,
-      categoryId: Number(form.category),
-      caseQuantity: Number(form.caseQty),
-      minOrderQuantity: Number(form.minOrderQty),
-      maxOrderQuantity:
-        form.maxOrderQty === 'Unlimited' ? null : Number(form.maxOrderQty),
-      allowGroupPurchase: form.groupEnabled,
-      minGroupOrderQuantity: Number(form.groupMinQty),
-      groupPurchasePrice: form.groupPricePerUnit
-        ? Number(form.groupPricePerUnit)
-        : null,
-      groupPurchaseDuration:
-        groupDeadlineMap[form.groupDeadline] || 'THREE_DAYS',
-      isPublished: form.status === 'PUBLISHED',
-    };
-    formData.append('dto', JSON.stringify(dto));
-
-    // Add images (files only)
-    (form._newFiles || []).forEach((file) => formData.append('files', file));
-
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/products`,
-      {
-        method: 'POST',
-        body: formData,
-        credentials: 'include',
-      },
-    );
-    const data = await res.json();
-    if (!res.ok)
-      throw new Error(data?.error?.message || 'Failed to create product');
-    return data;
+  const { t: tDemo } = useTranslation('demo');
+  async function createProduct(e) {
+    // const formData = new FormData();
+    // const dto = {
+    //   name: form.name,
+    //   description: form.description,
+    //   price: Number(form.pricePerUnit),
+    //   stock: form.stockQty,
+    //   categoryId: Number(form.category),
+    //   caseQuantity: Number(form.caseQty),
+    //   minOrderQuantity: Number(form.minOrderQty),
+    //   maxOrderQuantity:
+    //     form.maxOrderQty === 'Unlimited' ? null : Number(form.maxOrderQty),
+    //   allowGroupPurchase: form.groupEnabled,
+    //   minGroupOrderQuantity: Number(form.groupMinQty),
+    //   groupPurchasePrice: form.groupPricePerUnit
+    //     ? Number(form.groupPricePerUnit)
+    //     : null,
+    //   groupPurchaseDuration:
+    //     groupDeadlineMap[form.groupDeadline] || 'THREE_DAYS',
+    //   isPublished: form.status === 'PUBLISHED',
+    // };
+    // formData.append('dto', JSON.stringify(dto));
+    // // Add images (files only)
+    // (form._newFiles || []).forEach((file) => formData.append('files', file));
+    // const res = await fetch(
+    //   `${import.meta.env.VITE_BACKEND_URL}/api/products`,
+    //   {
+    //     method: 'POST',
+    //     body: formData,
+    //     credentials: 'include',
+    //   },
+    // );
+    // const data = await res.json();
+    // if (!res.ok)
+    //   throw new Error(data?.error?.message || 'Failed to create product');
+    // return data;
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   }
 
-  async function updateProduct() {
-    const formData = new FormData();
-    const payload = {
-      name: form.name,
-      description: form.description,
-      price: Number(form.pricePerUnit),
-      stock: form.stockQty,
-      categoryId: Number(form.category),
-      caseQuantity: Number(form.caseQty),
-      minOrderQuantity: Number(form.minOrderQty),
-      maxOrderQuantity:
-        form.maxOrderQty === 'Unlimited' ? null : Number(form.maxOrderQty),
-      allowGroupPurchase: form.groupEnabled,
-      minGroupOrderQuantity: Number(form.groupMinQty),
-      groupPurchasePrice: form.groupPricePerUnit
-        ? Number(form.groupPricePerUnit)
-        : null,
-      groupPurchaseDuration:
-        groupDeadlineMap[form.groupDeadline] || 'THREE_DAYS',
-      isPublished: form.status === 'PUBLISHED',
-    };
+  async function updateProduct(e) {
+    // const formData = new FormData();
+    // const payload = {
+    //   name: form.name,
+    //   description: form.description,
+    //   price: Number(form.pricePerUnit),
+    //   stock: form.stockQty,
+    //   categoryId: Number(form.category),
+    //   caseQuantity: Number(form.caseQty),
+    //   minOrderQuantity: Number(form.minOrderQty),
+    //   maxOrderQuantity:
+    //     form.maxOrderQty === 'Unlimited' ? null : Number(form.maxOrderQty),
+    //   allowGroupPurchase: form.groupEnabled,
+    //   minGroupOrderQuantity: Number(form.groupMinQty),
+    //   groupPurchasePrice: form.groupPricePerUnit
+    //     ? Number(form.groupPricePerUnit)
+    //     : null,
+    //   groupPurchaseDuration:
+    //     groupDeadlineMap[form.groupDeadline] || 'THREE_DAYS',
+    //   isPublished: form.status === 'PUBLISHED',
+    // };
 
-    // Add images in create mode
-    (form._newFiles || []).forEach((file) => formData.append('files', file));
+    // // Add images in create mode
+    // (form._newFiles || []).forEach((file) => formData.append('files', file));
 
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}`,
-      {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        credentials: 'include',
-      },
-    );
-    const data = await res.json();
-    if (!res.ok)
-      throw new Error(data?.error?.message || 'Failed to update product');
-    return data;
+    // const res = await fetch(
+    //   `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}`,
+    //   {
+    //     method: 'PATCH',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(payload),
+    //     credentials: 'include',
+    //   },
+    // );
+    // const data = await res.json();
+    // if (!res.ok)
+    //   throw new Error(data?.error?.message || 'Failed to update product');
+    // return data;
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   }
 
-  const uploadProductImage = async (file) => {
+  const uploadProductImage = async (e, file) => {
     if (!productId || isCreateMode) return;
     if (!file) return;
 
@@ -195,30 +216,35 @@ export default function SupplierProductDetails() {
     try {
       setSaving(true);
       setError('');
-      const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}/images`,
-        {
-          method: 'PATCH',
-          body: formData,
-          credentials: 'include',
-        },
-      );
+      // const res = await fetch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}/images`,
+      //   {
+      //     method: 'PATCH',
+      //     body: formData,
+      //     credentials: 'include',
+      //   },
+      // );
 
-      const data = await res.json();
-      if (!res.ok)
-        throw new Error(data?.error?.message || 'Failed to upload image');
+      // const data = await res.json();
+      // if (!res.ok)
+      //   throw new Error(data?.error?.message || 'Failed to upload image');
 
-      // Add new image URL to local state
-      setForm((p) => ({
-        ...p,
-        images: [
-          ...(p.images || []),
-          {
-            url: data.imagesFilesUrls.slice(-1)[0],
-            fileName: data.imagesFilesNames.slice(-1)[0] || null,
-          },
-        ],
-      }));
+      // // Add new image URL to local state
+      // setForm((p) => ({
+      //   ...p,
+      //   images: [
+      //     ...(p.images || []),
+      //     {
+      //       url: data.imagesFilesUrls.slice(-1)[0],
+      //       fileName: data.imagesFilesNames.slice(-1)[0] || null,
+      //     },
+      //   ],
+      // }));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message);
@@ -227,44 +253,54 @@ export default function SupplierProductDetails() {
     }
   };
 
-  async function deleteImage(fileName, idx) {
+  async function deleteImage(e, fileName, idx) {
     if (!productId || isCreateMode) return;
     try {
-      const res = await fetch(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/api/products/${productId}/image/${fileName}`,
-        { method: 'DELETE', credentials: 'include' },
-      );
-      const data = await res.json();
-      if (!res.ok)
-        throw new Error(data?.error?.message || 'Failed to delete image');
+      // const res = await fetch(
+      //   `${
+      //     import.meta.env.VITE_BACKEND_URL
+      //   }/api/products/${productId}/image/${fileName}`,
+      //   { method: 'DELETE', credentials: 'include' },
+      // );
+      // const data = await res.json();
+      // if (!res.ok)
+      //   throw new Error(data?.error?.message || 'Failed to delete image');
 
-      // Update local form.images (URLs)
-      setForm((p) => ({
-        ...p,
-        images: p.images.filter((_, i) => i !== idx),
-      }));
+      // // Update local form.images (URLs)
+      // setForm((p) => ({
+      //   ...p,
+      //   images: p.images.filter((_, i) => i !== idx),
+      // }));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message);
     }
   }
 
-  async function deleteProduct() {
+  async function deleteProduct(e) {
     if (!confirm('Are you sure you want to delete this product?')) return;
     try {
-      const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}`,
-        {
-          method: 'DELETE',
-          credentials: 'include',
-        },
-      );
-      const data = await res.json();
-      if (!res.ok)
-        throw new Error(data?.error?.message || 'Failed to delete product');
-      navigate('/supplier/listings');
+      // const res = await fetch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}`,
+      //   {
+      //     method: 'DELETE',
+      //     credentials: 'include',
+      //   },
+      // );
+      // const data = await res.json();
+      // if (!res.ok)
+      //   throw new Error(data?.error?.message || 'Failed to delete product');
+      // navigate('/supplier/listings');
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message);
@@ -323,40 +359,44 @@ export default function SupplierProductDetails() {
     (async () => {
       try {
         setLoading(true);
-        const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}`,
-          {
-            credentials: 'include',
-          },
-        );
+        // const res = await fetch(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}`,
+        //   {
+        //     credentials: 'include',
+        //   },
+        // );
+        const res = await fetch(getProductListings());
 
         const data = await res.json();
-        if (!res.ok || data.isDeleted)
+
+        const foundProduct = data.find((p) => p.productId === productId);
+
+        if (!res.ok || data.isDeleted || !foundProduct)
           throw new Error(data?.error?.message || 'Failed to load product');
 
         setForm({
           ...form,
-          id: data.productId,
-          name: data.name,
-          description: data.description,
-          category: data.category?.id || '',
+          id: foundProduct.productId,
+          name: foundProduct.name,
+          description: foundProduct.description,
+          category: foundProduct.category?.id || '',
           images:
-            data.imagesFilesUrls.map((url, i) => ({
+            foundProduct.imagesFilesUrls.map((url, i) => ({
               url,
-              fileName: data.imagesFilesNames[i],
+              fileName: foundProduct.imagesFilesNames[i],
             })) || [],
-          pricePerUnit: data.price,
+          pricePerUnit: foundProduct.price,
           currency: '﷼',
-          caseQty: data.caseQuantity,
-          minOrderQty: data.minOrderQuantity,
-          maxOrderQty: data.maxOrderQuantity || 'Unlimited',
-          groupEnabled: data.allowGroupPurchase,
-          groupMinQty: data.minGroupOrderQuantity,
-          groupDeadline: data.groupPurchaseDuration,
-          groupPricePerUnit: data.groupPurchasePrice,
-          status: data.isPublished ? 'PUBLISHED' : 'UNPUBLISHED',
-          stockQty: data.stock,
-          createdAt: data.createdAt,
+          caseQty: foundProduct.caseQuantity,
+          minOrderQty: foundProduct.minOrderQuantity,
+          maxOrderQty: foundProduct.maxOrderQuantity || 'Unlimited',
+          groupEnabled: foundProduct.allowGroupPurchase,
+          groupMinQty: foundProduct.minGroupOrderQuantity,
+          groupDeadline: foundProduct.groupPurchaseDuration,
+          groupPricePerUnit: foundProduct.groupPurchasePrice,
+          status: foundProduct.isPublished ? 'PUBLISHED' : 'UNPUBLISHED',
+          stockQty: foundProduct.stock,
+          createdAt: foundProduct.createdAt,
         });
       } catch (err) {
         console.error(err);
@@ -375,14 +415,24 @@ export default function SupplierProductDetails() {
     }
     const fetchCategory = async () => {
       try {
+        // const res = await fetch(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/categories/${
+        //     form.category
+        //   }?lang=${i18n.language}`,
+        // );
         const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/categories/${
-            form.category
-          }?lang=${i18n.language}`,
+          getCategories({
+            main: false,
+            lang: `${i18n.language}`,
+            sub: true,
+            type: 'products',
+          }),
         );
         if (!res.ok) throw new Error('category not found');
         const data = await res.json();
-        setCategoryDetails(data);
+        const category = data.find((c) => c.categoryId === form.categoryId);
+        // setCategoryDetails(data);
+        setCategoryDetails(category);
       } catch (err) {
         console.error('fetch category error', err);
         setCategoryDetails(null);
@@ -525,15 +575,20 @@ export default function SupplierProductDetails() {
   const hasErrors = Object.values(errors).some(Boolean);
 
   /* ------- Actions ------- */
-  const handleTogglePublish = () => {
-    setForm((p) => {
-      const newStatus = p.status === 'PUBLISHED' ? 'UNPUBLISHED' : 'PUBLISHED';
-      setMsg(
-        t(
-          `messages.${newStatus === 'PUBLISHED' ? 'published' : 'unpublished'}`,
-        ),
-      );
-      return { ...p, status: newStatus };
+  const handleTogglePublish = async (e) => {
+    // setForm((p) => {
+    //   const newStatus = p.status === 'PUBLISHED' ? 'UNPUBLISHED' : 'PUBLISHED';
+    //   setMsg(
+    //     t(
+    //       `messages.${newStatus === 'PUBLISHED' ? 'published' : 'unpublished'}`,
+    //     ),
+    //   );
+    //   return { ...p, status: newStatus };
+    // });
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
     });
   };
 
@@ -557,15 +612,20 @@ export default function SupplierProductDetails() {
     setError('');
 
     try {
-      let data;
-      if (isCreateMode) {
-        data = await createProduct();
-        localStorage.removeItem(LOCAL_STORAGE_KEY); // clear auto-save after save
-      } else {
-        data = await updateProduct();
-      }
-      setMsg(t('messages.saved'));
-      if (isCreateMode) navigate(`/supplier/products/${data.productId}`); // go to new product page
+      // let data;
+      // if (isCreateMode) {
+      //   data = await createProduct();
+      //   localStorage.removeItem(LOCAL_STORAGE_KEY); // clear auto-save after save
+      // } else {
+      //   data = await updateProduct();
+      // }
+      // setMsg(t('messages.saved'));
+      // if (isCreateMode) navigate(`/supplier/products/${data.productId}`); // go to new product page
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message || t('errors.save'));
@@ -579,31 +639,36 @@ export default function SupplierProductDetails() {
     setShowStockModal(true);
   };
 
-  const applyStockUpdate = async () => {
+  const applyStockUpdate = async (e) => {
     const qty = Number(newStockQty || 0);
     setSaving(true);
     setError('');
     setMsg('');
 
     try {
-      const payload = { stock: qty };
+      // const payload = { stock: qty };
 
-      const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}`,
-        {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-          credentials: 'include',
-        },
-      );
+      // const res = await fetch(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/products/${productId}`,
+      //   {
+      //     method: 'PATCH',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify(payload),
+      //     credentials: 'include',
+      //   },
+      // );
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.message || 'Failed to update stock');
+      // const data = await res.json();
+      // if (!res.ok) throw new Error(data?.message || 'Failed to update stock');
 
-      setForm((p) => ({ ...p, stockQty: qty }));
-      setShowStockModal(false);
-      setMsg(t('stock.updated'));
+      // setForm((p) => ({ ...p, stockQty: qty }));
+      // setShowStockModal(false);
+      // setMsg(t('stock.updated'));
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       console.error(err);
       setError(err.message);
@@ -614,7 +679,14 @@ export default function SupplierProductDetails() {
 
   /* ------- Images handling ------- */
   // Add image (create mode vs update mode)
-  const onAddImage = async (file) => {
+  const onAddImage = async (e, file) => {
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
+    return;
+
     if (!file) return;
 
     if (isCreateMode) {
@@ -831,7 +903,7 @@ export default function SupplierProductDetails() {
           <div className="pd-image-list">
             {(form.images || []).map((img, i) => (
               <div key={i} className="pd-image-item">
-                <img src={img.url} alt={`product-${i}`} />
+                <img src={normalizeUrl(img.url)} alt={`product-${i}`} />
                 <div className="delete-image-icon-bg">
                   <button
                     type="button"
@@ -893,7 +965,7 @@ export default function SupplierProductDetails() {
               }}
               onBlur={() => setTouched((t) => ({ ...t, pricePerUnit: true }))}
             />
-            <img src="/riyal.png" alt="SAR" className="sar" />
+            <img src="/silah-showcase/riyal.png" alt="SAR" className="sar" />
           </div>
           {errors.pricePerUnit && (
             <div className="pd-error-text">{errors.pricePerUnit}</div>
@@ -1107,7 +1179,11 @@ export default function SupplierProductDetails() {
                         setField('groupPricePerUnit', e.target.value)
                       }
                     />
-                    <img src="/riyal.png" alt="SAR" className="sar" />
+                    <img
+                      src="/silah-showcase/riyal.png"
+                      alt="SAR"
+                      className="sar"
+                    />
                   </div>
                   {errors.groupPricePerUnit && (
                     <div className="pd-error-text">

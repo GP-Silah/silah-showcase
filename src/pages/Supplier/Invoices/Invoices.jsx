@@ -3,8 +3,19 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../../Buyer/Invoices/Invoices.css';
+import { getInvoices } from '@/utils/mock-api/supplierApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
+
+const PRE_INVOICE_STATUSES = ['PENDING', 'SUCCESSFUL', 'FAILED'];
+
+const INVOICE_STATUSES = [
+  'PENDING',
+  'REJECTED',
+  'ACCEPTED',
+  'PARTIALLY_PAID',
+  'FULLY_PAID',
+];
 
 // Helper: first 10 digits → #1234567890
 const refNumber = (id) => {
@@ -74,11 +85,74 @@ export default function Invoices() {
       if (typeFilter !== 'all') params.showFor = typeFilter;
       if (statusFilter !== 'all') params.status = mapStatusToApi(statusFilter);
 
-      const { data } = await axios.get(`${API_BASE}/api/invoices/me`, {
-        params,
-        withCredentials: true,
+      // const { data } = await axios.get(`${API_BASE}/api/invoices/me`, {
+      //   params,
+      //   withCredentials: true,
+      // });
+      const { data } = await axios.get(getInvoices());
+      const apiStatus =
+        statusFilter === 'all' ? undefined : mapStatusToApi(statusFilter);
+
+      const normalizedStatus = validateQuery({
+        status: apiStatus,
+        showFor: typeFilter,
       });
-      setInvoices(data || []);
+
+      let invoices = [];
+      let preInvoices = [];
+
+      // ---- APPLY STATUS FILTER (same as backend) ----
+      if (normalizedStatus) {
+        if (PRE_INVOICE_STATUSES.includes(normalizedStatus)) {
+          preInvoices = data.filter(
+            (inv) =>
+              inv.type === 'PRE_INVOICE' && inv.status === normalizedStatus,
+          );
+        } else {
+          invoices = data.filter(
+            (inv) => inv.type === 'INVOICE' && inv.status === normalizedStatus,
+          );
+        }
+      } else {
+        invoices = data.filter((inv) => inv.type === 'INVOICE');
+        preInvoices = data.filter((inv) => inv.type === 'PRE_INVOICE');
+      }
+
+      // ---- APPLY SHOWFOR FILTER ----
+      if (typeFilter && typeFilter !== 'all') {
+        if (['products', 'services'].includes(typeFilter)) {
+          // invoices only
+          invoices = invoices.filter((inv) => {
+            if (typeFilter === 'products') {
+              return inv.items?.some((i) => i.relatedProduct);
+            }
+            if (typeFilter === 'services') {
+              return inv.items?.some((i) => i.relatedService);
+            }
+            return false;
+          });
+          preInvoices = [];
+        }
+
+        if (['bids', 'groups'].includes(typeFilter)) {
+          // pre-invoices only
+          preInvoices = preInvoices.filter((inv) => {
+            if (typeFilter === 'bids') return !!inv.offer?.bid;
+            if (typeFilter === 'groups') return !!inv.groupPurchaseBuyer;
+            return false;
+          });
+          invoices = [];
+        }
+      }
+
+      // ---- FINAL MERGE + SORT (same as backend) ----
+      const result = [...invoices, ...preInvoices].sort(
+        (a, b) =>
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+      );
+
+      // setInvoices(data || []);
+      setInvoices(result);
     } catch (err) {
       const msg =
         err.response?.data?.message || err.message || t('errors.unknown');
@@ -254,7 +328,11 @@ export default function Invoices() {
                   {/* Total */}
                   <td>
                     {inv.amount?.toLocaleString() || '0'}
-                    <img src="/riyal.png" alt="SAR" className="sar" />
+                    <img
+                      src="/silah-showcase/riyal.png"
+                      alt="SAR"
+                      className="sar"
+                    />
                   </td>
                 </tr>
               );
@@ -264,4 +342,52 @@ export default function Invoices() {
       </table>
     </div>
   );
+}
+
+function normalizeStatus(status) {
+  return status ? status.toUpperCase() : undefined;
+}
+
+function validateQuery({ status, showFor }) {
+  const normalizedStatus = normalizeStatus(status);
+
+  if (normalizedStatus) {
+    const isInvoiceStatus = INVOICE_STATUSES.includes(normalizedStatus);
+    const isPreInvoiceStatus = PRE_INVOICE_STATUSES.includes(normalizedStatus);
+
+    if (!isInvoiceStatus && !isPreInvoiceStatus) {
+      throw new Error(`Invalid status: ${status}`);
+    }
+  }
+
+  if (showFor === 'all' && normalizedStatus && normalizedStatus !== 'PENDING') {
+    throw new Error(
+      'When showFor is "all", the only allowed status is "PENDING"',
+    );
+  }
+
+  if (showFor) {
+    const acceptedValues = ['all', 'products', 'services', 'bids', 'groups'];
+    if (!acceptedValues.includes(showFor)) {
+      throw new Error(`Invalid showFor choice: ${showFor}`);
+    }
+
+    if (['bids', 'groups'].includes(showFor) && normalizedStatus) {
+      if (!PRE_INVOICE_STATUSES.includes(normalizedStatus)) {
+        throw new Error(
+          `Cannot filter ${showFor} with invoice status ${normalizedStatus}`,
+        );
+      }
+    }
+
+    if (['products', 'services'].includes(showFor) && normalizedStatus) {
+      if (!INVOICE_STATUSES.includes(normalizedStatus)) {
+        throw new Error(
+          `Cannot filter ${showFor} with pre-invoice status ${normalizedStatus}`,
+        );
+      }
+    }
+  }
+
+  return normalizedStatus;
 }

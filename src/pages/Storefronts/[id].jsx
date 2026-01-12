@@ -22,6 +22,7 @@ import { useAuth } from '../../context/AuthContext';
 import './SupplierStorefront.css';
 import { getSupplierReviews } from '@/utils/mock-api/reviewApi';
 import { getSearchResults } from '@/utils/mock-api/searchApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
 
 const API = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 const PLACEHOLD_BANNER = 'https://placehold.co/300x200?text=No+Image';
@@ -174,7 +175,8 @@ export default function SupplierStorefront() {
   };
 
   // ——————————————————————— OPEN CHAT (SAFE) ———————————————————————
-  const openChat = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const openChat = async (e) => {
     if (!supplier?.user?.userId) return;
     const partner = {
       userId: supplier.user.userId,

@@ -1,0 +1,86 @@
+[
+  {
+    "messageId": "8fed3212-ffce-4231-ad9a-2d91368d56e5",
+    "chatId": "44cdcf2d-04ed-4e18-9bb4-b71ae2aab1c9",
+    "sender": {
+      "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+      "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+      "name": "SHAHAD SAAD",
+      "email": "shahadsaad001.dev@gmail.com",
+      "crn": "1234567899",
+      "businessName": "ShahadSaad001",
+      "role": "BUYER",
+      "city": "Riyadh",
+      "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+      "categories": [
+        { "id": 10, "name": "Software & IT Solutions" },
+        { "id": 14, "name": "Technical & Repair Services" }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-10-25T13:07:44.792Z",
+      "updatedAt": "2026-01-03T11:58:23.970Z"
+    },
+    "receiver": {
+      "userId": "549a0904-b664-401f-a236-1f66aeedad6f",
+      "tapCustomerId": "cus_TS03A4320252015Qg8y1011372",
+      "name": "Shahad",
+      "email": "443007510@pnu.edu.sa",
+      "crn": "7001238640",
+      "businessName": "Animals World",
+      "role": "BUYER",
+      "city": "Riyadh",
+      "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+      "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
+      "isEmailVerified": false,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-11-10T20:15:43.552Z",
+      "updatedAt": "2025-11-25T04:43:55.352Z"
+    },
+    "text": "Can you customize the Bird House product I saw on your page for me? I didn't like both the green and black colors.. I wanted a wooden bird house. Is that possibe? Thank you!",
+    "isRead": false,
+    "createdAt": "2025-11-23T00:03:05.899Z"
+  },
+  {
+    "messageId": "72fca763-94a1-4258-963f-e017248b11a1",
+    "chatId": "44cdcf2d-04ed-4e18-9bb4-b71ae2aab1c9",
+    "sender": {
+      "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+      "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+      "name": "SHAHAD SAAD",
+      "email": "shahadsaad001.dev@gmail.com",
+      "crn": "1234567899",
+      "businessName": "ShahadSaad001",
+      "role": "BUYER",
+      "city": "Riyadh",
+      "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+      "categories": [
+        { "id": 10, "name": "Software & IT Solutions" },
+        { "id": 14, "name": "Technical & Repair Services" }
+      ],
+      "isEmailVerified": true,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-10-25T13:07:44.792Z",
+      "updatedAt": "2026-01-03T11:58:23.970Z"
+    },
+    "receiver": {
+      "userId": "549a0904-b664-401f-a236-1f66aeedad6f",
+      "tapCustomerId": "cus_TS03A4320252015Qg8y1011372",
+      "name": "Shahad",
+      "email": "443007510@pnu.edu.sa",
+      "crn": "7001238640",
+      "businessName": "Animals World",
+      "role": "BUYER",
+      "city": "Riyadh",
+      "pfpFileName": "defaultavatars549a0904b664401fa2361f66aeedad6f-6934e9dc-4769-4687-a3d2-6ec0b6230764.png",
+      "categories": [{ "id": 1, "name": "Agricultural & Pet Supplies" }],
+      "isEmailVerified": false,
+      "preferredLanguage": "EN",
+      "createdAt": "2025-11-10T20:15:43.552Z",
+      "updatedAt": "2025-11-25T04:43:55.352Z"
+    },
+    "imageUrl": "mock-api/images/bird-house.jpg",
+    "isRead": false,
+    "createdAt": "2025-11-23T00:03:44.952Z"
+  }
+]

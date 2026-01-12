@@ -14,6 +14,13 @@ import {
 } from 'react-icons/fi';
 import { format } from 'date-fns';
 import './CreateInvoice.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import {
+  getProductListings,
+  getServiceListings,
+} from '@/utils/mock-api/supplierApi';
+import { getChats } from '@/utils/mock-api/chatApi';
+import { getSupplier } from '@/utils/mock-api/supplierApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL;
 
@@ -60,6 +67,12 @@ const CreateInvoice = () => {
 
   const issueDate = format(new Date(), 'dd/MM/yyyy');
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   useEffect(() => {
     document.title = t('pageTitle');
     document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
@@ -76,23 +89,38 @@ const CreateInvoice = () => {
     const fetchBuyer = async () => {
       setFetchingBuyer(true);
       try {
-        const res = await axios.get(`${API_BASE}/api/users/id/${userId}`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        });
+        // const res = await axios.get(`${API_BASE}/api/users/id/${userId}`, {
+        //   withCredentials: true,
+        //   headers: { 'accept-language': i18n.language },
+        // });
+        const res = await axios.get(getChats());
 
-        const { buyer: buyerData, user } = res.data;
+        // const { buyer: buyerData, user } = res.data;
+        const chats = res.data;
+        // Find chat where otherUser matches userId AND is BUYER
+        const chat = chats.find(
+          (c) =>
+            c.otherUser?.userId === userId && c.otherUser?.role === 'BUYER',
+        );
 
-        // تأكد أن buyer موجود
-        if (!buyerData?.buyerId) {
+        // // تأكد أن buyer موجود
+        // if (!buyerData?.buyerId) {
+        //   toast.error(t('errors.buyerNotFound'));
+        //   navigate(-1);
+        //   return;
+        // }
+        if (!chat || !chat.otherUser) {
           toast.error(t('errors.buyerNotFound'));
           navigate(-1);
           return;
         }
 
+        const user = chat.otherUser;
+
         setBuyer({
           userId: user.userId,
-          buyerId: buyerData.buyerId, // ← المهم
+          // buyerId: buyerData.buyerId, // ← المهم
+          buyerId: chat.otherUser.userId, // ← المهم
           name: user.name,
           businessName: user.businessName,
           city: user.city,
@@ -115,10 +143,11 @@ const CreateInvoice = () => {
   useEffect(() => {
     const fetchSupplier = async () => {
       try {
-        const res = await axios.get(`${API_BASE}/api/suppliers/me`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        });
+        // const res = await axios.get(`${API_BASE}/api/suppliers/me`, {
+        //   withCredentials: true,
+        //   headers: { 'accept-language': i18n.language },
+        // });
+        const res = await axios.get(getSupplier());
         setSupplier(res.data);
       } catch (err) {
         toast.error(t('errors.supplierLoadFailed'));
@@ -132,15 +161,19 @@ const CreateInvoice = () => {
   const fetchListings = useCallback(async () => {
     if (!supplier?.supplierId) return;
     try {
+      // const [prodRes, servRes] = await Promise.all([
+      //   axios.get(`${API_BASE}/api/products/supplier/${supplier.supplierId}`, {
+      //     withCredentials: true,
+      //     headers: { 'accept-language': i18n.language },
+      //   }),
+      //   axios.get(`${API_BASE}/api/services/supplier/${supplier.supplierId}`, {
+      //     withCredentials: true,
+      //     headers: { 'accept-language': i18n.language },
+      //   }),
+      // ]);
       const [prodRes, servRes] = await Promise.all([
-        axios.get(`${API_BASE}/api/products/supplier/${supplier.supplierId}`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        }),
-        axios.get(`${API_BASE}/api/services/supplier/${supplier.supplierId}`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language },
-        }),
+        axios.get(getProductListings()),
+        axios.get(getServiceListings()),
       ]);
 
       const mapItem = (item, type) => ({
@@ -200,11 +233,15 @@ const CreateInvoice = () => {
 
             if (item.relatedProductId) {
               try {
-                const res = await axios.get(
-                  `${API_BASE}/api/products/${item.relatedProductId}`,
-                  { withCredentials: true },
+                // const res = await axios.get(
+                //   `${API_BASE}/api/products/${item.relatedProductId}`,
+                //   { withCredentials: true },
+                // );
+                const res = await axios.get(getProductListings());
+                // const p = res.data;
+                const p = res.data.find(
+                  (p) => p.productId === item.relatedProductId,
                 );
-                const p = res.data;
                 linkedItem = {
                   id: p.productId,
                   type: 'product',
@@ -217,11 +254,15 @@ const CreateInvoice = () => {
               }
             } else if (item.relatedServiceId) {
               try {
-                const res = await axios.get(
-                  `${API_BASE}/api/services/${item.relatedServiceId}`,
-                  { withCredentials: true },
+                // const res = await axios.get(
+                //   `${API_BASE}/api/services/${item.relatedServiceId}`,
+                //   { withCredentials: true },
+                // );
+                const res = await axios.get(getServiceListings());
+                // const s = res.data;
+                const s = res.data.find(
+                  (s) => s.serviceId === item.relatedServiceId,
                 );
-                const s = res.data;
                 linkedItem = {
                   id: s.serviceId,
                   type: 'service',
@@ -476,7 +517,8 @@ const CreateInvoice = () => {
     setItems((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleCreateInvoice = async () => {
+  const { t: tDemo } = useTranslation('demo');
+  const handleCreateInvoice = async (e) => {
     const payload = {
       buyerId: buyer.buyerId,
       supplierId: supplier.supplierId,
@@ -501,14 +543,19 @@ const CreateInvoice = () => {
     };
 
     try {
-      await axios.post(`${API_BASE}/api/invoices`, payload, {
-        withCredentials: true,
-        headers: { 'Content-Type': 'application/json' },
+      // await axios.post(`${API_BASE}/api/invoices`, payload, {
+      //   withCredentials: true,
+      //   headers: { 'Content-Type': 'application/json' },
+      // });
+      // toast.success(t('success'));
+      // // CLEAR DRAFT
+      // localStorage.removeItem(INVOICE_DRAFT_KEY);
+      // navigate(-1);
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
       });
-      toast.success(t('success'));
-      // CLEAR DRAFT
-      localStorage.removeItem(INVOICE_DRAFT_KEY);
-      navigate(-1);
     } catch (err) {
       const msg =
         err.response?.data?.error?.message || t('errors.createFailed');
@@ -792,7 +839,7 @@ const CreateInvoice = () => {
                     <div className="linked-icon">
                       <FiCheck />
                       <div className="linked-tooltip">
-                        <img src={item.linkedItem.img} alt="" />
+                        <img src={normalizeUrl(item.linkedItem.img)} alt="" />
                         <span>{item.linkedItem.name}</span>
                       </div>
                     </div>
@@ -940,7 +987,7 @@ const CreateInvoice = () => {
                       >
                         <td>
                           <div className="thumb">
-                            <img src={listing.img} alt="" />
+                            <img src={normalizeUrl(listing.img)} alt="" />
                           </div>
                         </td>
                         <td>

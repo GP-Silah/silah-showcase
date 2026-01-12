@@ -6,6 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import { faShoppingBasket, faCubes } from '@fortawesome/free-solid-svg-icons';
 import './Overview.css';
+import {
+  getSupplier,
+  getStockLevels,
+  getPendingOrdersCount,
+} from '@/utils/mock-api/supplierApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -32,14 +37,19 @@ function SupplierOverview() {
       try {
         setLoading(true);
         setError(null);
+        // const [profileRes, pendingRes, stockRes] = await Promise.all([
+        //   axios.get(`${API_BASE}/api/suppliers/me`, { withCredentials: true }),
+        //   axios.get(`${API_BASE}/api/suppliers/me/pending-orders-count`, {
+        //     withCredentials: true,
+        //   }),
+        //   axios.get(`${API_BASE}/api/suppliers/me/stock-levels`, {
+        //     withCredentials: true,
+        //   }),
+        // ]);
         const [profileRes, pendingRes, stockRes] = await Promise.all([
-          axios.get(`${API_BASE}/api/suppliers/me`, { withCredentials: true }),
-          axios.get(`${API_BASE}/api/suppliers/me/pending-orders-count`, {
-            withCredentials: true,
-          }),
-          axios.get(`${API_BASE}/api/suppliers/me/stock-levels`, {
-            withCredentials: true,
-          }),
+          axios.get(getSupplier()),
+          axios.get(getPendingOrdersCount()),
+          axios.get(getStockLevels()),
         ]);
 
         const profile = profileRes.data;

@@ -1,0 +1,39 @@
+[
+  {
+    "bidId": "b4188406-050a-4597-91a3-e56fcbdac9a0",
+    "bidName": "توفير مستلزمات صحية",
+    "mainActivity": "توفير اكبر قدر ممكن من مستلزمات الطواريء",
+    "submissionDeadline": "2026-04-01T00:00:00.000Z",
+    "expectedResponseTime": "FOUR_WEEKS",
+    "status": "CLOSED",
+    "buyer": {
+      "buyerId": "9ca00807-8633-4972-b237-45b195c2b4a6",
+      "user": {
+        "userId": "21e928da-253f-4a88-b0a1-37b9c5a1f15d",
+        "tapCustomerId": "cus_TS05A2720252026Ph621011053",
+        "name": "FAYROUZ ",
+        "email": "fairozzsagga@gmail.com",
+        "crn": "4420053940",
+        "businessName": "Store_f",
+        "role": "SUPPLIER",
+        "city": "Riyadh",
+        "pfpFileName": "defaultavatars21e928da253f4a88b0a137b9c5a1f15d-5f311856-83f0-4872-9095-e307ddbc9db8.png",
+        "categories": [{ "id": 3, "name": "Fashion & Accessories" }],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-11-10T20:26:27.214Z",
+        "updatedAt": "2025-11-25T04:54:46.551Z"
+      },
+      "card": {
+        "id": "522cb42a-1986-40eb-acf9-fcadc7af982c",
+        "tapCardId": "card_TS84A625535pliQ24nB10l481",
+        "cardHolderName": "MARAM",
+        "last4": "0008",
+        "brand": "MASTERCARD",
+        "expMonth": "01",
+        "expYear": "39"
+      }
+    },
+    "createdAt": "2025-11-24T05:40:36.500Z"
+  }
+]

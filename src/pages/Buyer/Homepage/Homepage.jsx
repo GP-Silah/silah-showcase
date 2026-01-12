@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import styles from './Homepage.module.css'; // ← فقط غيرت هذا السطر
+import { getSearchResults } from '@/utils/mock-api/searchApi';
 
 export default function Homepage() {
   const { t, i18n } = useTranslation('homepage');
@@ -32,15 +33,19 @@ export default function Homepage() {
       setError(null);
       try {
         const lang = i18n.language === 'ar' ? 'ar' : 'en';
+        // const [prodRes, servRes] = await Promise.all([
+        //   axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products`, {
+        //     headers: { 'accept-language': lang },
+        //     withCredentials: true,
+        //   }),
+        //   axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/services`, {
+        //     headers: { 'accept-language': lang },
+        //     withCredentials: true,
+        //   }),
+        // ]);
         const [prodRes, servRes] = await Promise.all([
-          axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products`, {
-            headers: { 'accept-language': lang },
-            withCredentials: true,
-          }),
-          axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/services`, {
-            headers: { 'accept-language': lang },
-            withCredentials: true,
-          }),
+          axios.get(getSearchResults({ type: 'products', lang, isAll: true })),
+          axios.get(getSearchResults({ type: 'services', lang, isAll: true })),
         ]);
         setProducts(prodRes.data || []);
         setServices(servRes.data || []);

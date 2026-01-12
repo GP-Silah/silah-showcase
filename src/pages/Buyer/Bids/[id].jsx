@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './BidDetailsBuyer.css';
+import { getMyBids } from '@/utils/mock-api/bidApi';
 
 export default function BidDetailsBuyer() {
   const { t, i18n } = useTranslation('BidDetailsBuyer');
@@ -18,10 +19,20 @@ export default function BidDetailsBuyer() {
   useEffect(() => {
     const fetchBid = async () => {
       try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/bids/${id}`,
-        );
-        setBid(data);
+        // const { data } = await axios.get(
+        //   `${import.meta.env.VITE_BACKEND_URL}/api/bids/${id}`,
+        // );
+        // setBid(data);
+        const { data } = await axios.get(getMyBids());
+
+        const foundBid = data.find((b) => String(b.bidId) === String(id));
+
+        if (!foundBid) {
+          setError(t('errors.notFound'));
+          return;
+        }
+
+        setBid(foundBid);
       } catch (err) {
         if (err.response?.status === 404) {
           setError(t('errors.notFound'));

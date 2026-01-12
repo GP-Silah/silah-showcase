@@ -6,6 +6,9 @@ import { Trash2 } from 'lucide-react';
 import { useCart } from '../../../context/CartContext';
 import Swal from 'sweetalert2';
 import './Cart.css';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getCart, getCard } from '@/utils/mock-api/buyerApi';
+import { getSearchResults } from '@/utils/mock-api/searchApi';
 
 const API = import.meta.env.VITE_BACKEND_URL;
 
@@ -23,6 +26,12 @@ export default function CartBuyer() {
   const [updating, setUpdating] = useState({});
   const [processingCheckout, setProcessingCheckout] = useState(false);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   useEffect(() => {
     document.title = t('pageTitle');
   }, [t, i18n.language]);
@@ -31,9 +40,10 @@ export default function CartBuyer() {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const cartRes = await axios.get(`${API}/api/carts/me`, {
-          withCredentials: true,
-        });
+        // const cartRes = await axios.get(`${API}/api/carts/me`, {
+        //   withCredentials: true,
+        // });
+        const cartRes = await axios.get(getCart());
         const cartData = cartRes.data;
 
         // Extract all unique product IDs
@@ -45,21 +55,36 @@ export default function CartBuyer() {
           ),
         ];
 
-        // Fetch all products in parallel
-        const productPromises = productIds.map((id) =>
-          axios
-            .get(`${API}/api/products/${id}`, {
-              params: { lang: i18n.language },
-              withCredentials: true,
-            })
-            .catch(() => null),
+        // // Fetch all products in parallel
+        // const productPromises = productIds.map((id) =>
+        //   axios
+        //     .get(`${API}/api/products/${id}`, {
+        //       params: { lang: i18n.language },
+        //       withCredentials: true,
+        //     })
+        //     .catch(() => null),
+        // );
+
+        // const productResponses = await Promise.all(productPromises);
+        // const productMap = {};
+        // productResponses.forEach((res, i) => {
+        //   if (res?.data) {
+        //     productMap[productIds[i]] = res.data;
+        //   }
+        // });
+        const searchRes = await axios.get(
+          getSearchResults({
+            type: 'products',
+            lang: i18n.language,
+            isAll: true,
+          }),
         );
 
-        const productResponses = await Promise.all(productPromises);
         const productMap = {};
-        productResponses.forEach((res, i) => {
-          if (res?.data) {
-            productMap[productIds[i]] = res.data;
+        searchRes.data.forEach((product) => {
+          const pid = product.productId || product._id;
+          if (productIds.includes(pid)) {
+            productMap[pid] = product;
           }
         });
 
@@ -83,9 +108,10 @@ export default function CartBuyer() {
   useEffect(() => {
     const checkCard = async () => {
       try {
-        const res = await axios.get(`${API}/api/buyers/me/card`, {
-          withCredentials: true,
-        });
+        // const res = await axios.get(`${API}/api/buyers/me/card`, {
+        //   withCredentials: true,
+        // });
+        const res = await axios.get(getCard());
         setHasCard(res.data.message !== 'No card found');
       } catch (err) {
         setHasCard(false);
@@ -94,87 +120,103 @@ export default function CartBuyer() {
     if (cart) checkCard();
   }, [cart]);
 
-  const adjustQuantity = async (item, delta) => {
-    const product = products[item.productId];
-    if (!product) return;
+  const { t: tDemo } = useTranslation('demo');
+  const adjustQuantity = async (e, item, delta) => {
+    // const product = products[item.productId];
+    // if (!product) return;
 
-    const newQty = item.quantity + delta;
-    const min = product.minOrderQuantity || 1;
-    const max = product.maxOrderQuantity || Infinity;
-    const caseQty = product.caseQuantity || 1;
+    // const newQty = item.quantity + delta;
+    // const min = product.minOrderQuantity || 1;
+    // const max = product.maxOrderQuantity || Infinity;
+    // const caseQty = product.caseQuantity || 1;
 
-    if (newQty < min) return;
-    if (newQty > max) return;
-    if (newQty % caseQty !== 0) return;
+    // if (newQty < min) return;
+    // if (newQty > max) return;
+    // if (newQty % caseQty !== 0) return;
 
-    const originalQty = item.quantity;
-    setUpdating({ ...updating, [item.cartItemId]: true });
+    // const originalQty = item.quantity;
+    // setUpdating({ ...updating, [item.cartItemId]: true });
 
-    try {
-      const res = await axios.patch(
-        `${API}/api/carts/me/items/${item.cartItemId}`,
-        { newQuantity: newQty },
-        { withCredentials: true },
-      );
-      setCart(res.data);
-      refreshCart();
-    } catch (err) {
-      // REVERT ON ERROR
-      setCart((prev) => {
-        const newCart = { ...prev };
-        newCart.suppliers = newCart.suppliers.map((s) => ({
-          ...s,
-          cartItems: s.cartItems.map((i) =>
-            i.cartItemId === item.cartItemId
-              ? { ...i, quantity: originalQty }
-              : i,
-          ),
-        }));
-        return newCart;
-      });
+    // try {
+    //   const res = await axios.patch(
+    //     `${API}/api/carts/me/items/${item.cartItemId}`,
+    //     { newQuantity: newQty },
+    //     { withCredentials: true },
+    //   );
+    //   setCart(res.data);
+    //   refreshCart();
+    // } catch (err) {
+    //   // REVERT ON ERROR
+    //   setCart((prev) => {
+    //     const newCart = { ...prev };
+    //     newCart.suppliers = newCart.suppliers.map((s) => ({
+    //       ...s,
+    //       cartItems: s.cartItems.map((i) =>
+    //         i.cartItemId === item.cartItemId
+    //           ? { ...i, quantity: originalQty }
+    //           : i,
+    //       ),
+    //     }));
+    //     return newCart;
+    //   });
 
-      const msg = err.response?.data?.error?.message || t('validation.error');
-      Swal.fire({ icon: 'error', text: msg });
-    } finally {
-      setUpdating({ ...updating, [item.cartItemId]: false });
-    }
+    //   const msg = err.response?.data?.error?.message || t('validation.error');
+    //   Swal.fire({ icon: 'error', text: msg });
+    // } finally {
+    //   setUpdating({ ...updating, [item.cartItemId]: false });
+    // }
+    await demoAction({
+      e,
+      title: tDemo('action.title'),
+      text: tDemo('action.description'),
+    });
   };
 
-  const removeItem = async (itemId) => {
+  const removeItem = async (e, itemId) => {
     if (!window.confirm(t('confirmRemoveItem'))) return;
     try {
-      const res = await axios.delete(`${API}/api/carts/me/items/${itemId}`, {
-        withCredentials: true,
-      });
-      refreshCart();
+      // const res = await axios.delete(`${API}/api/carts/me/items/${itemId}`, {
+      //   withCredentials: true,
+      // });
+      // refreshCart();
 
-      if (!res.data.suppliers || res.data.suppliers.length === 0) {
-        setCart(null);
-      } else {
-        setCart(res.data);
-      }
+      // if (!res.data.suppliers || res.data.suppliers.length === 0) {
+      //   setCart(null);
+      // } else {
+      //   setCart(res.data);
+      // }
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       Swal.fire({ icon: 'error', text: 'Failed to remove item' });
     }
   };
 
-  const removeSupplier = async (supplierId) => {
+  const removeSupplier = async (e, supplierId) => {
     if (!window.confirm(t('confirmRemoveSupplier'))) return;
 
     try {
-      const res = await axios.delete(
-        `${API}/api/carts/me/suppliers/${supplierId}`,
-        { withCredentials: true },
-      );
-      refreshCart();
+      // const res = await axios.delete(
+      //   `${API}/api/carts/me/suppliers/${supplierId}`,
+      //   { withCredentials: true },
+      // );
+      // refreshCart();
 
-      // Normal success: cart still exists
-      if (res.data.suppliers && res.data.suppliers.length > 0) {
-        setCart(res.data);
-      } else {
-        refreshCart();
-        setCart(null); // Cart deleted
-      }
+      // // Normal success: cart still exists
+      // if (res.data.suppliers && res.data.suppliers.length > 0) {
+      //   setCart(res.data);
+      // } else {
+      //   refreshCart();
+      //   setCart(null); // Cart deleted
+      // }
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       // SPECIAL CASE: 404 + "Cart is now empty" → SUCCESS
       if (
@@ -194,12 +236,17 @@ export default function CartBuyer() {
     }
   };
 
-  const deleteAll = async () => {
+  const deleteAll = async (e) => {
     if (!window.confirm(t('confirmDeleteAll'))) return;
     try {
-      await axios.delete(`${API}/api/carts/me`, { withCredentials: true });
-      setCart(null);
-      refreshCart();
+      // await axios.delete(`${API}/api/carts/me`, { withCredentials: true });
+      // setCart(null);
+      // refreshCart();
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       Swal.fire({ icon: 'error', text: 'Failed to delete cart' });
     }
@@ -210,7 +257,7 @@ export default function CartBuyer() {
       s.cartItems.some((item) => !item.isAvailable),
     ) || false;
 
-  const startCheckout = async () => {
+  const startCheckout = async (e) => {
     if (hasOutOfStock) return;
     if (hasCard === false) {
       Swal.fire({
@@ -230,29 +277,34 @@ export default function CartBuyer() {
 
     setProcessingCheckout(true);
     try {
-      const redirectUrl = `${window.location.origin}/buyer/payment/callback?type=checkout`;
-      const res = await axios.post(
-        `${API}/api/carts/me/checkout`,
-        { redirectUrl },
-        { withCredentials: true },
-      );
+      // const redirectUrl = `${window.location.origin}/buyer/payment/callback?type=checkout`;
+      // const res = await axios.post(
+      //   `${API}/api/carts/me/checkout`,
+      //   { redirectUrl },
+      //   { withCredentials: true },
+      // );
 
-      if (res.data.redirectUrl) {
-        // 3DS Required → Tap
-        window.location.href = res.data.redirectUrl;
-      } else {
-        // Instant success → SHOW SWAL
-        await refreshCart();
-        Swal.fire({
-          icon: 'success',
-          title: t('checkoutSuccess.title'),
-          text: t('checkoutSuccess.message'),
-          confirmButtonText: t('checkoutSuccess.continue'),
-          allowOutsideClick: false,
-        }).then(() => {
-          navigate('/buyer/homepage');
-        });
-      }
+      // if (res.data.redirectUrl) {
+      //   // 3DS Required → Tap
+      //   window.location.href = res.data.redirectUrl;
+      // } else {
+      //   // Instant success → SHOW SWAL
+      //   await refreshCart();
+      //   Swal.fire({
+      //     icon: 'success',
+      //     title: t('checkoutSuccess.title'),
+      //     text: t('checkoutSuccess.message'),
+      //     confirmButtonText: t('checkoutSuccess.continue'),
+      //     allowOutsideClick: false,
+      //   }).then(() => {
+      //     navigate('/buyer/homepage');
+      //   });
+      // }
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg = err.response?.data?.error?.message || t('error');
       Swal.fire({ icon: 'error', text: msg });
@@ -284,7 +336,8 @@ export default function CartBuyer() {
             const supplierItems = supplier.cartItems;
             const firstProduct = products[supplierItems[0]?.productId];
             const supplierLogo =
-              firstProduct?.supplier?.user?.pfpUrl || '/logo-placeholder.png';
+              normalizeUrl(firstProduct?.supplier?.user?.pfpUrl) ||
+              '/logo-placeholder.png';
             const supplierName =
               firstProduct?.supplier?.businessName || 'Unknown Supplier';
 
@@ -318,7 +371,8 @@ export default function CartBuyer() {
                   if (!product) return null;
 
                   const imageUrl =
-                    product.imagesFilesUrls?.[0] || '/placeholder.jpg';
+                    normalizeUrl(product.imagesFilesUrls?.[0]) ||
+                    '/placeholder.jpg';
 
                   return (
                     <div
@@ -394,7 +448,7 @@ export default function CartBuyer() {
                         <div className="cart-item-price">
                           {item.itemTotalPrice}{' '}
                           <img
-                            src="/riyal.png"
+                            src="/silah-showcase/riyal.png"
                             alt="SAR"
                             style={{
                               width: 16,
@@ -426,7 +480,7 @@ export default function CartBuyer() {
           <span>
             {cart.productsTotal}{' '}
             <img
-              src="/riyal.png"
+              src="/silah-showcase/riyal.png"
               alt="SAR"
               style={{ width: 16, height: 16, verticalAlign: 'middle' }}
             />
@@ -437,7 +491,7 @@ export default function CartBuyer() {
           <span>
             {cart.deliveryFees}{' '}
             <img
-              src="/riyal.png"
+              src="/silah-showcase/riyal.png"
               alt="SAR"
               style={{ width: 16, height: 16, verticalAlign: 'middle' }}
             />
@@ -448,7 +502,7 @@ export default function CartBuyer() {
           <span>
             {cart.cartTotal}{' '}
             <img
-              src="/riyal.png"
+              src="/silah-showcase/riyal.png"
               alt="SAR"
               style={{ width: 16, height: 16, verticalAlign: 'middle' }}
             />

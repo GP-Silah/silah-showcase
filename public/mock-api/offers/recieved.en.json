@@ -1,0 +1,180 @@
+[
+  {
+    "offerId": "c26daec0-23c9-45ee-8157-f088b6a77123",
+    "proposedAmount": 2000,
+    "expectedCompletionTime": "2025-11-25T00:00:00.000Z",
+    "offerDetails": "سنقوم بتوفيرها لكم",
+    "executionDetails": "خلال يومين",
+    "notes": null,
+    "status": "DECLINED",
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "BUYER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-03T11:58:23.970Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    },
+    "bid": {
+      "bidId": "f19955a9-4de1-485e-a5b6-09d06b7e6c5e",
+      "bidName": "توفير موارد بناء",
+      "mainActivity": "نحتاج 100,000 بلاط أبيض مساحة 24سم في 12سم",
+      "submissionDeadline": "2025-11-09T00:00:00.000Z",
+      "expectedResponseTime": "ONE_WEEK",
+      "status": "CLOSED",
+      "buyer": {
+        "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+        "user": {
+          "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+          "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+          "name": "SHAHAD SAAD",
+          "email": "shahadsaad001.dev@gmail.com",
+          "crn": "1234567899",
+          "businessName": "ShahadSaad001",
+          "role": "BUYER",
+          "city": "Riyadh",
+          "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "mock-api/images/moon.jpg",
+          "categories": [
+            { "id": 10, "name": "Software & IT Solutions" },
+            { "id": 14, "name": "Technical & Repair Services" }
+          ],
+          "isEmailVerified": true,
+          "preferredLanguage": "EN",
+          "createdAt": "2025-10-25T13:07:44.792Z",
+          "updatedAt": "2026-01-03T11:58:23.970Z"
+        },
+        "card": {
+          "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+          "tapCardId": "card_TS48A10251648oyy23cO10q816",
+          "cardHolderName": "SHAHAD SAAD",
+          "last4": "1019",
+          "brand": "VISA",
+          "expMonth": "01",
+          "expYear": "30"
+        }
+      },
+      "createdAt": "2025-11-09T00:00:00.000Z"
+    },
+    "createdAt": "2025-11-23T00:54:55.318Z"
+  },
+  {
+    "offerId": "a2136daec0-23c9-45ee-8157-f8b6a77123",
+    "proposedAmount": 1000,
+    "expectedCompletionTime": "2025-11-25T00:00:00.000Z",
+    "offerDetails": "سنقوم بتوفيرها",
+    "executionDetails": "اليوم",
+    "notes": null,
+    "status": "ACCEPTED",
+    "supplier": {
+      "user": {
+        "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+        "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+        "name": "SHAHAD SAAD",
+        "email": "shahadsaad001.dev@gmail.com",
+        "crn": "1234567899",
+        "businessName": "ShahadSaad001",
+        "role": "BUYER",
+        "city": "Riyadh",
+        "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+        "pfpUrl": "mock-api/images/moon.jpg",
+        "categories": [
+          { "id": 10, "name": "Software & IT Solutions" },
+          { "id": 14, "name": "Technical & Repair Services" }
+        ],
+        "isEmailVerified": true,
+        "preferredLanguage": "EN",
+        "createdAt": "2025-10-25T13:07:44.792Z",
+        "updatedAt": "2026-01-03T11:58:23.970Z"
+      },
+      "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+      "supplierName": "SHAHAD SAAD",
+      "supplierEmail": "shahadsaad001.dev@gmail.com",
+      "businessName": "ShahadSaad001",
+      "city": "Riyadh",
+      "storeStatus": "OPEN",
+      "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
+      "storeBio": "Developer",
+      "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
+      "deliveryFees": 38,
+      "avgRating": 4.5,
+      "ratingsCount": 14,
+      "usedFreeTrail": true,
+      "supplierStatus": "ACTIVE",
+      "plan": "PREMIUM",
+      "favoriteCategories": [{ "id": 42, "name": "Web & App Development" }]
+    },
+    "bid": {
+      "bidId": "f19955a9-4de1-485e-a5b6-09d06b7e6c5e",
+      "bidName": "توفير موارد بناء",
+      "mainActivity": "نحتاج 100,000 بلاط أبيض مساحة 24سم في 12سم",
+      "submissionDeadline": "2025-11-09T00:00:00.000Z",
+      "expectedResponseTime": "ONE_WEEK",
+      "status": "CLOSED",
+      "buyer": {
+        "buyerId": "faef5f76-975f-4a8e-9ff1-1fc619a158a0",
+        "user": {
+          "userId": "4eca40f5-c251-4e8e-8151-52d21f002f2f",
+          "tapCustomerId": "cus_TS04A4420251307b6Z82510619",
+          "name": "SHAHAD SAAD",
+          "email": "shahadsaad001.dev@gmail.com",
+          "crn": "1234567899",
+          "businessName": "ShahadSaad001",
+          "role": "BUYER",
+          "city": "Riyadh",
+          "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
+          "pfpUrl": "mock-api/images/moon.jpg",
+          "categories": [
+            { "id": 10, "name": "Software & IT Solutions" },
+            { "id": 14, "name": "Technical & Repair Services" }
+          ],
+          "isEmailVerified": true,
+          "preferredLanguage": "EN",
+          "createdAt": "2025-10-25T13:07:44.792Z",
+          "updatedAt": "2026-01-03T11:58:23.970Z"
+        },
+        "card": {
+          "id": "4215ee64-89d5-45c1-bb49-c8555d25d77e",
+          "tapCardId": "card_TS48A10251648oyy23cO10q816",
+          "cardHolderName": "SHAHAD SAAD",
+          "last4": "1019",
+          "brand": "VISA",
+          "expMonth": "01",
+          "expYear": "30"
+        }
+      },
+      "createdAt": "2025-11-09T00:00:00.000Z"
+    },
+    "createdAt": "2025-11-23T00:54:55.318Z"
+  }
+]

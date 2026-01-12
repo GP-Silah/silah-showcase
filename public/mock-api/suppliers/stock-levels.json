@@ -1,0 +1,56 @@
+{
+  "supplierId": "0a3c63b4-a25d-45ad-9386-566bf9eaa7e5",
+  "overview": {
+    "VERY_LOW": {
+      "count": 2,
+      "products": [
+        {
+          "productId": "0c2c3bef-884e-4d5c-ba0f-81690d8be092",
+          "name": "Hair Brushes",
+          "stock": 0
+        },
+        {
+          "productId": "622c4d57-2e75-4991-b43d-2e8f048136a8",
+          "name": "زبادي لذيذ",
+          "stock": 0
+        }
+      ]
+    },
+    "LOW": { "count": 0, "products": [] },
+    "AVERAGE": {
+      "count": 1,
+      "products": [
+        {
+          "productId": "d4056bdf-05d8-4bbf-9025-51b8dffb524c",
+          "name": "REAL DIAMOND RING",
+          "stock": 20
+        }
+      ]
+    },
+    "GOOD": {
+      "count": 4,
+      "products": [
+        {
+          "productId": "c9a58d4a-81f4-4a44-a515-565c29688946",
+          "name": "Bread",
+          "stock": 150
+        },
+        {
+          "productId": "bfb63c85-1a73-4a67-8238-a4236dd10dba",
+          "name": "Lipstick",
+          "stock": 500
+        },
+        {
+          "productId": "68edd0bf-852f-40c4-8335-b3e97c031dc3",
+          "name": "حذاء رجالي مصنوع من الجلد",
+          "stock": 2000
+        },
+        {
+          "productId": "51fd6152-7a67-4109-ba1d-8ea93636b2e4",
+          "name": "بدلة رجالية",
+          "stock": 2000
+        }
+      ]
+    }
+  }
+}

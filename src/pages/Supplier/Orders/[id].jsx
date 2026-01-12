@@ -4,6 +4,9 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { MessageCircle } from 'lucide-react';
 import '../../Buyer/Orders/OrderDetails.css'; // same CSS
+import { getOrders } from '@/utils/mock-api/supplierApi';
+import { demoAction } from '@/components/DemoAction/DemoAction';
+import { getChats } from '@/utils/mock-api/chatApi';
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL || 'https://api.silah.site';
 
@@ -25,6 +28,12 @@ export default function OrderDetailsSupplier() {
   const [updating, setUpdating] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
+
   // -------------------------------------------------
   // FETCH ORDER
   // -------------------------------------------------
@@ -37,11 +46,14 @@ export default function OrderDetailsSupplier() {
     setLoading(true);
     setError(null);
     try {
-      const { data } = await axios.get(`${API_BASE}/api/orders/${orderId}`, {
-        params: { lang: i18n.language },
-        withCredentials: true,
-      });
-      setOrder(data);
+      // const { data } = await axios.get(`${API_BASE}/api/orders/${orderId}`, {
+      //   params: { lang: i18n.language },
+      //   withCredentials: true,
+      // });
+      // setOrder(data);
+      const { data } = await axios.get(getOrders());
+      const orderData = data.find((order) => order.orderId === orderId);
+      setOrder(orderData);
     } catch (err) {
       const msg =
         err.response?.data?.error?.message ||
@@ -61,17 +73,23 @@ export default function OrderDetailsSupplier() {
   // -------------------------------------------------
   // UPDATE STATUS (PATCH)
   // -------------------------------------------------
-  const updateStatus = async (newStatus) => {
+  const { t: tDemo } = useTranslation('demo');
+  const updateStatus = async (e, newStatus) => {
     if (updating) return;
     setUpdating(true);
     try {
-      await axios.patch(
-        `${API_BASE}/api/orders/${orderId}/status`,
-        { newStatus },
-        { withCredentials: true },
-      );
-      setOrder((prev) => ({ ...prev, status: newStatus }));
-      setShowDropdown(false);
+      // await axios.patch(
+      //   `${API_BASE}/api/orders/${orderId}/status`,
+      //   { newStatus },
+      //   { withCredentials: true },
+      // );
+      // setOrder((prev) => ({ ...prev, status: newStatus }));
+      // setShowDropdown(false);
+      await demoAction({
+        e,
+        title: tDemo('action.title'),
+        text: tDemo('action.description'),
+      });
     } catch (err) {
       const msg =
         err.response?.data?.error?.message ||
@@ -96,9 +114,10 @@ export default function OrderDetailsSupplier() {
     };
 
     try {
-      const { data: chats } = await axios.get(`${API_BASE}/api/chats/me`, {
-        withCredentials: true,
-      });
+      // const { data: chats } = await axios.get(`${API_BASE}/api/chats/me`, {
+      //   withCredentials: true,
+      // });
+      const { data: chats } = await axios.get(getChats());
       const existing = (chats || []).find(
         (c) => c.otherUser?.userId === partner.userId,
       );
@@ -228,7 +247,11 @@ export default function OrderDetailsSupplier() {
         {t('order.totalPrice')}{' '}
         <b>
           {order.finalPrice.toLocaleString()}{' '}
-          <img src="/riyal.png" alt={t('sarAlt')} className="sar" />
+          <img
+            src="/silah-showcase/riyal.png"
+            alt={t('sarAlt')}
+            className="sar"
+          />
         </b>{' '}
         {t('order.paid')}
       </p>
@@ -253,7 +276,7 @@ export default function OrderDetailsSupplier() {
                 <td>
                   <div className="item-image-placeholder">
                     <img
-                      src={imgUrl}
+                      src={normalizeUrl(imgUrl)}
                       alt={item.product?.name}
                       className="item-image"
                     />
