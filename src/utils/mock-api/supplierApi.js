@@ -55,3 +55,7 @@ export function getAnalytics() {
 export function getSupplierReviews() {
   return `${API_BASE_URL}/suppliers/reviews.json`;
 }
+
+export function getDemandPredictions() {
+  return `${API_BASE_URL}/suppliers/demand-predictions.json`;
+}

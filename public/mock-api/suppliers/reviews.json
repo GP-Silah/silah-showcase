@@ -17,7 +17,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -36,7 +35,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -64,7 +62,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -83,7 +80,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -111,7 +107,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -130,7 +125,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -157,7 +151,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -176,7 +169,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -203,7 +195,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -222,7 +213,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -250,7 +240,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -269,7 +258,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -297,7 +285,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -316,7 +303,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -343,7 +329,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -362,7 +347,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -389,7 +373,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -408,7 +391,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -436,7 +418,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -455,7 +436,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -482,7 +462,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -501,7 +480,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -529,7 +507,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -548,7 +525,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -576,7 +552,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -595,7 +570,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
@@ -622,7 +596,6 @@
         "role": "SUPPLIER",
         "city": "Riyadh",
         "pfpFileName": "moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg",
-        "pfpUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/moon-32a16ef5-0d5f-42bc-98a1-7d388df3ce9b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=2664247bbbc6398be6dd9856c35ef232280f6c9d3f7e38a100cffe9e4b0155b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "categories": [
           { "id": 10, "name": "Software & IT Solutions" },
           { "id": 14, "name": "Technical & Repair Services" }
@@ -641,7 +614,6 @@
       "storeClosedMsg": "This store is currently closed. Please check back later. - SHAHAD SAAD",
       "storeBio": "Developer",
       "storeBannerFileName": "flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg",
-      "storeBannerFileUrl": "https://gp-silah.d025be9440ae5eb8295c69a36497276a.r2.cloudflarestorage.com/gp-silah/flowers-8f8a0d33-26d7-47dc-894a-b9b3bd9324e7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=2cd46f1efb9f7de0471b97ee91fcab0f%2F20260107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260107T084746Z&X-Amz-Expires=3600&X-Amz-Signature=6d7b4f1e4cdf7a6b128a10cf56d5afed29fecf9aac887e79cee761095716e138&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "deliveryFees": 38,
       "avgRating": 4.5,
       "ratingsCount": 14,
