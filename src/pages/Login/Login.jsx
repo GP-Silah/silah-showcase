@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { useAuth } from '@/context/AuthContext';
+import Swal from 'sweetalert2';
 
 function Login() {
   const { t, i18n } = useTranslation('login');
@@ -19,6 +20,22 @@ function Login() {
   useEffect(() => {
     document.title = t('pageTitle.login', { ns: 'common' });
   }, [t, i18n.language]);
+
+  const { t: tDemo } = useTranslation('demo');
+  useEffect(() => {
+    Swal.fire({
+      icon: 'info',
+      title: tDemo('login.title'),
+      text: tDemo('login.description'),
+      confirmButtonText: tDemo('ok'),
+      confirmButtonColor: '#8a52a7',
+      allowOutsideClick: false,
+      allowEscapeKey: true,
+      customClass: {
+        popup: i18n.language === 'ar' ? 'swal-rtl' : '',
+      },
+    });
+  }, [tDemo, i18n.language]);
 
   const handleLogin = async () => {
     setError('');

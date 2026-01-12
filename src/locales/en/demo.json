@@ -7,5 +7,9 @@
     "title": "Demo Version",
     "description": "This website is a demonstration of the platform's core features. Some functionalities such as payments, authentication, and dynamic state changes are intentionally disabled or simplified."
   },
+  "login": {
+    "title": "Demo Login",
+    "description": "Since this site is a demonstration, you can enter any email or Commercial Registration Number with any password combination to log in."
+  },
   "ok": "Ok"
 }
