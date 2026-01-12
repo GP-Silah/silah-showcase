@@ -16,6 +16,9 @@ import {
   Filler,
 } from 'chart.js';
 import './PredictDemand.css';
+import { getDemandPredictions } from '@/utils/mock-api/supplierApi';
+import { getPlan } from '@/utils/mock-api/supplierApi';
+import { getProductListings } from '@/utils/mock-api/supplierApi';
 
 ChartJS.register(
   CategoryScale,
@@ -34,6 +37,12 @@ export default function DemandPrediction() {
   const navigate = useNavigate();
   const { user, role, supplierStatus } = useAuth();
   const isRTL = i18n.dir() === 'rtl';
+
+  const normalizeUrl = (url) => {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `/silah-showcase/${url}`;
+  };
 
   useEffect(() => {
     document.title = t('pageTitle');
@@ -87,13 +96,10 @@ export default function DemandPrediction() {
     const fetchPlan = async () => {
       try {
         const base = import.meta.env.VITE_BACKEND_URL;
-        console.log(
-          '[Demand] Fetching plan from',
-          `${base}/api/suppliers/me/plan`,
-        );
-        const res = await axios.get(`${base}/api/suppliers/me/plan`, {
-          withCredentials: true,
-        });
+        // const res = await axios.get(`${base}/api/suppliers/me/plan`, {
+        //   withCredentials: true,
+        // });
+        const res = await axios.get(getPlan());
         console.log('[Demand] Plan response', res.data);
         setPlan(res.data.plan);
       } catch (err) {
@@ -117,9 +123,10 @@ export default function DemandPrediction() {
       try {
         const base = import.meta.env.VITE_BACKEND_URL;
         console.log('[Demand] Fetching forecast for id', id);
-        const res = await axios.get(`${base}/api/demand-predictions/${id}`, {
-          withCredentials: true,
-        });
+        // const res = await axios.get(`${base}/api/demand-predictions/${id}`, {
+        //   withCredentials: true,
+        // });
+        const res = await axios.get(getDemandPredictions());
         console.log('[Demand] Forecast response', res.data);
 
         const d = res.data;
@@ -171,9 +178,10 @@ export default function DemandPrediction() {
       try {
         const base = import.meta.env.VITE_BACKEND_URL;
         console.log('[Demand] (2nd effect) Fetching forecast for id', id);
-        const res = await axios.get(`${base}/api/demand-predictions/${id}`, {
-          withCredentials: true,
-        });
+        // const res = await axios.get(`${base}/api/demand-predictions/${id}`, {
+        //   withCredentials: true,
+        // });
+        const res = await axios.get(getDemandPredictions());
         console.log('[Demand] Forecast response', res.data);
 
         const d = res.data;
@@ -207,14 +215,21 @@ export default function DemandPrediction() {
       if (!id) return;
       try {
         const base = import.meta.env.VITE_BACKEND_URL;
-        const res = await axios.get(`${base}/api/products/${id}`, {
-          withCredentials: true,
-          headers: { 'accept-language': i18n.language === 'ar' ? 'ar' : 'en' },
-        });
-        setCurrentStock(res.data.stock || 0);
+        // const res = await axios.get(`${base}/api/products/${id}`, {
+        //   withCredentials: true,
+        //   headers: { 'accept-language': i18n.language === 'ar' ? 'ar' : 'en' },
+        // });
+        const res = await axios.get(getProductListings());
+        const product = res.data.find((p) => p.productId === id);
+        // setCurrentStock(res.data.stock || 0);
+        // setProduct({
+        //   name: res.data.name,
+        //   image: res.data.imagesFilesUrls[0],
+        // });
+        setCurrentStock(200);
         setProduct({
-          name: res.data.name,
-          image: res.data.imagesFilesUrls[0],
+          name: product.name,
+          image: product.imagesFilesUrls[0],
         });
       } catch (err) {
         console.error('Failed to fetch current stock', err);
@@ -386,7 +401,7 @@ export default function DemandPrediction() {
           <section className="forecast-section">
             <div className="product-card">
               <img
-                src={product.image}
+                src={normalizeUrl(product.image)}
                 alt={product.name}
                 className="product-image"
               />
